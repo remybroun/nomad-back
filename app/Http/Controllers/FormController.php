@@ -17,6 +17,7 @@ class FormController extends Controller
         ])->notify(new SendEmail($request->all()));
 
 
-        dd($request->all());
+        // dd($request->all());
+        return response()->json([], 200);
     }
 }
