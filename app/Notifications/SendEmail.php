@@ -44,7 +44,7 @@ class SendEmail extends Notification
         return (new MailMessage)
                     ->line('The introduction to the notification.')
                     ->line('email:' . $this->data['email'])
-                    ->action('Go to Nomad Life Style', url('https://nomadlife.style'))
+                    ->action('Go to Nomad Life Style', url('https://nomadlife.style'));
     }
 
     /**
