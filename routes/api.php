@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\ListingController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/forms', [FormController::class, 'index']);
 Route::post('/forms', [FormController::class, 'store']);
 
+
+Route::get('/listings', [ListingController::class, 'index']);
+Route::post('/listings', [ListingController::class, 'store']);
+Route::put('/listings', [ListingController::class, 'update']);
