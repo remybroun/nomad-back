@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\ListingImageController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,3 +27,5 @@ Route::post('/forms', [FormController::class, 'store']);
 Route::get('/listings', [ListingController::class, 'index']);
 Route::post('/listings', [ListingController::class, 'store']);
 Route::put('/listings', [ListingController::class, 'update']);
+
+Route::post('/listing_images', [ListingImageController::class, 'store']);
