@@ -31,9 +31,9 @@ class ListingController extends Controller
 
         return response()->json(['data' => $listing], 200);
     }
-    public function show(Listing $listing): ListingResource
+    public function show(Listing $listing, $id): ListingResource
     {
-        return new ListingResource($listing);
+        return new ListingResource(Listing::find($id));
     }
 
 }

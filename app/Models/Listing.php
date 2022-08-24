@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\ListingImage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\ListingImage;
 
 class Listing extends Model
 {
@@ -18,6 +18,6 @@ class Listing extends Model
 
     public function main_listing_image()
     {
-        return ListingImage::where('listing_id', $this->id)->first()->url;
+        return ListingImage::where('listing_id', $this->id)->first()->url ?? Null;
     }
 }
