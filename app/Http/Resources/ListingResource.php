@@ -18,6 +18,7 @@ class ListingResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
+            'main_image' => $this->main_listing_image(),
             'external_url' => $this->external_url,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

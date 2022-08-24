@@ -11,9 +11,13 @@ class Listing extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'description', 'external_url'];
-
     public function listingImages()
     {
         return $this->hasMany(ListingImage::class);
+    }
+
+    public function main_listing_image()
+    {
+        return ListingImage::where('listing_id', $this->id)->first()->url;
     }
 }

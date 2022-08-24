@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description');
-            $table->string('external_url');
+            $table->text('title');
+            $table->text('description');
+            $table->text('external_url');
             $table->timestamps();
         });
     }
