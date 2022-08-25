@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\ListingImageResource;
 use App\Models\ListingImage;
+use App\Models\Listing;
 use Illuminate\Http\Request;
+use App\Http\Resources\ListingImageResource;
+use App\Http\Resources\ListingResource;
 
 class ListingImageController extends Controller
 {
@@ -26,4 +28,11 @@ class ListingImageController extends Controller
     {
         return new ListingImageResource($listing_image);
     }
+
+    public function listing_images_for_id($id)
+    {
+        $listing = new ListingResource(Listing::find($id));
+        return $listing->listingImages;
+    }
+
 }

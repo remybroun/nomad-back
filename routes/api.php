@@ -30,3 +30,5 @@ Route::post('/listings', [ListingController::class, 'store']);
 Route::put('/listings', [ListingController::class, 'update']);
 
 Route::post('/listing_images', [ListingImageController::class, 'store']);
+Route::get('/listing_images', [ListingImageController::class, 'show']);
+Route::get('/listings/{id}/images', [ListingImageController::class, 'listing_images_for_id']);
