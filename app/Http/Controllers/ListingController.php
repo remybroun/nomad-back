@@ -11,11 +11,13 @@ use App\Models\Listing;
 class ListingController extends Controller
 {
     public function index(Request $request){
-    
-        $listings = Listing::all();
+        $limit = request()->get('limit');
+        $listings = Listing::all()->sortByDesc('id');
+        if ($limit){
+            $listings = $listings->take($limit);
+        }
         return ListingResource::collection($listings);
     }
-    // public function create(Request $request){
     public function store(Request $request){
         request()->validate([
             'title' => 'required',
