@@ -25,12 +25,10 @@ class ListingController extends Controller
             'location' => 'required',
             'external_url' => 'required',
         ]);
-
         $listing = Listing::where('external_url', request('external_url'))->get();
         if (!$listing->isEmpty()){
             return response()->json(['message' => "Listing with this URL is already added"], 422);
         }
-
         $listing = Listing::create([
             'title' => request('title'),
             'description' => request('description'),
@@ -43,6 +41,11 @@ class ListingController extends Controller
     public function show(Listing $listing, $id): ListingResource
     {
         return new ListingResource(Listing::find($id));
+    }
+
+    public function showLocations()
+    {
+        return Listing::distinct()->get(['location']);
     }
 
 }

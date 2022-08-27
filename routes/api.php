@@ -25,6 +25,7 @@ Route::post('/forms', [FormController::class, 'store']);
 
 
 Route::get('/listings', [ListingController::class, 'index']);
+Route::get('/listings/locations', [ListingController::class, 'showLocations']);
 Route::get('/listings/{id}', [ListingController::class, 'show']);
 Route::post('/listings', [ListingController::class, 'store']);
 Route::put('/listings', [ListingController::class, 'update']);
