@@ -22,12 +22,19 @@ class ListingController extends Controller
         request()->validate([
             'title' => 'required',
             'description' => 'required',
+            'location' => 'required',
             'external_url' => 'required',
         ]);
+
+        $listing = Listing::where('external_url', request('external_url'))->get();
+        if (!$listing->isEmpty()){
+            return response()->json(['message' => "Listing with this URL is already added"], 422);
+        }
 
         $listing = Listing::create([
             'title' => request('title'),
             'description' => request('description'),
+            'location' => request('location'),
             'external_url' => request('external_url'),
         ]);
 
