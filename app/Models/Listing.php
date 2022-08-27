@@ -10,7 +10,7 @@ class Listing extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'external_url'];
+    protected $fillable = ['title', 'description', 'external_url', 'location'];
     public function listingImages()
     {
         return $this->hasMany(ListingImage::class);
