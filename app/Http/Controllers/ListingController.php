@@ -48,4 +48,11 @@ class ListingController extends Controller
         return Listing::distinct()->get(['location']);
     }
 
+
+    public function listingsPerLocation($location)
+    {
+        $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->get();
+        return ListingResource::collection($listings);
+    }
+
 }
