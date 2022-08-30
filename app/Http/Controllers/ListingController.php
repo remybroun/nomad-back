@@ -45,7 +45,7 @@ class ListingController extends Controller
     }
     public function show(Listing $listing, $id): ListingResource
     {
-        return new ListingResource(Listing::find($id));
+        return new ListingResource(Listing::with("mainListingImage")->find($id));
     }
 
     public function showLocations()
@@ -55,7 +55,12 @@ class ListingController extends Controller
 
     public function listingsPerLocation($location)
     {
-        $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->get();
+        $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with("mainListingImage")->latest();
+        if(request()->get('page')){
+            $listings = $listings->paginate();
+        }else{
+            $listings = $listings->get();
+        }
         return ListingResource::collection($listings);
     }
 

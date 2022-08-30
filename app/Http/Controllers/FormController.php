@@ -17,8 +17,6 @@ class FormController extends Controller
             'remy@broun.fr' => 'Remy Broun',
         ])->notify(new SendEmail($request->all()));
 
-
-
         // dd($request->all());
         return response()->json([], 200);
     }
