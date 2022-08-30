@@ -16,8 +16,8 @@ class Listing extends Model
         return $this->hasMany(ListingImage::class);
     }
 
-    public function main_listing_image()
+    public function mainListingImage()
     {
-        return ListingImage::where('listing_id', $this->id)->first()->url ?? Null;
+        return $this->hasOne(ListingImage::class)->latestOfMany();
     }
 }
