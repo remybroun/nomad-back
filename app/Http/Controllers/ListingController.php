@@ -12,7 +12,7 @@ class ListingController extends Controller
 {
     public function index(Request $request){
         $limit = request()->get('limit');
-        $listings = Listing::query()->with("mainListingImage")->latest();
+        $listings = Listing::orderBy('is_featured', 'DESC')->with("mainListingImage")->latest();
         if(request()->get('page')){
             $listings = $listings->paginate();
         }else{
