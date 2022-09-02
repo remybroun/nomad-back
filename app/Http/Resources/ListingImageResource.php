@@ -16,7 +16,6 @@ class ListingImageResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'listing_id' => $this->listing_id,
             'url' => $this->url,
         ];
     }

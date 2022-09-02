@@ -10,7 +10,9 @@ class Listing extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'external_url', 'location'];
+//    protected $fillable = ['title', 'description', 'external_url', 'location', co];
+    protected $guarded = [];
+
     public function listingImages()
     {
         return $this->hasMany(ListingImage::class);
@@ -18,6 +20,6 @@ class Listing extends Model
 
     public function mainListingImage()
     {
-        return $this->hasOne(ListingImage::class)->latestOfMany();
+        return $this->hasOne(ListingImage::class)->orderByDesc('is_main');
     }
 }

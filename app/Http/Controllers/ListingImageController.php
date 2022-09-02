@@ -20,6 +20,7 @@ class ListingImageController extends Controller
         $listing = ListingImage::create([
             'url' => request('url'),
             'listing_id' => request('listing_id'),
+            'is_main' => False,
         ]);
 
         return response()->json(['data' => $listing], 200);

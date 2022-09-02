@@ -12,7 +12,7 @@ class ListingController extends Controller
 {
     public function index(Request $request){
         $limit = request()->get('limit');
-        $listings = Listing::orderBy('is_featured', 'DESC')->with("mainListingImage")->latest();
+        $listings = Listing::orderBy('is_featured', 'DESC')->orderBy('id', 'DESC')->with("mainListingImage");
         if(request()->get('page')){
             $listings = $listings->paginate();
         }else{
@@ -38,14 +38,32 @@ class ListingController extends Controller
             'title' => request('title'),
             'description' => request('description'),
             'location' => request('location'),
+            'is_featured' => False,
             'external_url' => request('external_url'),
         ]);
 
         return response()->json(['data' => $listing], 200);
     }
-    public function show(Listing $listing, $id): ListingResource
+
+    public function update(Listing $listing, Request $request){
+
+        request()->validate([
+            'title' => 'string',
+            'description' => 'string',
+            'location' => 'string',
+            'external_url' => 'string',
+            'longitude' => 'string',
+            'latitude' => 'string',
+            'amenities' => '',
+        ]);
+
+        $listing->update($request->all());
+        return response()->json(['data' => $listing], 200);
+    }
+
+    public function show(Listing $listing): ListingResource
     {
-        return new ListingResource(Listing::with("mainListingImage")->find($id));
+        return new ListingResource($listing->load('mainListingImage'));
     }
 
     public function showLocations()
