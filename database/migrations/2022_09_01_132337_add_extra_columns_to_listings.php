@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('listings', function (Blueprint $table) {
-            $table->string('longitude');
-            $table->string('latitude');
-            $table->string('amenities');
+            $table->double('longitude')->nullable(true);
+            $table->double('latitude')->nullable(true);
+            $table->json('amenities')->nullable(true);
         });
     }
 

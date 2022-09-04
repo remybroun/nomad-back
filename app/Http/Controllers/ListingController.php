@@ -52,11 +52,11 @@ class ListingController extends Controller
             'description' => 'string',
             'location' => 'string',
             'external_url' => 'string',
-            'longitude' => 'string',
-            'latitude' => 'string',
-            'amenities' => '',
+            'longitude' => 'numeric',
+            'latitude' => 'numeric',
+            'amenities' => 'array',
+            'arrangements' => 'array',
         ]);
-
         $listing->update($request->all());
         return response()->json(['data' => $listing], 200);
     }

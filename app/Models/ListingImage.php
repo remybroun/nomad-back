@@ -10,7 +10,7 @@ class ListingImage extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['url', 'listing_id'];
+    protected $guarded = [''];
 
     public function listings()
     {
