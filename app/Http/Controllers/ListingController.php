@@ -68,7 +68,17 @@ class ListingController extends Controller
 
     public function showLocations()
     {
-        return Listing::distinct()->get(['location']);
+        $listings = Listing::distinct('location')->get('location')->map(function ($listing){
+            return $listing->location;
+        });
+        $countries = $listings->map(function ($listing){
+            return str($listing)->explode(', ')->last();
+        })->unique()->values();
+
+        return response()->json([
+            'cities' => $listings,
+            'countries' => $countries,
+        ], 200);
     }
 
     public function listingsPerLocation($location)

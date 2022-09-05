@@ -17,6 +17,10 @@ class ListingImageController extends Controller
             'listing_id' => 'required',
         ]);
 
+        $listing_image = ListingImage::where('url', request('url'))->get();
+        if (!$listing_image->isEmpty()){
+            return response()->json(['message' => "Listing Image with this URL is already added"], 422);
+        }
         $listing = ListingImage::create([
             'url' => request('url'),
             'listing_id' => request('listing_id'),
