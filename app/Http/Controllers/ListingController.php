@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Resources\ListingResource;
 use App\Models\Listing;
+use App\Models\Visit;
 
 
 class ListingController extends Controller
@@ -64,6 +65,20 @@ class ListingController extends Controller
     public function show(Listing $listing): ListingResource
     {
         return new ListingResource($listing->load('mainListingImage'));
+    }
+
+    public function visit(Listing $listing, Request $request)
+    {
+        Visit::create([
+            'ip_address' => $request->ip(),
+            'url' => $listing->external_url,
+            'listing_id' => $listing->id,
+        ]);
+
+        return response()->json([
+            'external_url' => $listing->external_url,
+        ]);//redirect()->away($listing->external_url);
+
     }
 
     public function showLocations()

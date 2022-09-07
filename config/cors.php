@@ -31,4 +31,9 @@ return [
 
     'supports_credentials' => false,
 
+    'allowedOrigins' => ['*'],
+
+    'allowedOriginsPatterns' => [],
+
+
 ];

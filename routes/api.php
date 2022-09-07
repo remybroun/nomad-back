@@ -36,3 +36,12 @@ Route::get('/listing_images', [ListingImageController::class, 'show']);
 Route::get('/listings/{id}/images', [ListingImageController::class, 'listing_images_for_id']);
 
 Route::post('/forms/host', [FormController::class, 'storeHostAnswers']);
+Route::get('listings/{listing}/visit',[ListingController::class, 'visit']);
+
+//
+//    Route::group([
+//        'middleware' => ['api', 'cors'],
+//    ], function ($router) {
+//         //Add you routes here, for example:
+//        Route::get('listings/{listing}/visit',[ListingController::class, 'visit']);
+//    });

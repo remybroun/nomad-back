@@ -10,7 +10,7 @@ class Listing extends Model
 {
     use HasFactory;
 
-//    protected $fillable = ['title', 'description', 'external_url', 'location', co];
+
     protected $guarded = [];
     protected $casts = ['amenities' => 'array'];
     public function listingImages()

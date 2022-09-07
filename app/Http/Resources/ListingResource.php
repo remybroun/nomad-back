@@ -24,6 +24,7 @@ class ListingResource extends JsonResource
             'longitude' => $this->longitude,
             'latitude' => $this->latitude,
             'amenities' => $this->amenities,
+            'arrangements' => $this->arrangements,
             'main_image' => new ListingImageResource($this->mainListingImage),
             'external_url' => $this->external_url,
             'created_at' => $this->created_at,
