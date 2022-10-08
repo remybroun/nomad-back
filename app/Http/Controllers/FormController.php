@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HostFormAnswer;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Notifications\SendEmail;
 use Illuminate\Support\Facades\Notification;
@@ -13,11 +14,20 @@ class FormController extends Controller
         dd($request->all());
     }
     public function store(Request $request){
+
+        request()->validate([
+            'email' => 'required',
+            'form' => 'optional',
+        ]);
+        
+        Contact::create([
+            'email' => request('email'),
+            'form' => request('form'),
+        ]);
+
         Notification::route('mail', [
             'remy@broun.fr' => 'Remy Broun',
         ])->notify(new SendEmail($request->all()));
-
-        // dd($request->all());
         return response()->json([], 200);
     }
 

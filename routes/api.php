@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/forms', [FormController::class, 'index']);
 Route::post('/forms', [FormController::class, 'store']);
+Route::post('/forms/host', [FormController::class, 'storeHostAnswers']);
 
 
 Route::get('/listings', [ListingController::class, 'index']);
