@@ -27,7 +27,9 @@ Route::post('/forms/host', [FormController::class, 'storeHostAnswers']);
 
 Route::get('/listings', [ListingController::class, 'index']);
 Route::get('/listings/locations', [ListingController::class, 'showLocations']);
+Route::get('/listings/locations/area/{area}', [ListingController::class, 'locationsPerArea']);
 Route::get('/listings/locations/{location}', [ListingController::class, 'listingsPerLocation']);
+Route::get('/listings/locations/{location}/preview', [ListingController::class, 'showTopThreeListingsForLocation']);
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 Route::post('/listings', [ListingController::class, 'store']);
 Route::put('/listings/{listing}', [ListingController::class, 'update']);
@@ -36,7 +38,6 @@ Route::post('/listing_images', [ListingImageController::class, 'store']);
 Route::get('/listing_images', [ListingImageController::class, 'show']);
 Route::get('/listings/{id}/images', [ListingImageController::class, 'listing_images_for_id']);
 
-Route::post('/forms/host', [FormController::class, 'storeHostAnswers']);
 Route::get('listings/{listing}/visit',[ListingController::class, 'visit']);
 
 //

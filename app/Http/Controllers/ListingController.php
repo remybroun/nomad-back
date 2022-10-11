@@ -82,7 +82,7 @@ class ListingController extends Controller
     }
 
     public function showLocations()
-    {
+    {   
         $listings = Listing::distinct('location')->get('location')->map(function ($listing){
             return $listing->location;
         });
@@ -96,6 +96,11 @@ class ListingController extends Controller
         ], 200);
     }
 
+    public function showTopThreeListingsForLocation($location){
+        $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with("mainListingImage")->latest()->take(3)->get();
+        return ListingResource::collection($listings);
+    }
+
     public function listingsPerLocation($location)
     {
         $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with("mainListingImage")->latest();
@@ -105,6 +110,24 @@ class ListingController extends Controller
             $listings = $listings->get();
         }
         return ListingResource::collection($listings);
+    }
+
+
+    public function locationsPerArea($area)
+    {
+        
+        $asia = ["Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Costa Rica", "Ecuador", "El Salvador", "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Dominican Republic", "Uruguay"];
+
+        $europe = ["Hungary", "Belarus", "Austria", "Serbia", "Switzerland", "Germany", "Holy", "Andorra", "Bulgaria", "United", "France", "Montenegro", "Luxembourg", "Italy", "Denmark", "Finland", "Slovakia", "Norway", "Ireland", "Spain", "Malta", "Ukraine", "Croatia", "Moldova", "Monaco", "Liechtenstein", "Poland", "Iceland", "San Marino", "Bosnia", "Albania", "Lithuania", "North", "Slovenia", "Romania", "Latvia", "Netherlands", "Russia", "Estonia", "Belgium", "Czech", "Greece", "Portugal", "Sweden"];
+
+        $south_america = ["Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Costa Rica", "Ecuador", "El Salvador", "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Dominican Republic", "Uruguay"];
+
+        if ($area == "europe")
+            return $europe;
+        if ($area == "asia")
+            return $asia;
+
+        return $south_america;
     }
 
 }
