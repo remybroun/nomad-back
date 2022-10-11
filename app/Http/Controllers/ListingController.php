@@ -97,12 +97,18 @@ class ListingController extends Controller
     }
 
     public function showTopThreeListingsForLocation($location){
+        $location = str_replace('--', '.', $location);
+        $location = str_replace('-', ' ', $location);
+        $location = str_replace('.', '-', $location);
         $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with("mainListingImage")->latest()->take(3)->get();
         return ListingResource::collection($listings);
     }
 
     public function listingsPerLocation($location)
     {
+        $location = str_replace('--', '.', $location);
+        $location = str_replace('-', ' ', $location);
+        $location = str_replace('.', '-', $location);
         $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with("mainListingImage")->latest();
         if(request()->get('page')){
             $listings = $listings->paginate();
@@ -115,7 +121,6 @@ class ListingController extends Controller
 
     public function locationsPerArea($area)
     {
-        
         $asia = ["Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Costa Rica", "Ecuador", "El Salvador", "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Dominican Republic", "Uruguay"];
 
         $europe = ["Hungary", "Belarus", "Austria", "Serbia", "Switzerland", "Germany", "Holy", "Andorra", "Bulgaria", "United", "France", "Montenegro", "Luxembourg", "Italy", "Denmark", "Finland", "Slovakia", "Norway", "Ireland", "Spain", "Malta", "Ukraine", "Croatia", "Moldova", "Monaco", "Liechtenstein", "Poland", "Iceland", "San Marino", "Bosnia", "Albania", "Lithuania", "North", "Slovenia", "Romania", "Latvia", "Netherlands", "Russia", "Estonia", "Belgium", "Czech", "Greece", "Portugal", "Sweden"];
