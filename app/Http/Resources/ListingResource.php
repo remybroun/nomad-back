@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Models\ListingImage;
+use App\Http\Resources\LocationResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ListingResource extends JsonResource
@@ -19,7 +20,7 @@ class ListingResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'location' => $this->location,
+            'location' => new LocationResource($this->location_slug),
             'is_featured' => $this->is_featured,
             'longitude' => $this->longitude,
             'latitude' => $this->latitude,

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ListingImageController;
 /*
 |--------------------------------------------------------------------------
@@ -20,13 +21,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Forms
 Route::get('/forms', [FormController::class, 'index']);
 Route::post('/forms', [FormController::class, 'store']);
 Route::post('/forms/host', [FormController::class, 'storeHostAnswers']);
 
+//Locations
+Route::get('/locations/cities', [LocationController::class, 'showLocations']);
+Route::get('/locations/countries', [LocationController::class, 'showCountries']);
+Route::get('/locations/area/{area}', [LocationController::class, 'locationsPerArea']);
 
+//Listings
 Route::get('/listings', [ListingController::class, 'index']);
 Route::get('/listings/locations', [ListingController::class, 'showLocations']);
+Route::get('/listings/locations/countries/{country}', [ListingController::class, 'listingsPerCountry']);
 Route::get('/listings/locations/area/{area}', [ListingController::class, 'locationsPerArea']);
 Route::get('/listings/locations/{location}', [ListingController::class, 'listingsPerLocation']);
 Route::get('/listings/locations/{location}/preview', [ListingController::class, 'showTopThreeListingsForLocation']);

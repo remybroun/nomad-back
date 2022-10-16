@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Resources\ListingResource;
 use App\Models\Listing;
+use App\Models\Location;
+use App\Models\Country;
 use App\Models\Visit;
 
 
@@ -13,7 +15,7 @@ class ListingController extends Controller
 {
     public function index(Request $request){
         $limit = request()->get('limit');
-        $listings = Listing::orderBy('is_featured', 'DESC')->orderBy('id', 'DESC')->with("mainListingImage");
+        $listings = Listing::orderBy('is_featured', 'DESC')->orderBy('id', 'DESC')->with(["mainListingImage", "location_slug"]);
         if(request()->get('page')){
             $listings = $listings->paginate();
         }else{
@@ -42,6 +44,40 @@ class ListingController extends Controller
             'is_featured' => False,
             'external_url' => request('external_url'),
         ]);
+
+
+        $location_slug = $this->generateSlug(request('location'));
+        $country_str = str(request('location'))->explode(', ')->last();
+        $country = Country::where('name', $country_str)->first();
+        $location = Location::where('slug', $location_slug)->first();
+
+        if(!$location){
+            try{
+                Location::create([
+                  "name" => request('location'),
+                  "slug" => $location_slug,
+                ]);
+                
+            }
+            catch(QueryException $e){
+                print($e->getMessage());
+            }
+        }
+
+        if(!$country){
+            try{
+                $country_obj = Country::create([
+                    "slug"=>$this->generateSlug($country_str),
+                    "name"=>$country_str,
+                ]);
+
+                $location->country()->associate($country_obj);
+                $location->save();
+            }
+            catch(QueryException $e){
+                print($e->getMessage());
+            }
+        }
 
         return response()->json(['data' => $listing], 200);
     }
@@ -81,41 +117,78 @@ class ListingController extends Controller
 
     }
 
+    private function generateSlug($string){
+        $string = explode(",", $string)[0];
+        $string = str_replace([',', "'", '.'], '-', $string);
+        $string = str_replace([' '], '--', $string);
+        $string = strtolower($string);
+        return $string;
+    }
+
     public function showLocations()
     {   
-        $listings = Listing::distinct('location')->get('location')->map(function ($listing){
-            return $listing->location;
-        });
-        $countries = $listings->map(function ($listing){
-            return str($listing)->explode(', ')->last();
+        $locations = Location::get();
+
+        $countries = $locations->map(function ($location){
+            $name = str($location->name)->explode(', ')->last();
+            return [
+                "slug"=>$this->generateSlug($name),
+                "name"=>$name,
+            ];
         })->unique()->values();
 
+
         return response()->json([
-            'cities' => $listings,
+            'cities' => $locations,
             'countries' => $countries,
         ], 200);
     }
 
     public function showTopThreeListingsForLocation($location){
-        $location = str_replace('--', '.', $location);
-        $location = str_replace('-', ' ', $location);
-        $location = str_replace('.', '-', $location);
-        $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with("mainListingImage")->latest()->take(3)->get();
+        
+        $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with(["mainListingImage", "location_slug"])->latest()->take(3)->get();
+
         return ListingResource::collection($listings);
     }
 
-    public function listingsPerLocation($location)
-    {
-        $location = str_replace('--', '.', $location);
-        $location = str_replace('-', ' ', $location);
-        $location = str_replace('.', '-', $location);
-        $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with("mainListingImage")->latest();
+    public function listingsPerLocation($location){
+        
+        $listings = Listing::whereHas('location_slug', function($q) use($location){
+            $q->where('slug', 'LIKE', '%'.$location.'%');
+        })
+        ->with(["mainListingImage", "location_slug"])
+        ->latest();
         if(request()->get('page')){
             $listings = $listings->paginate();
         }else{
             $listings = $listings->get();
         }
+
         return ListingResource::collection($listings);
+    }
+
+
+    public function listingsPerCountry($country){
+        
+        $country = Country::where('slug', $country)->first();
+        $listings = Listing::whereHas('location_slug', function($q) use($country){
+            $q->whereHas('country', function($q) use($country){
+                $q->where('slug', 'LIKE', '%'.$country->slug.'%');
+            });
+        })
+        ->with(["mainListingImage", "location_slug"])
+        ->latest();
+
+        if(request()->get('page')){
+            $listings = $listings->paginate();
+        }else{
+            $listings = $listings->get();
+        }
+
+        return response()->json([
+            "listings" => ListingResource::collection($listings),
+            "country" => $country,
+        ]);
     }
 
 
