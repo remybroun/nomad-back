@@ -16,5 +16,13 @@ class WeworkController extends Controller
         $weworks = Wework::orderBy('score', 'DESC')->orderBy('country', 'ASC')->paginate(50);
         return response()->json($weworks, 200);
     }
+    
+    public function upvote(Wework $wework){
+
+        $wework->score = $wework->score + 1.0;
+        $wework->save();
+
+        return response()->json($wework, 200);
+    }
 
 }

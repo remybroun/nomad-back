@@ -51,6 +51,7 @@ Route::get('listings/{listing}/visit',[ListingController::class, 'visit']);
 
 Route::get('/coworking/wework/all', [WeworkController::class, 'index']);
 Route::get('/coworking/wework/{id}', [WeworkController::class, 'show']);
+Route::post('/coworking/wework/{wework}/upvote', [WeworkController::class, 'upvote']);
 
 
 //

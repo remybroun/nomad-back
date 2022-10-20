@@ -9,6 +9,7 @@ class Wework extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $fillable = ['score'];
     public $timestamps = false;
-    
+
 }
