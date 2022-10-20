@@ -6,6 +6,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ListingImageController;
+use App\Http\Controllers\WeworkController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -47,6 +48,10 @@ Route::get('/listing_images', [ListingImageController::class, 'show']);
 Route::get('/listings/{id}/images', [ListingImageController::class, 'listing_images_for_id']);
 
 Route::get('listings/{listing}/visit',[ListingController::class, 'visit']);
+
+Route::get('/coworking/wework/all', [WeworkController::class, 'index']);
+Route::get('/coworking/wework/{id}', [WeworkController::class, 'show']);
+
 
 //
 //    Route::group([

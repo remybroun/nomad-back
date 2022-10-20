@@ -29,62 +29,66 @@ class AddLocationSlug extends Command
      * @return int
      */
 
+    private function stripAccents($str) {
+        return strtr(utf8_decode($str), utf8_decode('àáâãäçćèéêęëìíîïñńòóôõöùúûüýÿžÅÀÁÂÃÄÇÈÉÊËĠÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'), 'aaaaacceeeeeiiiinnooooouuuuyyzAAAAAACEEEEGIIIINOOOOOUUUUY');
+    }
     private function generateSlug($string){
         $string = explode(",", $string)[0];
-        $string = strtolower(str_replace([',', "'", ' ', '.'], '-', $string));
+        $string = str_replace([',', "'", "ʻ", '.'], '-', $string);
+        $string = str_replace([' '], '--', $string);
+        $string = strtolower($string);
+        $string = $this->stripAccents($string);
 
         return $string;
     }
 
+
     public function handle()
     {
-        $listings = Listing::distinct('location')->get('location')->map(function ($listing){
+        $listing_locations = Listing::distinct('location')->get('location')->map(function ($listing){
             return $listing->location;
         });
+    
+        foreach($listing_locations as $listing_location){
 
-        // $countries = $listings->map(function ($listing){
-        //     return str($listing)->explode(', ')->last();
-        // })->unique()->values();
-        $locations = Location::get();
+            $this->line($listing_location);
+            $location_slug = $this->generateSlug($listing_location);
+            $location = Location::where('slug', $location_slug)->first();
+            if($location)
+                continue;
+            $country_str = str($listing_location)->explode(', ')->last();
+            $country = Country::where('name', $country_str)->first();
 
-        // $countries = $locations->map(function ($location){
-        //     $name = str($location->name)->explode(', ')->last();
-        //     $this->line($name);
-        //     try{
-        //         // $country = Country::create([
-        //         //     "slug"=>$this->generateSlug($name),
-        //         //     "name"=>$name,
-        //         // ]);
-        //         $country = Country::where("name", $name)->first();
+            if(!$location){
+                try{
+                    $location = Location::create([
+                      "name" => $listing_location,
+                      "slug" => $location_slug,
+                    ]);
+                    $this->line($location_slug . " Location Created");
 
-        //         $location->country()->associate($country);
-        //         $location->save();
-        //     }
-        //     catch(QueryException $e){
-        //         print($e->getMessage());
-        //     }
-        //     return [
-        //         "slug"=>$this->generateSlug($name),
-        //         "name"=>$name,
-        //     ];
-        // })
-        // ->unique()
-        // ->values();
-
-        foreach($listings as $listing){
-
-            $location = $this->generateSlug($listing);
-
-            try{
-                Location::create([
-                  "name" => $listing,
-                  "slug" => $location,
-                ]);
-
+                }
+                catch(QueryException $e){
+                    $this->line($e->getMessage());
+                }
             }
-            catch(QueryException $e){
-                print($e->getMessage());
+
+            if(!$country){
+                try{
+                    $country = Country::create([
+                        "slug"=>$this->generateSlug($country_str),
+                        "name"=>$country_str,
+                    ]);
+                    $this->line($country_str . " Location Created");
+                }
+                catch(QueryException $e){
+                    $this->line($e->getMessage());
+                }
             }
+
+            $location->country()->associate($country);
+            $location->save();
+
         }
     }
 }

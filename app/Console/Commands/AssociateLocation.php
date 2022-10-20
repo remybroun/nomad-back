@@ -41,12 +41,10 @@ class AssociateLocation extends Command
             if ($listing->location_id){
                 continue;
             }
-            $location_str = $this->generateSlug($listing->location);
-            $location_obj = Location::where("slug", $location_str)->first();
+            $location_obj = Location::where("name", $listing->location)->first();
             $this->line($listing->location);
-            $listing->locationSlug()->associate($location_obj);
+            $listing->location_slug()->associate($location_obj);
             $listing->save();
         }
-
     }
 }

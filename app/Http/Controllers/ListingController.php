@@ -26,6 +26,7 @@ class ListingController extends Controller
         }
         return ListingResource::collection($listings);
     }
+    
     public function store(Request $request){
         request()->validate([
             'title' => 'required',
@@ -117,13 +118,19 @@ class ListingController extends Controller
 
     }
 
+    private function stripAccents($str) {
+        return strtr(utf8_decode($str), utf8_decode('àáâãäçćèéêęëìíîïñńòóôõöùúûüýÿžÅÀÁÂÃÄÇÈÉÊËĠÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'), 'aaaaacceeeeeiiiinnooooouuuuyyzAAAAAACEEEEGIIIINOOOOOUUUUY');
+    }
     private function generateSlug($string){
         $string = explode(",", $string)[0];
         $string = str_replace([',', "'", '.'], '-', $string);
         $string = str_replace([' '], '--', $string);
         $string = strtolower($string);
+        $string = $this->stripAccents($string);
+
         return $string;
     }
+
 
     public function showLocations()
     {   
