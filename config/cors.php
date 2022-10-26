@@ -15,11 +15,11 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => ['*'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => [env('FRONTEND_URL', 'https://api.nomadliving.test')],
 
     'allowed_origins_patterns' => [],
 
@@ -29,11 +29,6 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
-
-    'allowedOrigins' => ['*'],
-
-    'allowedOriginsPatterns' => [],
-
+    'supports_credentials' => true,
 
 ];
