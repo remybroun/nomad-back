@@ -7,6 +7,7 @@ use App\Http\Controllers\ListingController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ListingImageController;
 use App\Http\Controllers\WeworkController;
+use App\Http\Controllers\WeworkImageController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -49,9 +50,13 @@ Route::get('/listings/{id}/images', [ListingImageController::class, 'listing_ima
 
 Route::get('listings/{listing}/visit',[ListingController::class, 'visit']);
 
-Route::get('/coworking/wework/all', [WeworkController::class, 'index']);
-Route::get('/coworking/wework/{id}', [WeworkController::class, 'show']);
+Route::get('/coworking/wework/all', [WeworkController::class, 'all']);
+Route::get('/coworking/wework/ranking', [WeworkController::class, 'ranking']);
 Route::post('/coworking/wework/{wework}/upvote', [WeworkController::class, 'upvote']);
+Route::post('/coworking/wework/image/store', [WeworkImageController::class, 'store']);
+Route::get('/coworking/wework/{slug}', [WeworkController::class, 'show']);
+Route::get('/coworking/wework/{id}/images', [WeworkController::class, 'show']);
+
 
 
 //

@@ -54,17 +54,21 @@ class ListingController extends Controller
 
         if(!$location){
             try{
-                Location::create([
+                $location = Location::create([
                   "name" => request('location'),
                   "slug" => $location_slug,
                 ]);
                 
             }
+
             catch(QueryException $e){
                 print($e->getMessage());
             }
         }
 
+        $listing->location_slug()->associate($location);
+        $listing->save();
+        
         if(!$country){
             try{
                 $country_obj = Country::create([

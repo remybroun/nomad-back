@@ -7,13 +7,18 @@ use App\Models\Wework;
 
 class WeworkController extends Controller
 {
-    public function show($id){
-        $wework = Wework::find($id);
+    public function show($wework_slug){
+        $wework = Wework::with("images")->where('slug', $wework_slug)->first();
         return response()->json($wework, 200);
     }
 
-    public function index(){
+    public function ranking(){
         $weworks = Wework::orderBy('score', 'DESC')->orderBy('country', 'ASC')->paginate(50);
+        return response()->json($weworks, 200);
+    }
+
+    public function all(){
+        $weworks = Wework::get();
         return response()->json($weworks, 200);
     }
     

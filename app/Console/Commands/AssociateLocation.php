@@ -28,12 +28,6 @@ class AssociateLocation extends Command
      */
 
 
-    private function generateSlug($string){
-        $string = explode(",", $string)[0];
-        $string = strtolower(str_replace([',', "'", ' ', '.'], '-', $string));
-        return $string;
-    }
-
     public function handle()
     {
         $listings = Listing::get();

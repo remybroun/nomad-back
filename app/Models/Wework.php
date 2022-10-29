@@ -12,4 +12,10 @@ class Wework extends Model
     protected $fillable = ['score'];
     public $timestamps = false;
 
+
+    public function images()
+    {
+        return $this->hasMany(WeworkImage::class);
+    }
+
 }
