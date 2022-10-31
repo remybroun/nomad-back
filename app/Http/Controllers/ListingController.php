@@ -68,7 +68,7 @@ class ListingController extends Controller
 
         $listing->location_slug()->associate($location);
         $listing->save();
-        
+
         if(!$country){
             try{
                 $country_obj = Country::create([
@@ -101,6 +101,12 @@ class ListingController extends Controller
         ]);
         $listing->update($request->all());
         return response()->json(['data' => $listing], 200);
+    }
+
+    public function selection(Request $request)
+    {
+        $listings = Listing::findMany($request->ids);
+        return ListingResource::collection($listings);
     }
 
     public function show(Listing $listing): ListingResource

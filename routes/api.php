@@ -35,13 +35,14 @@ Route::get('/locations/area/{area}', [LocationController::class, 'locationsPerAr
 
 //Listings
 Route::get('/listings', [ListingController::class, 'index']);
+Route::post('/listings', [ListingController::class, 'store']);
 Route::get('/listings/locations', [ListingController::class, 'showLocations']);
 Route::get('/listings/locations/countries/{country}', [ListingController::class, 'listingsPerCountry']);
 Route::get('/listings/locations/area/{area}', [ListingController::class, 'locationsPerArea']);
 Route::get('/listings/locations/{location}', [ListingController::class, 'listingsPerLocation']);
 Route::get('/listings/locations/{location}/preview', [ListingController::class, 'showTopThreeListingsForLocation']);
+Route::get('/listings/selection', [ListingController::class, 'selection']);
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
-Route::post('/listings', [ListingController::class, 'store']);
 Route::put('/listings/{listing}', [ListingController::class, 'update']);
 
 Route::post('/listing_images', [ListingImageController::class, 'store']);
@@ -55,7 +56,7 @@ Route::get('/coworking/wework/ranking', [WeworkController::class, 'ranking']);
 Route::post('/coworking/wework/{wework}/upvote', [WeworkController::class, 'upvote']);
 Route::post('/coworking/wework/image/store', [WeworkImageController::class, 'store']);
 Route::get('/coworking/wework/{slug}', [WeworkController::class, 'show']);
-Route::get('/coworking/wework/{id}/images', [WeworkController::class, 'show']);
+
 
 
 
