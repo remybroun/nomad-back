@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Wework;
+use App\Models\WeworkListingProximity;
 
 class WeworkController extends Controller
 {
     public function show($wework_slug){
         $wework = Wework::with("images")->where('slug', $wework_slug)->first();
-        return response()->json($wework, 200);
+        $closeListings = WeworkListingProximity::where('wework_id', $wework->id)
+            ->leftJoin('listings', 'listings.id', '=', 'wework_listing_proximities.listing_id')
+            ->get();
+
+        return response()->json([
+            'location' => $wework,
+            'close_listings' => $closeListings,
+        ], 200);
     }
 
     public function ranking(Request $request){

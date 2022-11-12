@@ -30,7 +30,7 @@ class AddLocationSlug extends Command
      */
 
     private function stripAccents($str) {
-        return strtr(utf8_decode($str), utf8_decode('àáâãäçćèéêęëìíîïñńòóôõöùúûüýÿžÅÀÁÂÃÄÇÈÉÊËĠÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'), 'aaaaacceeeeeiiiinnooooouuuuyyzAAAAAACEEEEGIIIINOOOOOUUUUY');
+        return strtr(utf8_decode($str), utf8_decode('àáâãäçćèéêęëìíîïñńòóôõöøùúûüýÿžÅÀÁÂÃÄÇÈÉÊËĠÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'), 'aaaaacceeeeeiiiinnoooooouuuuyyzAAAAAACEEEEGIIIINOOOOOUUUUY');
     }
     private function generateSlug($string){
         $string = explode(",", $string)[0];
@@ -45,24 +45,36 @@ class AddLocationSlug extends Command
 
     public function handle()
     {
-        $listing_locations = Listing::distinct('location')->get('location')->map(function ($listing){
-            return $listing->location;
-        });
+        // $listing_locations = Listing::distinct('location')->get('location')->map(function ($listing){
+        //     return $listing->location;
+        // });
+    
+        $listing_locations = Listing::distinct('location')->get();
+        // ->map(function ($listing){
+        //     return $listing->location;
+        // });
     
         foreach($listing_locations as $listing_location){
 
-            $this->line($listing_location);
-            $location_slug = $this->generateSlug($listing_location);
+            $this->line($listing_location->location);
+            $location_slug = $this->generateSlug($listing_location->location);
             $location = Location::where('slug', $location_slug)->first();
-            if($location)
+
+            // $this->line($location.' --- '.($listing_location->location).' --- '.$location->country);
+
+            if($location && $listing_location->location_id===$location->id && $location->country){
+                $this->line('pass');
                 continue;
-            $country_str = str($listing_location)->explode(', ')->last();
+            }
+
+            $country_str = str($listing_location->location)->explode(', ')->last();
             $country = Country::where('name', $country_str)->first();
+            $this->line($country);
 
             if(!$location){
                 try{
                     $location = Location::create([
-                      "name" => $listing_location,
+                      "name" => $listing_location->location,
                       "slug" => $location_slug,
                     ]);
                     $this->line($location_slug . " Location Created");
@@ -72,6 +84,15 @@ class AddLocationSlug extends Command
                     $this->line($e->getMessage());
                 }
             }
+
+            if(!$listing_location->location_id){
+                $this->line("Associating Listing to Location");
+                $this->line($listing_location->id);
+                $listing_location->location_slug()->associate($location);
+                $listing_location->save();
+            }
+
+            $this->line($listing_location->location_id);
 
             if(!$country){
                 try{
@@ -86,8 +107,11 @@ class AddLocationSlug extends Command
                 }
             }
 
-            $location->country()->associate($country);
-            $location->save();
+            if(!$location->country){
+                $this->line("Associating Location to Country");
+                $location->country()->associate($country);
+                $location->save();
+            }
 
         }
     }

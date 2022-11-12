@@ -29,10 +29,14 @@ class ListingController extends Controller
     
     public function store(Request $request){
         request()->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'location' => 'required',
-            'external_url' => 'required',
+            'title' => 'string',
+            'description' => 'string',
+            'location' => 'string',
+            'external_url' => 'string',
+            'longitude' => 'numeric',
+            'latitude' => 'numeric',
+            'amenities' => 'array',
+            'arrangements' => 'array',
         ]);
         $listing = Listing::where('external_url', request('external_url'))->get();
         if (!$listing->isEmpty()){
@@ -42,6 +46,10 @@ class ListingController extends Controller
             'title' => request('title'),
             'description' => request('description'),
             'location' => request('location'),
+            'longitude' => request('longitude'),
+            'latitude' => request('latitude'),
+            'amenities' => request('amenities'),
+            'arrangements' => request('arrangements'),
             'is_featured' => False,
             'external_url' => request('external_url'),
         ]);
@@ -71,19 +79,17 @@ class ListingController extends Controller
 
         if(!$country){
             try{
-                $country_obj = Country::create([
+                $country = Country::create([
                     "slug"=>$this->generateSlug($country_str),
                     "name"=>$country_str,
                 ]);
-
-                $location->country()->associate($country_obj);
-                $location->save();
             }
             catch(QueryException $e){
                 print($e->getMessage());
             }
         }
-
+        $location->country()->associate($country);
+        $location->save();
         return response()->json(['data' => $listing], 200);
     }
 
@@ -112,6 +118,22 @@ class ListingController extends Controller
     public function show(Listing $listing): ListingResource
     {
         return new ListingResource($listing->load('mainListingImage'));
+    }
+
+
+    public function showWithUrl(Request $request)
+    {
+        $listing = Listing::where('external_url', request('url'))->first();
+        if ($listing)
+            return response()->json([
+                'message' => "Listing with this URL is already added",
+                "listing" => $listing,
+            ], 422);
+        else { 
+            return response()->json([
+                "message" => "No listing for this url",
+            ], 200);
+        }
     }
 
     public function visit(Listing $listing, Request $request)

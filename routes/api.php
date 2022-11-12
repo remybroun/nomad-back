@@ -42,10 +42,12 @@ Route::get('/listings/locations/area/{area}', [ListingController::class, 'locati
 Route::get('/listings/locations/{location}', [ListingController::class, 'listingsPerLocation']);
 Route::get('/listings/locations/{location}/preview', [ListingController::class, 'showTopThreeListingsForLocation']);
 Route::get('/listings/selection', [ListingController::class, 'selection']);
+Route::get('/listings/with-url', [ListingController::class, 'showWithUrl']);
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 Route::put('/listings/{listing}', [ListingController::class, 'update']);
 
 Route::post('/listing_images', [ListingImageController::class, 'store']);
+Route::post('/listing_images/multiple', [ListingImageController::class, 'storeMultiple']);
 Route::get('/listing_images', [ListingImageController::class, 'show']);
 Route::get('/listings/{id}/images', [ListingImageController::class, 'listing_images_for_id']);
 

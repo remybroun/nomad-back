@@ -29,6 +29,32 @@ class ListingImageController extends Controller
 
         return response()->json(['data' => $listing], 200);
     }
+
+    public function storeMultiple(Request $request){
+        
+        request()->validate([
+            'urls' => 'required|array',
+            'listing_id' => 'required',
+        ]);
+
+        foreach (request('urls') as $url) {
+
+            $listing_image = ListingImage::where('url', $url)->get();
+
+            if (!$listing_image->isEmpty()){
+                continue;
+            }
+
+            $image = ListingImage::create([
+                'url' => $url,
+                'listing_id' => request('listing_id'),
+                'is_main' => false,
+            ]);
+        }
+        $images = ListingImage::where('listing_id', request('listing_id'))->get();
+        return ListingImageResource::collection($images);
+    }
+
     public function show(ListingImage $listing_image): ListingImageResource
     {
         return new ListingImageResource($listing_image);
