@@ -56,6 +56,8 @@ Route::get('listings/{listing}/visit',[ListingController::class, 'visit']);
 Route::get('/coworking/wework/all', [WeworkController::class, 'all']);
 Route::get('/coworking/wework/locations', [WeworkController::class, 'locations']);
 Route::get('/coworking/wework/ranking', [WeworkController::class, 'ranking']);
+Route::get('/coworking/wework/search', [WeworkController::class, 'searchTerms']);
+Route::get('/coworking/wework/stickers', [WeworkController::class, 'stickers']);
 Route::post('/coworking/wework/{wework}/upvote', [WeworkController::class, 'upvote']);
 Route::post('/coworking/wework/image/store', [WeworkImageController::class, 'store']);
 Route::get('/coworking/wework/{slug}', [WeworkController::class, 'show']);

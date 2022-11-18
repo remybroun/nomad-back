@@ -9,6 +9,8 @@ use App\Models\Listing;
 use App\Models\Location;
 use App\Models\Country;
 use App\Models\Visit;
+use App\Models\Wework;
+use App\Models\WeworkListingProximity;
 
 
 class ListingController extends Controller
@@ -27,6 +29,40 @@ class ListingController extends Controller
         return ListingResource::collection($listings);
     }
     
+
+
+    function haversineGreatCircleDistance(
+      $latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
+    {
+      // convert from degrees to radians
+      $latFrom = deg2rad($latitudeFrom);
+      $lonFrom = deg2rad($longitudeFrom);
+      $latTo = deg2rad($latitudeTo);
+      $lonTo = deg2rad($longitudeTo);
+
+      $latDelta = $latTo - $latFrom;
+      $lonDelta = $lonTo - $lonFrom;
+
+      $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
+        cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+      return $angle * $earthRadius;
+    }
+
+    function checkProximityToWework($listing){
+        $weworks = Wework::get();
+        foreach ($weworks as $wework) {
+            $distance = $this->haversineGreatCircleDistance($wework->lat, $wework->lng, $listing->latitude, $listing->longitude);
+            if ($distance < 2000){
+                $proximity = WeworkListingProximity::create([
+                    "distance"=>$distance,
+                ]);
+                $proximity->weworks()->associate($wework);
+                $proximity->listings()->associate($listing);
+                $proximity->save();
+            }
+        }
+    }    
+
     public function store(Request $request){
         request()->validate([
             'title' => 'string',
@@ -90,6 +126,8 @@ class ListingController extends Controller
         }
         $location->country()->associate($country);
         $location->save();
+
+        $this->checkProximityToWework($listing);
         return response()->json(['data' => $listing], 200);
     }
 

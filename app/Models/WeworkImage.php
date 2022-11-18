@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class WeworkImage extends Model
 {
     use HasFactory;
-
-    protected $guarded = [''];
+    protected $guarded = [];
+    public $timestamps = false;
 
     public function weworks()
     {

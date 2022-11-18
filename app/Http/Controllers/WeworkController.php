@@ -42,6 +42,28 @@ class WeworkController extends Controller
         return response()->json($weworks, 200);
     }
     
+    public function stickers(){
+        $stickers = Wework::select(["city", "country", "sticker_image"])
+                    ->whereNotNull("sticker_image")
+                    ->groupBy("sticker_image")
+                    ->get();
+        return response()->json($stickers, 200);
+    }
+
+    public function searchTerms(){
+
+        $search_terms = Wework::get()->map(function ($wework){
+            $search_term = [
+                'name'=>$wework->default_name,
+                'country'=>$wework->country,
+                'slug'=>$wework->slug,
+                'search_slug'=>$wework->default_name.$wework->city.$wework->country,
+            ];
+            return $search_term;
+        });
+        return response()->json($search_terms, 200);
+    }
+
     public function locations(){
         $cities = Wework::select('city')->distinct()->get()->map(function ($item) {
             return $item['city'];
