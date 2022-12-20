@@ -1,0 +1,1314 @@
+[
+    {
+        "id": 4,
+        "listing_name": "Kelp CoWork",
+        "space_url": "/spaces/4/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Capture.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 38.9673195,
+        "longitude": -9.4176105,
+        "city": "Ericeira",
+        "country": "Portugal",
+        "review_rating": "5.0"
+    },
+    {
+        "id": 56,
+        "listing_name": "The Zen Den Tenerife",
+        "space_url": "/spaces/56/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/A7300814-HDR.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 18.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.0734178,
+        "longitude": -16.7315053,
+        "city": "Costa Adeje",
+        "country": "Spain",
+        "review_rating": "5.0"
+    },
+    {
+        "id": 89,
+        "listing_name": "Work in Marbella",
+        "space_url": "/spaces/89/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/cover_fb.jpg",
+        "price": null,
+
+        "latitude": 36.46777499999999,
+        "longitude": -5.017361999999999,
+        "city": "Atalaya Isdabe",
+        "country": "Spain",
+        "review_rating": "5.0"
+    },
+    {
+        "id": 5,
+        "listing_name": "CREC Coworking Barcelona Eixample",
+        "space_url": "/spaces/5/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/CRECEixample-espacioscoworking-55.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 20.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 41.3918594,
+        "longitude": 2.1720999,
+        "city": "Barcelona",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 6,
+        "listing_name": "Hyggelig",
+        "space_url": "/spaces/6/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/photo_one.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 38.7202352,
+        "longitude": -9.137483000000001,
+        "city": "Lisbon",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 7,
+        "listing_name": "CREC Coworking Barcelona Poble Sec",
+        "space_url": "/spaces/7/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/coworking-CRECPobleSec-salaB-by-Alice-Brazzit00022.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 20.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 41.3721711,
+        "longitude": 2.1683514,
+        "city": "Barcelona",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 8,
+        "listing_name": "CREC Coworking Barcelona Sabadell",
+        "space_url": "/spaces/8/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Open_Space_Coworking_Sabadell_.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 100.0,
+            "currency": "€",
+            "duration_type": "10 day"
+        },
+
+        "latitude": 41.5444203,
+        "longitude": 2.1091927,
+        "city": "Sabadell",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 9,
+        "listing_name": "Coworkidea",
+        "space_url": "/spaces/9/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/COWORKIDEA_FOTOS-ESPACIOS_2019-185.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 25.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 41.38460740000001,
+        "longitude": 2.1657891,
+        "city": "Barcelona",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 10,
+        "listing_name": "FactsCoworking",
+        "space_url": "/spaces/10/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Facts_1.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 100.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 41.1601697,
+        "longitude": -8.6311913,
+        "city": "Porto",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 11,
+        "listing_name": "Gocoworking",
+        "space_url": "/spaces/11/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/23DR123NeilNavarro.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 13.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.1077243,
+        "longitude": -15.4184161,
+        "city": "Las Palmas de Gran Canaria",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 12,
+        "listing_name": "The House",
+        "space_url": "/spaces/12/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/The-House-15.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.1078589,
+        "longitude": -15.4207422,
+        "city": "Las Palmas de Gran Canaria",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 13,
+        "listing_name": "Synergy Porto",
+        "space_url": "/spaces/13/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/synergy-cowork-openspace-1024x576.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 10.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 41.1552935,
+        "longitude": -8.595377,
+        "city": "Porto",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 15,
+        "listing_name": "Fusion Cowork",
+        "space_url": "/spaces/15/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/A_L_L9361_copy.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 10.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 40.63999340000001,
+        "longitude": -8.6474181,
+        "city": "Aveiro",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 17,
+        "listing_name": "Golden Creative: Co-Work & Creative Studio",
+        "space_url": "/spaces/17/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/golden-creative--03.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 10.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 37.141659,
+        "longitude": -8.0279293,
+        "city": "Loulé",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 18,
+        "listing_name": "Porto i/o - Coworking Spaces",
+        "space_url": "/spaces/18/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/downtown2.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 130.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 41.1467422,
+        "longitude": -8.6139783,
+        "city": "Porto",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 19,
+        "listing_name": "LACS ROCHA CONDE D'ÓBIDOS",
+        "space_url": "/spaces/19/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/LACS_CDO_EXT_3.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 120.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 38.70313489999999,
+        "longitude": -9.1623702,
+        "city": "Lisbon",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 20,
+        "listing_name": "LACS ANJOS",
+        "space_url": "/spaces/20/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/LACS_ANJOS_D50_0132-Editar_2.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 120.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 38.7264115,
+        "longitude": -9.135883999999999,
+        "city": "Lisbon",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 21,
+        "listing_name": "LACS CASCAIS",
+        "space_url": "/spaces/21/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/LACS_CASCAIS_D50_0289.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 120.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 38.724181,
+        "longitude": -9.441574699999999,
+        "city": "Cascais",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 22,
+        "listing_name": "La Vaca Coworking",
+        "space_url": "/spaces/22/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/la_vaca_coworking_-_barcelona_.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 19.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 41.374099,
+        "longitude": 2.1619423,
+        "city": "Barcelona",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 23,
+        "listing_name": "JavaCowork",
+        "space_url": "/spaces/23/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/fotobanner.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 10.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 41.1785309,
+        "longitude": -8.688394299999999,
+        "city": "Matosinhos",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 24,
+        "listing_name": "Lisbon WorkHub",
+        "space_url": "/spaces/24/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/LisbonWorkHub0311.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 38.7468235,
+        "longitude": -9.098528399999998,
+        "city": "Lisbon",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 26,
+        "listing_name": "Start2bee Escorial",
+        "space_url": "/spaces/26/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/start_2_bee_5.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 14.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 41.4108323,
+        "longitude": 2.1581441,
+        "city": "Barcelona",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 27,
+        "listing_name": "The Block Lisboa",
+        "space_url": "/spaces/27/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Main_Space_1.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 38.7328489,
+        "longitude": -9.149734599999999,
+        "city": "Lisbon",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 28,
+        "listing_name": "Eclektic Space Poblenou",
+        "space_url": "/spaces/28/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Coworking_poblenou_eclektic__-4.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 41.3976361,
+        "longitude": 2.2042334,
+        "city": "Barcelona",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 29,
+        "listing_name": "Cowork Aquário Rogil [CLOSED]",
+        "space_url": "/spaces/29/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Space.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 7.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 37.3674237,
+        "longitude": -8.800480700000001,
+        "city": "Rogil",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 30,
+        "listing_name": "Faro Avenida",
+        "space_url": "/spaces/30/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/IMG_8502.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 18.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 37.0188345,
+        "longitude": -7.923257500000001,
+        "city": "Faro",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 31,
+        "listing_name": "Taoro Coliving",
+        "space_url": "/spaces/31/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Photofullhouse.jpg",
+        "price":
+        {
+            "product_category": "Co-Living Room",
+            "shown_price": 900.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.4087129,
+        "longitude": -16.5058517,
+        "city": "Santa Úrsula",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 32,
+        "listing_name": "Iriarte 37 Coworking",
+        "space_url": "/spaces/32/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/iriarte.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 20.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.416162,
+        "longitude": -16.5466312,
+        "city": "Puerto de la Cruz",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 33,
+        "listing_name": "Costa Adeje Coworking",
+        "space_url": "/spaces/33/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/webpnet-resizeimage1_0.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 20.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.1055683,
+        "longitude": -16.7293265,
+        "city": "Costa Adeje",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 34,
+        "listing_name": "Espacio Kernel",
+        "space_url": "/spaces/34/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/IMG_20190508_162242.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.45892749999999,
+        "longitude": -16.2580501,
+        "city": "Santa Cruz de Tenerife",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 35,
+        "listing_name": "Ikigai Coliving",
+        "space_url": "/spaces/35/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/CS1.jpg",
+        "price":
+        {
+            "product_category": "Co-Living Room",
+            "shown_price": 700.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 28.39839,
+        "longitude": -16.53892,
+        "city": "San Nicolás",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 36,
+        "listing_name": "Cowork Café - La Palma Gran Canaria",
+        "space_url": "/spaces/36/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/180085054_1169780260111904_5549050087988250768_n.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 53.5,
+            "currency": "€",
+            "duration_type": "week"
+        },
+
+        "latitude": 28.6571342,
+        "longitude": -17.9147844,
+        "city": "Los Llanos",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 39,
+        "listing_name": "Tenwork Coworking Space",
+        "space_url": "/spaces/39/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/ten_-_2.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 80.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 28.4674251,
+        "longitude": -16.2552252,
+        "city": "Santa Cruz de Tenerife",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 41,
+        "listing_name": "NKOOWOORK Loft F",
+        "space_url": "/spaces/41/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Loft_F_inside_Space_S.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 38.7471942,
+        "longitude": -9.0994612,
+        "city": "Lisbon",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 42,
+        "listing_name": "NKOOWOORK Loft I",
+        "space_url": "/spaces/42/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Loft_I_space_M.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 20.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 38.74675939999999,
+        "longitude": -9.0982243,
+        "city": "Lisbon",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 43,
+        "listing_name": "Nomad Coworking Madrid",
+        "space_url": "/spaces/43/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/_DSC05550555.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 18.15,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 40.46262759999999,
+        "longitude": -3.691452899999999,
+        "city": "Madrid",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 44,
+        "listing_name": "Homeoffice Madeira",
+        "space_url": "/spaces/44/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/inbound398702646625846959.jpg",
+        "price":
+        {
+            "product_category": "Co-Living Room",
+            "shown_price": 448.0,
+            "currency": "€",
+            "duration_type": "7 day"
+        },
+
+        "latitude": 32.715313,
+        "longitude": -16.827554,
+        "city": "Ribeira João Gonçalves",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 46,
+        "listing_name": "Spot Luggage & Lounge",
+        "space_url": "/spaces/46/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/DSC_7167_.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 5.0,
+            "currency": "€",
+            "duration_type": "4 hour"
+        },
+
+        "latitude": 41.1522138,
+        "longitude": -8.6102653,
+        "city": "Porto",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 48,
+        "listing_name": "One Leaf incub",
+        "space_url": "/spaces/48/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/01-05-rua-rodrigues-sampaio-76-1-andar-lisboa__2.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 14.0,
+            "currency": "€",
+            "duration_type": "hour"
+        },
+
+        "latitude": 38.722773,
+        "longitude": -9.146255900000002,
+        "city": "Lisbon",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 49,
+        "listing_name": "Amarilla - Community, Coliving, Coworking",
+        "space_url": "/spaces/49/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/cowork4.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 100.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 28.3784315,
+        "longitude": -16.5853096,
+        "city": "Los Realejos",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 51,
+        "listing_name": "Centro - Work & Event Space",
+        "space_url": "/spaces/51/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/detail_cowork.jpg",
+        "price":
+        {
+            "product_category": "Private Desk",
+            "shown_price": 150.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 37.1023879,
+        "longitude": -8.6724873,
+        "city": "Lagos",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 52,
+        "listing_name": "Vertical Coworking",
+        "space_url": "/spaces/52/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/008_4.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 41.1521753,
+        "longitude": -8.6066406,
+        "city": "Porto",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 53,
+        "listing_name": "Lavàndula",
+        "space_url": "/spaces/53/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/IMG_7684.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 42.35,
+            "currency": "€",
+            "duration_type": "10 hour"
+        },
+
+        "latitude": 41.4093842,
+        "longitude": 2.1489956,
+        "city": "Barcelona",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 54,
+        "listing_name": "Cow coworking & creative hub",
+        "space_url": "/spaces/54/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/DSC01811.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 67.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 39.9823205,
+        "longitude": -0.0402647,
+        "city": "Castelló de la Plana",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 55,
+        "listing_name": "Talleres Palermo",
+        "space_url": "/spaces/55/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/DSC02580-1-scaled.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 12.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.1317674,
+        "longitude": -15.4402535,
+        "city": "Las Palmas de Gran Canaria",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 57,
+        "listing_name": "Mydesk Coworking Solutions",
+        "space_url": "/spaces/57/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/MYDESK-20.jpg",
+        "price":
+        {
+            "product_category": "Private Desk",
+            "shown_price": 110.0,
+            "currency": "€",
+            "duration_type": "30 day"
+        },
+
+        "latitude": 41.2316358,
+        "longitude": -8.6228543,
+        "city": "Maia",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 58,
+        "listing_name": "JUNGLE coworking",
+        "space_url": "/spaces/58/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Jungle_1_.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 205.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 41.392208,
+        "longitude": 2.1909145,
+        "city": "Barcelona",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 59,
+        "listing_name": "Work-Labs",
+        "space_url": "/spaces/59/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Proyecto_de_Studio_3.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.1335157,
+        "longitude": -15.4413581,
+        "city": "Las Palmas de Gran Canaria",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 61,
+        "listing_name": "Area 0",
+        "space_url": "/spaces/61/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Area_0_-1.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 250.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 27.7976485,
+        "longitude": -15.4634121,
+        "city": "Castillo del Romeral",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 63,
+        "listing_name": "THE OFFICE BCN",
+        "space_url": "/spaces/63/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/THEOFFICE013.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 41.38176309999999,
+        "longitude": 2.1519625,
+        "city": "Barcelona",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 64,
+        "listing_name": "Château Coliving",
+        "space_url": "/spaces/64/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/photo_2021-12-08_13.jpg",
+        "price": null,
+
+        "latitude": 49.3682368,
+        "longitude": -1.3620472,
+        "city": "Picauville",
+        "country": "France",
+        "review_rating": null
+    },
+    {
+        "id": 65,
+        "listing_name": "Coworking in the Sun Tenerife Coworking & Coliving",
+        "space_url": "/spaces/65/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/coworking_in_the_sun.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.4100764,
+        "longitude": -16.5353877,
+        "city": "Puerto de la Cruz",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 66,
+        "listing_name": "TANDEM & COWORKING",
+        "space_url": "/spaces/66/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/tandem_new.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 20.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.3879,
+        "longitude": -16.53875,
+        "city": "La Orotava",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 67,
+        "listing_name": "Cactus Coliving & Coworking",
+        "space_url": "/spaces/67/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Screenshot_2022-12-10_231703.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.0905515,
+        "longitude": -16.6552306,
+        "city": "Arona",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 69,
+        "listing_name": "Arca de Babel",
+        "space_url": "/spaces/69/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Arca_Coworking-4059.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 20.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.4653131,
+        "longitude": -16.2594576,
+        "city": "Santa Cruz de Tenerife",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 70,
+        "listing_name": "Coworking Nomad Tenerife",
+        "space_url": "/spaces/70/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/DesayunoCoworking_copia.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 12.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.4706203,
+        "longitude": -16.2508583,
+        "city": "Santa Cruz de Tenerife",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 72,
+        "listing_name": "REC.ON Project Spain - Coliving & Coworking",
+        "space_url": "/spaces/72/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/lawka-baner.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 10.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 37.5536552,
+        "longitude": -1.9343555,
+        "city": "Vélez-Rubio",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 76,
+        "listing_name": "Chill Co-Working",
+        "space_url": "/spaces/76/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/IMG_4842.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 14.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.0533189,
+        "longitude": -16.7092617,
+        "city": "Los Cristianos",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 77,
+        "listing_name": "Coespai Girona",
+        "space_url": "/spaces/77/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Captura_de_Pantalla_2022-01-25_a_les_13.jpg",
+        "price": null,
+
+        "latitude": 41.9851637,
+        "longitude": 2.8220815,
+        "city": "Girona",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 79,
+        "listing_name": "Lisbon-cowork.com",
+        "space_url": "/spaces/79/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/plants.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 20.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 38.718444,
+        "longitude": -9.1243418,
+        "city": "Lisbon",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 82,
+        "listing_name": "Spacio-Lab Co-Working",
+        "space_url": "/spaces/82/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/20220531_170212.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 49.0,
+            "currency": "€",
+            "duration_type": "5 day"
+        },
+
+        "latitude": 36.7315875,
+        "longitude": -3.6947474,
+        "city": "Almuñécar",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 84,
+        "listing_name": "Luna House & Cowork",
+        "space_url": "/spaces/84/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/IMG_20220510_171134_6623.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 38.7054834,
+        "longitude": -9.418704499999999,
+        "city": "Cascais",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 85,
+        "listing_name": "Coworking Space - Workden Downtown Montreal",
+        "space_url": "/spaces/85/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/first_pic.jpg",
+        "price":
+        {
+            "product_category": "Private Desk",
+            "shown_price": 10.0,
+            "currency": "CAD",
+            "duration_type": "day"
+        },
+
+        "latitude": 45.497317,
+        "longitude": -73.5735009,
+        "city": "Montréal",
+        "country": "Canada",
+        "review_rating": null
+    },
+    {
+        "id": 86,
+        "listing_name": "INION COWORK",
+        "space_url": "/spaces/86/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/20220328_155858_1.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 450.0,
+            "currency": "CZK",
+            "duration_type": "2 day"
+        },
+
+        "latitude": 50.2356038,
+        "longitude": 12.8788782,
+        "city": "Karlovy Vary",
+        "country": "Czechia",
+        "review_rating": null
+    },
+    {
+        "id": 88,
+        "listing_name": "The Black Whale Coworking",
+        "space_url": "/spaces/88/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/G2.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 20.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 43.57908,
+        "longitude": -5.95005,
+        "city": "Salinas",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 90,
+        "listing_name": "Sangha Cowork",
+        "space_url": "/spaces/90/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Sangha_5.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 0.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 32.6394961,
+        "longitude": -16.930004,
+        "city": "Funchal",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 91,
+        "listing_name": "HUB Ativo",
+        "space_url": "/spaces/91/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Open_Space_1.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 37.127206,
+        "longitude": -8.544063999999999,
+        "city": "Portimão",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 92,
+        "listing_name": "CoCreate Coworking",
+        "space_url": "/spaces/92/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Best_coworking_space_in_Algarve1.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 37.1376909,
+        "longitude": -8.5362542,
+        "city": "Portimão",
+        "country": "Portugal",
+        "review_rating": null
+    },
+    {
+        "id": 93,
+        "listing_name": "El Núcleo",
+        "space_url": "/spaces/93/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/Foto_1.jpg",
+        "price":
+        {
+            "product_category": "Private Desk",
+            "shown_price": 150.0,
+            "currency": "€",
+            "duration_type": "month"
+        },
+
+        "latitude": 28.1162241,
+        "longitude": -15.4193203,
+        "city": "Las Palmas de Gran Canaria",
+        "country": "Spain",
+        "review_rating": null
+    },
+    {
+        "id": 50,
+        "listing_name": "Puerto Nest Coliving",
+        "space_url": "/spaces/50/",
+        "cover_image": "https://icowork-static-prd.s3.amazonaws.com/media/listings_cover_pictures/dbmo1vdyvjd1tqtg6k1b.jpg",
+        "price":
+        {
+            "product_category": "Flexible Desk",
+            "shown_price": 15.0,
+            "currency": "€",
+            "duration_type": "day"
+        },
+
+        "latitude": 28.4107304,
+        "longitude": -16.5654392,
+        "city": "Puerto de la Cruz",
+        "country": "Spain",
+        "review_rating": "1.0"
+    }
+]

@@ -17,7 +17,7 @@ class ListingController extends Controller
 {
     public function index(Request $request){
         $limit = request()->get('limit');
-        $listings = Listing::orderBy('is_featured', 'DESC')->orderBy('id', 'DESC')->with(["mainListingImage", "location_slug"]);
+        $listings = Listing::orderBy('is_featured', 'DESC')->orderBy('id', 'DESC')->with(["mainListingImage", "location_slug", "close_coworkings"]);
         if(request()->get('page')){
             $listings = $listings->paginate();
         }else{
@@ -155,7 +155,7 @@ class ListingController extends Controller
 
     public function show(Listing $listing): ListingResource
     {
-        return new ListingResource($listing->load('mainListingImage'));
+        return new ListingResource($listing->load(['mainListingImage', 'close_coworkings']));
     }
 
 

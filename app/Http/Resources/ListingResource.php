@@ -30,6 +30,7 @@ class ListingResource extends JsonResource
             'external_url' => $this->external_url,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'close_coworkings' => $this->close_coworkings,
         ];
     }
 }

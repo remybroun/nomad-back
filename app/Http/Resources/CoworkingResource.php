@@ -15,12 +15,14 @@ class CoworkingResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'title' => $this->first_name,
-            'location' => $this->location,
-            'images' => $this->location_images,
-            'website' => $this->website,
-            'instagram' => $this->instagram,
+            "name" => $this->name,
+            "main_image" => $this->main_image,
+            "city" => $this->city,
+            "country" => $this->country,
+            "lng" => $this->lng,
+            "lat" => $this->lat,
+            "slug" => $this->slug,
+            "url" => $this->url,
         ];
     }
 }

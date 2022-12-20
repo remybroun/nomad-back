@@ -1,20 +1,20 @@
 <?php
 
 namespace App\Console\Commands;
-use App\Models\Listing;
-use App\Models\Wework;
-use App\Models\WeworkListingProximity;
 
 use Illuminate\Console\Command;
+use App\Models\Listing;
+use App\Models\Coworking;
+use App\Models\CoworkingListingProximity;
 
-class analize_wework_proximity extends Command
+class coworking_proximity extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'calculate:proximity';
+    protected $signature = 'coworking:proximity';
 
     /**
      * The console command description.
@@ -46,15 +46,15 @@ class analize_wework_proximity extends Command
       return $angle * $earthRadius;
     }
 
-    function checkProximityToWework($listing, $weworks){
-        foreach ($weworks as $wework) {
-            $distance = $this->haversineGreatCircleDistance($wework->lat, $wework->lng, $listing->latitude, $listing->longitude);
+    function checkProximityToCoworking($listing, $coworkings){
+        foreach ($coworkings as $coworking) {
+            $distance = $this->haversineGreatCircleDistance($coworking->lat, $coworking->lng, $listing->latitude, $listing->longitude);
             if ($distance < 2000){
-                $this->line($listing->external_url." ".$wework->default_name." ".$distance);
-                $proximity = WeworkListingProximity::create([
+                $this->line($listing->url." ".$coworking->name." ".$distance);
+                $proximity = CoworkingListingProximity::create([
                     "distance"=>$distance,
                 ]);
-                $proximity->weworks()->associate($wework);
+                $proximity->coworkings()->associate($coworking);
                 $proximity->listings()->associate($listing);
                 $proximity->save();
 
@@ -65,15 +65,14 @@ class analize_wework_proximity extends Command
 
     public function handle()
     {
-        // $listings = Listing::latest()->take(7)->get();
         $listings = Listing::get();
-        $weworks = Wework::get();
+        $coworkings = Coworking::get();
 
         foreach ($listings as $listing) {
             if(!$listing->longitude || !$listing->latitude){
                 continue;
             }
-            $this->checkProximityToWework($listing, $weworks);
+            $this->checkProximityToCoworking($listing, $coworkings);
         }
 
     }

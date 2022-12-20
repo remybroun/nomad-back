@@ -13,7 +13,7 @@ class importWeworkData extends Command
      *
      * @var string
      */
-    protected $signature = 'upload-data:weworks';
+    protected $signature = 'import:weworks';
 
     /**
      * The console command description.
@@ -42,9 +42,7 @@ class importWeworkData extends Command
             $this->info($wework['_geoloc']['lat']);
             $this->info($wework['_geoloc']['lng']);
             $this->info($index);
-            if($index < 428){
-                continue;
-            }
+
             Wework::create([
                 "wework_id" => $wework['id'],
                 "default_name" => $wework['default_name'],
