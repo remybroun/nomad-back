@@ -20,7 +20,7 @@ class FormController extends Controller
             'form' => 'optional',
         ]);
         
-        Contact::create([
+        Contact::firstOrCreate([
             'email' => request('email'),
             'form' => request('form'),
         ]);
@@ -29,6 +29,23 @@ class FormController extends Controller
             'remy@broun.fr' => 'Remy Broun',
         ])->notify(new SendEmail($request->all()));
         return response()->json([], 200);
+    }
+
+
+    public function storeSettleForm(Request $request){
+        request()->validate([
+            'full_name' => 'required',
+            'email' => 'required',
+            'additional_link' => 'required',
+        ]);
+
+         $answer = Contact::firstOrCreate([
+             'full_name' => request('full_name'),
+             'email' => request('email'),
+             'additional_link' => request('additional_link'),
+             'form' => 'settle',
+         ]);
+        return response()->json(['data' => $answer], 200);
     }
 
     public function storeHostAnswers(Request $request){

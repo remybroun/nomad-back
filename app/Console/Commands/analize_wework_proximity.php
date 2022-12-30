@@ -49,15 +49,28 @@ class analize_wework_proximity extends Command
     function checkProximityToWework($listing, $weworks){
         foreach ($weworks as $wework) {
             $distance = $this->haversineGreatCircleDistance($wework->lat, $wework->lng, $listing->latitude, $listing->longitude);
-            if ($distance < 2000){
-                $this->line($listing->external_url." ".$wework->default_name." ".$distance);
+
+            if ($distance > 2000){
+                continue;
+            }
+
+            $this->line($listing->external_url." ".$wework->default_name." ".$distance);
+
+            $proximity = WeworkListingProximity::where([
+                'wework_id' => $wework->id,
+                'listing_id' => $listing->id,
+            ]);
+            $proximity->distance = $distance;
+
+
+            if ($proximity) {
                 $proximity = WeworkListingProximity::create([
                     "distance"=>$distance,
                 ]);
                 $proximity->weworks()->associate($wework);
                 $proximity->listings()->associate($listing);
                 $proximity->save();
-
+                continue;
             }
         }
     }
