@@ -34,8 +34,8 @@ class FormController extends Controller
 
     public function storeSettleForm(Request $request){
         request()->validate([
-            'full_name' => 'required',
-            'email' => 'required',
+            'full_name' => 'optional',
+            'email' => 'optional',
             'additional_link' => 'required',
         ]);
 
