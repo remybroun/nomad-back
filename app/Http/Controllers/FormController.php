@@ -13,7 +13,7 @@ class FormController extends Controller
     public function index(Request $request){
         dd($request->all());
     }
-    
+
     public function store(Request $request){
 
         request()->validate([
@@ -52,7 +52,7 @@ class FormController extends Controller
 
     public function storeHouseForm(Request $request){
         request()->validate([
-            'email' => 'optional',
+            'email' => 'required',
         ]);
 
         $answer = Contact::firstOrCreate([
