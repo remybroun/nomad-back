@@ -49,16 +49,25 @@ class coworking_proximity extends Command
     function checkProximityToCoworking($listing, $coworkings){
         foreach ($coworkings as $coworking) {
             $distance = $this->haversineGreatCircleDistance($coworking->lat, $coworking->lng, $listing->latitude, $listing->longitude);
-            if ($distance < 2000){
-                $this->line($listing->url." ".$coworking->name." ".$distance);
-                $proximity = CoworkingListingProximity::create([
-                    "distance"=>$distance,
-                ]);
-                $proximity->coworkings()->associate($coworking);
-                $proximity->listings()->associate($listing);
-                $proximity->save();
-
+            if ($distance > 2000){
+                continue;
             }
+            $this->line($listing->url." ".$coworking->name." ".$distance);
+
+            $existing_prox = CoworkingListingProximity::where([
+                "coworking_id" => $coworking->id
+            ])->first();
+
+            if($existing_prox){
+                continue;
+            }
+            $proximity = CoworkingListingProximity::create([
+                "distance"=>$distance,
+            ]);
+            $proximity->coworkings()->associate($coworking);
+            $proximity->listings()->associate($listing);
+            $proximity->save();
+
         }
     }
 

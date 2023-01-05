@@ -13,6 +13,7 @@ class FormController extends Controller
     public function index(Request $request){
         dd($request->all());
     }
+    
     public function store(Request $request){
 
         request()->validate([
@@ -39,12 +40,25 @@ class FormController extends Controller
             'additional_link' => 'required',
         ]);
 
-         $answer = Contact::firstOrCreate([
+        $answer = Contact::firstOrCreate([
              'full_name' => request('full_name'),
              'email' => request('email'),
              'additional_link' => request('additional_link'),
              'form' => 'settle',
-         ]);
+        ]);
+        return response()->json(['data' => $answer], 200);
+    }
+
+
+    public function storeHouseForm(Request $request){
+        request()->validate([
+            'email' => 'optional',
+        ]);
+
+        $answer = Contact::firstOrCreate([
+             'email' => request('email'),
+             'form' => 'house',
+        ]);
         return response()->json(['data' => $answer], 200);
     }
 

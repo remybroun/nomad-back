@@ -28,6 +28,7 @@ Route::get('/forms', [FormController::class, 'index']);
 Route::post('/forms', [FormController::class, 'store']);
 Route::post('/forms/host', [FormController::class, 'storeHostAnswers']);
 Route::post('/forms/settle', [FormController::class, 'storeSettleForm']);
+Route::post('/forms/house', [FormController::class, 'storeHouseForm']);
 
 //Locations
 Route::get('/locations/cities', [LocationController::class, 'showLocations']);

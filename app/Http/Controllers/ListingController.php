@@ -63,6 +63,26 @@ class ListingController extends Controller
         }
     }    
 
+    function checkProximityToCoworking($listing){
+        $coworkings = Coworking::get();
+        foreach ($coworkings as $coworking) {
+            $distance = $this->haversineGreatCircleDistance($coworking->lat, $coworking->lng, $listing->latitude, $listing->longitude);
+            
+            if ($distance > 2000){
+                continue;
+            }
+
+            $proximity = CoworkingListingProximity::create([
+                "distance"=>$distance,
+            ]);
+
+            $proximity->coworkings()->associate($coworking);
+            $proximity->listings()->associate($listing);
+            $proximity->save();
+
+        }
+    }    
+
     public function store(Request $request){
         request()->validate([
             'title' => 'string',
@@ -128,6 +148,7 @@ class ListingController extends Controller
         $location->save();
 
         $this->checkProximityToWework($listing);
+        $this->checkProximityToCoworking($listing);
         return response()->json(['data' => $listing], 200);
     }
 
