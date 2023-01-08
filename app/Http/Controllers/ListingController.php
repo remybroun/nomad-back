@@ -10,6 +10,7 @@ use App\Models\Location;
 use App\Models\Country;
 use App\Models\Visit;
 use App\Models\Wework;
+use App\Models\Coworking;
 use App\Models\WeworkListingProximity;
 
 
@@ -28,8 +29,6 @@ class ListingController extends Controller
         }
         return ListingResource::collection($listings);
     }
-    
-
 
     function haversineGreatCircleDistance(
       $latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
@@ -244,7 +243,7 @@ class ListingController extends Controller
 
     public function showTopThreeListingsForLocation($location){
         
-        $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with(["mainListingImage", "location_slug"])->latest()->take(3)->get();
+        $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with(["mainListingImage", "location_slug", "close_coworkings"])->latest()->take(3)->get();
 
         return ListingResource::collection($listings);
     }
@@ -254,7 +253,7 @@ class ListingController extends Controller
         $listings = Listing::whereHas('location_slug', function($q) use($location){
             $q->where('slug', 'LIKE', '%'.$location.'%');
         })
-        ->with(["mainListingImage", "location_slug"])
+        ->with(["mainListingImage", "location_slug", "close_coworkings"])
         ->latest();
         if(request()->get('page')){
             $listings = $listings->paginate();
@@ -275,7 +274,7 @@ class ListingController extends Controller
                 $q->where('slug', 'LIKE', '%'.$country->slug.'%');
             });
         })
-        ->with(["mainListingImage", "location_slug"])
+        ->with(["mainListingImage", "location_slug", "close_coworkings"])
         ->latest();
 
         if(request()->get('page')){

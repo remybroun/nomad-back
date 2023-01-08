@@ -32,6 +32,11 @@ class Listing extends Model
         return $this->belongsToMany(Coworking::class, 'coworking_listing_proximities', 'listing_id', 'coworking_id');
     }
 
+    public function close_weworks()
+    {
+        return $this->belongsToMany(Coworking::class, 'wework_listing_proximities', 'listing_id', 'wework_id');
+    }
+
     public function mainListingImage()
     {
         return $this->hasOne(ListingImage::class)->orderByDesc('is_main');
