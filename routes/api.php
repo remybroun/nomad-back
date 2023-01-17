@@ -54,6 +54,7 @@ Route::get('/listing_images', [ListingImageController::class, 'show']);
 Route::get('/listings/{id}/images', [ListingImageController::class, 'listing_images_for_id']);
 
 Route::get('listings/{listing}/visit',[ListingController::class, 'visit']);
+Route::get('forms/community/visit',[ListingController::class, 'comminityVisit']);
 
 Route::get('/coworking/wework/all', [WeworkController::class, 'all']);
 Route::get('/coworking/wework/locations', [WeworkController::class, 'locations']);

@@ -12,6 +12,7 @@ use App\Models\Visit;
 use App\Models\Wework;
 use App\Models\Coworking;
 use App\Models\WeworkListingProximity;
+use App\Models\CoworkingListingProximity;
 
 
 class ListingController extends Controller
@@ -204,7 +205,20 @@ class ListingController extends Controller
 
         return response()->json([
             'external_url' => $listing->external_url,
-        ]);//redirect()->away($listing->external_url);
+        ]);
+
+    }
+
+    public function comminityVisit(Request $request)
+    {
+        Visit::create([
+            'ip_address' => $request->ip(),
+            'url' => "community",
+        ]);
+
+        return response()->json([
+            'external_url' => "https://discord.gg/FnArQGq5EN",
+        ]);
 
     }
 
