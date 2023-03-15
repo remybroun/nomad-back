@@ -12,7 +12,7 @@ class CoworkingController extends Controller
     }
 
     public function proximityListings(Request $request){
-
+        
     }
 
 }

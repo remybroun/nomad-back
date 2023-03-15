@@ -20,6 +20,7 @@ class ListingController extends Controller
     public function index(Request $request){
         $limit = request()->get('limit');
         $listings = Listing::orderBy('is_featured', 'DESC')->orderBy('id', 'DESC')->with(["mainListingImage", "location_slug", "close_coworkings"]);
+
         if(request()->get('page')){
             $listings = $listings->paginate();
         }else{
@@ -28,6 +29,8 @@ class ListingController extends Controller
         if ($limit){
             $listings = $listings->take($limit);
         }
+
+
         return ListingResource::collection($listings);
     }
 
@@ -278,6 +281,32 @@ class ListingController extends Controller
         return ListingResource::collection($listings);
     }
 
+    public function listingsProximityWework(Request $request){
+        $results = $request->get('results');
+        $city = $request->get('city');
+
+        $listings = Listing::has('close_weworks')->with(["mainListingImage", "location_slug", "close_weworks"]);
+
+        if ($city){
+            $listings = $listings->where('location', 'LIKE', '%'.$city.'%');
+        }
+
+        if(request()->get('results')){
+            $listings = $listings->take($results);
+        }
+
+        $listings = $listings->get()->values();
+
+        return ListingResource::collection($listings);
+    }
+
+    public function listingsProximityWeworkLocations(){
+        $locations = Location::whereHas('listings', function($q){
+            $q->has('close_weworks');
+        })->get();
+
+        return response()->json($locations);
+    }
 
     public function listingsPerCountry($country){
         
@@ -308,7 +337,7 @@ class ListingController extends Controller
     {
         $asia = ["China", "India", "Indonesia", "Pakistan", "Bangladesh", "Japan", "Philippines", "Vietnam", "Turkey", "Iran", "Thailand", "Myanmar", "South Korea", "Iraq", "Afghanistan", "Saudi Arabia", "Uzbekistan", "Malaysia", "Yemen", "Nepal", "North Korea", "Sri Lanka", "Kazakhstan", "Syria", "Cambodia", "Jordan", "Azerbaijan", "United Arab Emirates", "Tajikistan", "Israel", "Laos", "Lebanon", "Kyrgyzstan", "Turkmenistan", "Singapore", "Oman", "State of Palestine", "Kuwait", "Georgia", "Mongolia", "Armenia", "Qatar", "Bahrain", "Timor-Leste", "Cyprus", "Bhutan", "Maldives", "Brunei"];
 
-        $europe = ["Hungary", "Belarus", "Austria", "Serbia", "Switzerland", "Germany", "Holy", "Andorra", "Bulgaria", "United", "France", "Montenegro", "Luxembourg", "Italy", "Denmark", "Finland", "Slovakia", "Norway", "Ireland", "Spain", "Malta", "Ukraine", "Croatia", "Moldova", "Monaco", "Liechtenstein", "Poland", "Iceland", "San Marino", "Bosnia", "Albania", "Lithuania", "Slovenia", "Romania", "Latvia", "Netherlands", "Russia", "Estonia", "Belgium", "Czech", "Greece", "Portugal", "Sweden"];
+        $europe = ["Hungary", "Belarus", "Austria", "Serbia", "Switzerland", "Germany", "Andorra", "Bulgaria", "United", "France", "Montenegro", "Luxembourg", "Italy", "Denmark", "Finland", "Slovakia", "Norway", "Ireland", "Spain", "Malta", "Ukraine", "Croatia", "Moldova", "Monaco", "Liechtenstein", "Poland", "Iceland", "San Marino", "Bosnia", "Albania", "Lithuania", "Slovenia", "Romania", "Latvia", "Netherlands", "Russia", "Estonia", "Belgium", "Czech", "Greece", "Portugal", "Sweden"];
 
         $south_america = ["Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Costa Rica", "Ecuador", "El Salvador", "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Dominican Republic", "Uruguay"];
 

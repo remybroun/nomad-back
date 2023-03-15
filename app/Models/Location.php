@@ -16,4 +16,9 @@ class Location extends Model
     {
         return $this->belongsTo(Country::class, 'country_id', 'id', 'countries');
     }
+
+    public function listings()
+    {
+        return $this->hasMany(Listing::class);
+    }
 }

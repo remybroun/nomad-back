@@ -61,7 +61,7 @@ class coworking_proximity extends Command
             if($existing_prox){
                 continue;
             }
-            $proximity = CoworkingListingProximity::create([
+            $proximity = CoworkingListingProximity::firstOrCreate([
                 "distance"=>$distance,
             ]);
             $proximity->coworkings()->associate($coworking);

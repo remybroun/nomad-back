@@ -43,6 +43,8 @@ Route::get('/listings/locations/countries/{country}', [ListingController::class,
 Route::get('/listings/locations/area/{area}', [ListingController::class, 'locationsPerArea']);
 Route::get('/listings/locations/{location}', [ListingController::class, 'listingsPerLocation']);
 Route::get('/listings/locations/{location}/preview', [ListingController::class, 'showTopThreeListingsForLocation']);
+Route::get('/listings/proximity/wework', [ListingController::class, 'listingsProximityWework']);
+Route::get('/listings/proximity/wework/locations', [ListingController::class, 'listingsProximityWeworkLocations']);
 Route::get('/listings/selection', [ListingController::class, 'selection']);
 Route::get('/listings/with-url', [ListingController::class, 'showWithUrl']);
 Route::get('/listings/{listing}', [ListingController::class, 'show']);

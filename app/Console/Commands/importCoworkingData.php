@@ -50,20 +50,20 @@ class importCoworkingData extends Command
             $this->info($coworking['id']);
             $this->info($coworking['listing_name']);
             $this->info($coworking['cover_image']);
-            $this->info($coworking['latitude']);
-            $this->info($coworking['longitude']);
-            $this->info($coworking['city']);
-            $this->info($coworking['country']);
+            $this->info($coworking['_address']['latitude']);
+            $this->info($coworking['_address']['longitude']);
+            $this->info($coworking['_address']['city']);
+            $this->info($coworking['_address']['country']);
             $this->info($coworking['space_url']);
             $this->info($index);
 
-            Coworking::create([
+            Coworking::firstOrCreate([
                 "name" => $coworking['listing_name'],
                 "main_image" => $coworking['cover_image'],
-                "city" => $coworking['city'],
-                "country" => $coworking['country'],
-                "lng" => $coworking['longitude'],
-                "lat" => $coworking['latitude'],
+                "city" => $coworking['_address']['city'],
+                "country" => $coworking['_address']['country'],
+                "lng" => $coworking['_address']['longitude'],
+                "lat" => $coworking['_address']['latitude'],
                 "slug" => $this->generateSlug($coworking['listing_name']),
                 "url" => 'https://nomadcowork.com'.$coworking['space_url'],
             ]);

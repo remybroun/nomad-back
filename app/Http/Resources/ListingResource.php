@@ -31,6 +31,7 @@ class ListingResource extends JsonResource
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'close_coworkings' => $this->close_coworkings,
+            'close_weworks' => $this->close_weworks,
         ];
     }
 }

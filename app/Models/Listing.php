@@ -34,7 +34,7 @@ class Listing extends Model
 
     public function close_weworks()
     {
-        return $this->belongsToMany(Coworking::class, 'wework_listing_proximities', 'listing_id', 'wework_id');
+        return $this->belongsToMany(Wework::class, 'wework_listing_proximities', 'listing_id', 'wework_id');
     }
 
     public function mainListingImage()
