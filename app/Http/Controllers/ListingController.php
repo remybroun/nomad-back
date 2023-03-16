@@ -288,7 +288,10 @@ class ListingController extends Controller
         $listings = Listing::has('close_weworks')->with(["mainListingImage", "location_slug", "close_weworks"]);
 
         if ($city){
-            $listings = $listings->where('location', 'LIKE', '%'.$city.'%');
+            // $listings = $listings->where('location', 'LIKE', '%'.$city.'%');
+            $listings = $listings->whereHas('location_slug', function($q) use($city){
+                $q->where('slug', $city);
+            });
         }
 
         if(request()->get('results')){
