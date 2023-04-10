@@ -46,7 +46,7 @@ class importSpacesData extends Command
 
     public function handle()
     {
-        $locations = json_decode(file_get_contents(public_path() . "/regusData1.json"), true);
+        $locations = json_decode(file_get_contents(public_path() . "/regusData3.json"), true);
         // dd($locations);
         foreach ($locations as $index => $location) {
 

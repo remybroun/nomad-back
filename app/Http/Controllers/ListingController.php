@@ -111,6 +111,7 @@ class ListingController extends Controller
             'arrangements' => request('arrangements'),
             'is_featured' => False,
             'external_url' => request('external_url'),
+            'price_per_night' => request('price_per_night'),
         ]);
 
 
@@ -152,6 +153,16 @@ class ListingController extends Controller
 
         $this->checkProximityToWework($listing);
         $this->checkProximityToCoworking($listing);
+        return response()->json(['data' => $listing], 200);
+    }
+
+    public function updatePrice(Listing $listing, Request $request){
+
+        request()->validate([
+            'price_per_night' => 'string',
+        ]);
+
+        $listing->update($request->price_per_night);
         return response()->json(['data' => $listing], 200);
     }
 

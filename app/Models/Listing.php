@@ -22,6 +22,16 @@ class Listing extends Model
         return $this->hasMany(ListingImage::class);
     }
 
+    public function latest_price()
+    {
+        return $this->hasOne(listingPrice::class)->orderByDesc('created_at');
+    }
+
+    public function listing_prices()
+    {
+        return $this->hasMany(listingPrice::class);
+    }
+
     public function location_slug()
     {
         return $this->belongsTo(Location::class, 'location_id', 'id', 'locations');

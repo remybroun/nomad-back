@@ -6,6 +6,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ListingImageController;
+use App\Http\Controllers\ListingPriceController;
 use App\Http\Controllers\WeworkController;
 use App\Http\Controllers\WeworkImageController;
 /*
@@ -38,6 +39,7 @@ Route::get('/locations/area/{area}', [LocationController::class, 'locationsPerAr
 //Listings
 Route::get('/listings', [ListingController::class, 'index']);
 Route::post('/listings', [ListingController::class, 'store']);
+Route::post('/listings/prices', [ListingPriceController::class, 'store']);
 Route::get('/listings/locations', [ListingController::class, 'showLocations']);
 Route::get('/listings/locations/countries/{country}', [ListingController::class, 'listingsPerCountry']);
 Route::get('/listings/locations/area/{area}', [ListingController::class, 'locationsPerArea']);
@@ -49,6 +51,7 @@ Route::get('/listings/selection', [ListingController::class, 'selection']);
 Route::get('/listings/with-url', [ListingController::class, 'showWithUrl']);
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 Route::put('/listings/{listing}', [ListingController::class, 'update']);
+Route::put('/listings/{listing}', [ListingController::class, 'updatePrice']);
 
 Route::post('/listing_images', [ListingImageController::class, 'store']);
 Route::post('/listing_images/multiple', [ListingImageController::class, 'storeMultiple']);

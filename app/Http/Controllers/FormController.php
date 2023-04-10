@@ -37,7 +37,7 @@ class FormController extends Controller
         request()->validate([
             'full_name' => 'optional',
             'email' => 'optional',
-            'additional_link' => 'required',
+            'additional_link' => 'optional',
         ]);
 
         $answer = Contact::firstOrCreate([
