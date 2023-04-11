@@ -2,11 +2,12 @@
 
 namespace App\Console\Commands;
 use App\Models\Listing;
+use App\Models\ListingPrice;
 use Illuminate\Support\Facades\Http;
 
 use Illuminate\Console\Command;
 
-class getLatestPrices extends Command
+class GetLatestPrices extends Command
 {
     /**
      * The name and signature of the console command.
@@ -29,17 +30,29 @@ class getLatestPrices extends Command
      */
     public function handle()
     {
-        $listings = Listing::whereNull('price_per_night')->get();
+        $listings = Listing::all();
 
         foreach ($listings as $listing) {
             echo $listing->external_url;
-            $url = "http://localhost:8084/pricing?url=".$listing->external_url;
-            $response = Http::timeout(100)->get($url);
-            
-            // dd($response->json()->data);
-            $response = json_decode($response);
-            $listing->update(['price_per_night' => $response?->data?->price_per_night]);
 
+            $url = "https://bnb-scraper.onrender.com/pricing?url=".$listing->external_url;
+
+            try {
+                $response = Http::timeout(100)->get($url);
+                
+                // dd($response->json()->data);
+                $response = json_decode($response);
+
+                $listing_price = ListingPrice::create([
+                   'listing_id' => $listing->id,
+                   'price_per_night' => $response?->data?->price_per_night 
+                ]);
+
+            } catch (\Exception $e) {
+                $this->line($e->getMessage());
+            }
+
+            // $listing->update(['price_per_night' => $response?->data?->price_per_night]);
         }
         return Command::SUCCESS;
     }
