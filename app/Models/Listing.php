@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\ListingImage;
+use App\Models\ListingPrice;
 use App\Models\Location;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -24,12 +25,12 @@ class Listing extends Model
 
     public function latest_price()
     {
-        return $this->hasOne(listingPrice::class)->orderByDesc('created_at');
+        return $this->hasOne(ListingPrice::class)->orderByDesc('created_at');
     }
 
     public function listing_prices()
     {
-        return $this->hasMany(listingPrice::class);
+        return $this->hasMany(ListingPrice::class);
     }
 
     public function location_slug()

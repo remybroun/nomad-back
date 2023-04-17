@@ -19,7 +19,7 @@ class ListingController extends Controller
 {
     public function index(Request $request){
         $limit = request()->get('limit');
-        $listings = Listing::orderBy('is_featured', 'DESC')->orderBy('id', 'DESC')->with(["mainListingImage", "location_slug", "close_coworkings"]);
+        $listings = Listing::with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->orderBy('is_featured', 'DESC')->orderBy('id', 'DESC');
 
         if(request()->get('page')){
             $listings = $listings->paginate();
@@ -190,9 +190,8 @@ class ListingController extends Controller
 
     public function show(Listing $listing): ListingResource
     {
-        return new ListingResource($listing->load(['mainListingImage', 'close_coworkings']));
+        return new ListingResource($listing->load(['mainListingImage', 'close_coworkings', "latest_price"]));
     }
-
 
     public function showWithUrl(Request $request)
     {
@@ -281,7 +280,7 @@ class ListingController extends Controller
         $listings = Listing::whereHas('location_slug', function($q) use($location){
             $q->where('slug', 'LIKE', '%'.$location.'%');
         })
-        ->with(["mainListingImage", "location_slug", "close_coworkings"])
+        ->with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])
         ->latest();
         if(request()->get('page')){
             $listings = $listings->paginate();
@@ -331,7 +330,7 @@ class ListingController extends Controller
                 $q->where('slug', 'LIKE', '%'.$country->slug.'%');
             });
         })
-        ->with(["mainListingImage", "location_slug", "close_coworkings"])
+        ->with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])
         ->latest();
 
         if(request()->get('page')){
