@@ -270,7 +270,7 @@ class ListingController extends Controller
 
     public function showTopThreeListingsForLocation($location){
         
-        $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with(["mainListingImage", "location_slug", "close_coworkings"])->latest()->take(3)->get();
+        $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with(["mainListingImage", "location_slug", "close_coworkings","latest_price"])->latest()->take(3)->get();
 
         return ListingResource::collection($listings);
     }
@@ -295,7 +295,7 @@ class ListingController extends Controller
         $results = $request->get('results');
         $city = $request->get('city');
 
-        $listings = Listing::has('close_weworks')->with(["mainListingImage", "location_slug", "close_weworks"]);
+        $listings = Listing::has('close_weworks')->with(["mainListingImage", "location_slug", "close_weworks","latest_price"]);
 
         if ($city){
             // $listings = $listings->where('location', 'LIKE', '%'.$city.'%');
