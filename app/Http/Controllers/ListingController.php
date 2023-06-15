@@ -14,6 +14,7 @@ use App\Models\Coworking;
 use App\Models\UnverifiedListings;
 use App\Models\WeworkListingProximity;
 use App\Models\CoworkingListingProximity;
+use App\Models\ListingPrice;
 
 
 class ListingController extends Controller
@@ -365,7 +366,10 @@ class ListingController extends Controller
         return response()->json([
             'listing' => $listing
         ], 200);
+    }
 
+    public function listingPricingHistory(Listing $listing){
+        return ListingPrice::where("listing_id", $listing->id)->get();
     }
 
     public function locationsPerArea($area)

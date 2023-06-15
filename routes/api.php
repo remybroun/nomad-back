@@ -51,6 +51,7 @@ Route::get('/listings/proximity/wework/locations', [ListingController::class, 'l
 Route::get('/listings/selection', [ListingController::class, 'selection']);
 Route::get('/listings/with-url', [ListingController::class, 'showWithUrl']);
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
+Route::get('/listings/{listing}/prices', [ListingController::class, 'listingPricingHistory']);
 Route::put('/listings/{listing}', [ListingController::class, 'update']);
 Route::put('/listings/{listing}', [ListingController::class, 'updatePrice']);
 
