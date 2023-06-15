@@ -40,6 +40,7 @@ Route::get('/locations/area/{area}', [LocationController::class, 'locationsPerAr
 Route::get('/listings', [ListingController::class, 'index']);
 Route::post('/listings', [ListingController::class, 'store']);
 Route::post('/listings/prices', [ListingPriceController::class, 'store']);
+Route::post('/listings/unverified/create', [ListingController::class, 'CreateUnverifiedListing']);
 Route::get('/listings/locations', [ListingController::class, 'showLocations']);
 Route::get('/listings/locations/countries/{country}', [ListingController::class, 'listingsPerCountry']);
 Route::get('/listings/locations/area/{area}', [ListingController::class, 'locationsPerArea']);
