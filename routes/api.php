@@ -53,7 +53,7 @@ Route::get('/listings/with-url', [ListingController::class, 'showWithUrl']);
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 Route::get('/listings/{listing}/prices', [ListingController::class, 'listingPricingHistory']);
 Route::put('/listings/{listing}', [ListingController::class, 'update']);
-Route::put('/listings/{listing}', [ListingController::class, 'updatePrice']);
+Route::put('/listings/{listing}/prices', [ListingController::class, 'updatePrice']);
 
 Route::post('/listing_images', [ListingImageController::class, 'store']);
 Route::post('/listing_images/multiple', [ListingImageController::class, 'storeMultiple']);

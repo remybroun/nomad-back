@@ -36,7 +36,7 @@ class ListingController extends Controller
         return ListingResource::collection($listings);
     }
 
-    function haversineGreatCircleDistance(
+    public static function haversineGreatCircleDistance(
       $latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
     {
       // convert from degrees to radians
@@ -53,10 +53,10 @@ class ListingController extends Controller
       return $angle * $earthRadius;
     }
 
-    function checkProximityToWework($listing){
+    public static function checkProximityToWework($listing){
         $weworks = Wework::get();
         foreach ($weworks as $wework) {
-            $distance = $this->haversineGreatCircleDistance($wework->lat, $wework->lng, $listing->latitude, $listing->longitude);
+            $distance = ListingController::haversineGreatCircleDistance($wework->lat, $wework->lng, $listing->latitude, $listing->longitude);
             if ($distance < 2000){
                 $proximity = WeworkListingProximity::create([
                     "distance"=>$distance,
@@ -68,10 +68,10 @@ class ListingController extends Controller
         }
     }    
 
-    function checkProximityToCoworking($listing){
+    public static function checkProximityToCoworking($listing){
         $coworkings = Coworking::get();
         foreach ($coworkings as $coworking) {
-            $distance = $this->haversineGreatCircleDistance($coworking->lat, $coworking->lng, $listing->latitude, $listing->longitude);
+            $distance = ListingController::haversineGreatCircleDistance($coworking->lat, $coworking->lng, $listing->latitude, $listing->longitude);
             
             if ($distance > 2000){
                 continue;
@@ -117,7 +117,7 @@ class ListingController extends Controller
         ]);
 
 
-        $location_slug = $this->generateSlug(request('location'));
+        $location_slug = ListingController::generateSlug(request('location'));
         $country_str = str(request('location'))->explode(', ')->last();
         $country = Country::where('name', $country_str)->first();
         $location = Location::where('slug', $location_slug)->first();
@@ -142,7 +142,7 @@ class ListingController extends Controller
         if(!$country){
             try{
                 $country = Country::create([
-                    "slug"=>$this->generateSlug($country_str),
+                    "slug"=>ListingController::generateSlug($country_str),
                     "name"=>$country_str,
                 ]);
             }
@@ -153,9 +153,66 @@ class ListingController extends Controller
         $location->country()->associate($country);
         $location->save();
 
-        $this->checkProximityToWework($listing);
-        $this->checkProximityToCoworking($listing);
+        ListingController::checkProximityToWework($listing);
+        ListingController::checkProximityToCoworking($listing);
         return response()->json(['data' => $listing], 200);
+    }
+
+    public static function storeFromObject($listing){
+
+        $listing = Listing::firstOrCreate([
+            'title' => $listing['title'],
+            'description' => $listing['description'],
+            'location' => $listing['location'],
+            'longitude' => $listing['longitude'],
+            'latitude' => $listing['latitude'],
+            'amenities' => $listing['amenities'],
+            'arrangements' => $listing['arrangements'],
+            'is_featured' => False,
+            'external_url' => $listing['external_url'],
+            'price_per_night' => $listing['price_per_night'],
+        ]);
+
+
+        $location_slug = ListingController::generateSlug($listing['location']);
+        $country_str = str($listing['location'])->explode(', ')->last();
+        $country = Country::where('name', $country_str)->first();
+        $location = Location::where('slug', $location_slug)->first();
+
+        if(!$location){
+            try{
+                $location = Location::create([
+                  "name" => $listing['location'],
+                  "slug" => $location_slug,
+                ]);
+                
+            }
+
+            catch(QueryException $e){
+                print($e->getMessage());
+            }
+        }
+
+        $listing->location_slug()->associate($location);
+        $listing->save();
+
+        if(!$country){
+            try{
+                $country = Country::create([
+                    "slug"=>ListingController::generateSlug($country_str),
+                    "name"=>$country_str,
+                ]);
+            }
+            catch(QueryException $e){
+                print($e->getMessage());
+            }
+        }
+        $location->country()->associate($country);
+        $location->save();
+
+        ListingController::checkProximityToWework($listing);
+        ListingController::checkProximityToCoworking($listing);
+        return $listing;
     }
 
     public function updatePrice(Listing $listing, Request $request){
@@ -163,7 +220,7 @@ class ListingController extends Controller
         request()->validate([
             'price_per_night' => 'string',
         ]);
-
+        
         $listing->update($request->price_per_night);
         return response()->json(['data' => $listing], 200);
     }
@@ -237,15 +294,16 @@ class ListingController extends Controller
 
     }
 
-    private function stripAccents($str) {
+    public static function stripAccents($str) {
         return strtr(utf8_decode($str), utf8_decode('àáâãäçćèéêęëìíîïñńòóôõöùúûüýÿžÅÀÁÂÃÄÇÈÉÊËĠÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'), 'aaaaacceeeeeiiiinnooooouuuuyyzAAAAAACEEEEGIIIINOOOOOUUUUY');
     }
-    private function generateSlug($string){
+
+    public static function generateSlug($string){
         $string = explode(",", $string)[0];
         $string = str_replace([',', "'", '.'], '-', $string);
         $string = str_replace([' '], '--', $string);
         $string = strtolower($string);
-        $string = $this->stripAccents($string);
+        $string = ListingController::stripAccents($string);
 
         return $string;
     }
@@ -258,7 +316,7 @@ class ListingController extends Controller
         $countries = $locations->map(function ($location){
             $name = str($location->name)->explode(', ')->last();
             return [
-                "slug"=>$this->generateSlug($name),
+                "slug"=>ListingController::generateSlug($name),
                 "name"=>$name,
             ];
         })->unique()->values();

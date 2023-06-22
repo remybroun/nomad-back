@@ -55,6 +55,26 @@ class ListingImageController extends Controller
         return ListingImageResource::collection($images);
     }
 
+    public static function storeMultipleImageObjects($image_urls, $listing_id){
+        
+        foreach ($image_urls as $url) {
+
+            $listing_image = ListingImage::where('url', $url)->get();
+
+            if (!$listing_image->isEmpty()){
+                continue;
+            }
+
+            $image = ListingImage::create([
+                'url' => $url,
+                'listing_id' => $listing_id,
+                'is_main' => false,
+            ]);
+        }
+        $images = ListingImage::where('listing_id', $listing_id)->get();
+        return ListingImageResource::collection($images);
+    }
+
     public function show(ListingImage $listing_image): ListingImageResource
     {
         return new ListingImageResource($listing_image);
