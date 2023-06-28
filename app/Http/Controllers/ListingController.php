@@ -407,7 +407,7 @@ class ListingController extends Controller
 
     public function CreateUnverifiedListing(Request $request){
 
-        if (Listing::where('external_url', request('airbnb_id'))->exists()) {
+        if (Listing::where('external_url', "https://www.airbnb.com/rooms".request('airbnb_id'))->exists()) {
             return response()->json(['message' => "Listing with this URL is already added"], 422);
         }
 
