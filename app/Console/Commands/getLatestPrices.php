@@ -4,7 +4,6 @@ namespace App\Console\Commands;
 use App\Models\Listing;
 use App\Models\ListingPrice;
 use Illuminate\Support\Facades\Http;
-
 use Illuminate\Console\Command;
 
 class GetLatestPrices extends Command

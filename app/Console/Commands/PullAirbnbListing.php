@@ -8,7 +8,7 @@ use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ListingImageController;
 use Illuminate\Console\Command;
 
-class GetLatestPrices extends Command
+class VerifyUnverifiedListings extends Command
 {
     /**
      * The name and signature of the console command.
