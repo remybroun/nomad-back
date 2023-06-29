@@ -5,7 +5,7 @@ use App\Models\Listing;
 use App\Models\ListingPrice;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Console\Command;
-
+use Carbon\Carbon;
 class GetLatestPrices extends Command
 {
     /**
@@ -32,8 +32,15 @@ class GetLatestPrices extends Command
         $listings = Listing::all();
 
         foreach ($listings as $listing) {
-            echo $listing->external_url;
+            $this->line($listing->external_url);
 
+            $existing_price = ListingPrice::where('listing_id', $listing->id)->where('created_at', '>', Carbon::now()->subDay())->first();
+            // dd($existing_price);
+            if($existing_price){
+                $this->line("Price already fetched today". "Price : ". $existing_price);
+                continue;
+            }
+            
             $url = "https://bnb-scraper.onrender.com/pricing?url=".$listing->external_url;
 
             try {
@@ -44,7 +51,7 @@ class GetLatestPrices extends Command
 
                 $listing_price = ListingPrice::create([
                    'listing_id' => $listing->id,
-                   'price_per_night' => $response?->data?->price_per_night 
+                   'price_per_night' => $response?->data?->price_per_night || 0
                 ]);
 
             } catch (\Exception $e) {
