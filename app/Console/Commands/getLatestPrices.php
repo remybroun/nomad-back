@@ -51,7 +51,7 @@ class GetLatestPrices extends Command
 
                 $listing_price = ListingPrice::create([
                    'listing_id' => $listing->id,
-                   'price_per_night' => $response?->data?->price_per_night || 0
+                   'price_per_night' => $response?->data?->price_per_night
                 ]);
 
             } catch (\Exception $e) {
