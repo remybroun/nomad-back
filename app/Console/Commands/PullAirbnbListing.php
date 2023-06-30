@@ -8,14 +8,14 @@ use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ListingImageController;
 use Illuminate\Console\Command;
 
-class VerifyUnverifiedListings extends Command
+class PullAirbnbListing extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'pull:unverified_listings';
+    protected $signature = 'pull:unverified-listings';
 
     /**
      * The console command description.

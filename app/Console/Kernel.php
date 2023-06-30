@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('pull:prices')->dailyAt("10:00");
-        $schedule->command('pull:unverified_listings')->dailyAt("00:00");
+        $schedule->command('pull:unverified-listings')->dailyAt("00:00");
     }
 
     /**
