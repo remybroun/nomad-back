@@ -24,6 +24,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/', function () {
+    return response()->json(['message' => 'Welcome to our API'], 200);
+});
+
 //Forms
 Route::get('/forms', [FormController::class, 'index']);
 Route::post('/forms', [FormController::class, 'store']);
