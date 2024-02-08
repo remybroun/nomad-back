@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "DelaGothicOne";
+  src:url("/public/fonts/DelaGothicOne-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "ITCGaramond";
+  src:url("/public/fonts/ITCGaramondStd-LtCond.ttf");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ITCGaramond";
+  src:url("/public/fonts/ITCGaramondStd-BkCond.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ITCGaramond";
+  src: url("/public/fonts/ITCGaramondStd-BdCond.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ITCGaramond";
+  src: url("/public/fonts/ITCGaramondStd-UltNarrow.ttf");
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "DelaGothicOne";
+  src:url("/public/fonts/DelaGothicOne-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dela{
+  font-family: DelaGothicOne;
+}
+
+
+.garamond{
+  font-family: ITCGaramond;
+}

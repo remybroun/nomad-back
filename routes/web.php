@@ -12,10 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//
+//Route::get('/', function () {
+//    return ['Laravel' => app()->version()];
+//});
 
+#Serve Inertia App
 Route::get('/', function () {
-    return ['Laravel' => app()->version()];
-});
+    return Inertia\Inertia::render('Welcome');
+})->name('welcome');
 
 Route::prefix('auth')->group(base_path('routes/auth.php'));
 // require __DIR__.'/auth.php';

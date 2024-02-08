@@ -173,7 +173,6 @@ class ListingController extends Controller
             'price_per_night' => $listing['price_per_night'],
         ]);
 
-
         $location_slug = ListingController::generateSlug($listing['location']);
         $country_str = str($listing['location'])->explode(', ')->last();
         $country = Country::where('name', $country_str)->first();
@@ -185,7 +184,6 @@ class ListingController extends Controller
                   "name" => $listing['location'],
                   "slug" => $location_slug,
                 ]);
-                
             }
 
             catch(QueryException $e){
