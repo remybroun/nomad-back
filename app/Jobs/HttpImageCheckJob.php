@@ -1,36 +1,34 @@
 <?php
-// app/Jobs/HttpImageCheckJob.php
-
-namespace App\Jobs;
-
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Http;
 use App\Models\ListingImage;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Contracts\Queue\ShouldQueue; // Import the ShouldQueue interface
 
-class HttpImageCheckJob implements ShouldQueue
+class HttpImageCheckJob implements ShouldQueue // Implement the ShouldQueue interface
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $image;
+    protected $imageId;
 
-    public function __construct(ListingImage $image)
+    public function __construct($imageId)
     {
-        $this->image = $image;
+        $this->imageId = $imageId;
     }
 
     public function handle()
     {
-        Log::info('Checking ' . $this->image->url);
-        $response = Http::timeout(300)->get($this->image->url);
+        // Use lockForUpdate to obtain a lock on the database record
+        $image = ListingImage::where('id', $this->imageId)->lockForUpdate()->first();
 
-        if ($response->status() != 200) {
-            Log::info('Deleting ' . $this->image->url);
-            $this->image->delete();
+        if ($image) {
+            Log::info('Checking ' . $image->id);
+            $response = Http::timeout(300)->get($image->url);
+
+            if ($response->status() != 200) {
+                Log::info('Deleting ' . $image->id);
+                $image->delete();
+            }
+        } else {
+            Log::info('Image not found, skipping...');
         }
     }
 }

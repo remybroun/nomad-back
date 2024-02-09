@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,18 @@ Route::get('/', function () {
 
 Route::prefix('auth')->group(base_path('routes/auth.php'));
 // require __DIR__.'/auth.php';
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+//Route::get('/listings', [ListingController::class], 'showListings')->name('listings');
+Route::get('listings', [ListingController::class, 'showListings'])->name('listings');
+
+//Route::get('/listings/{listing}', [ListingController::class], 'showView')->name('listing.show');
+Route::get('listings/locations', [ListingController::class, 'showLocationsView'])->name('listings-locations');
+Route::get('listings/locations/{location}', [ListingController::class, 'showLocationView'])->name('listings-locations-show');
+
+Route::get('listings/{listing}', [ListingController::class, 'showView'])->name('listing.show');
+
+
