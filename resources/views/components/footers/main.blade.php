@@ -38,7 +38,7 @@
                     href="https://www.producthunt.com/posts/nomad-living?utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-nomad-living"
                     target="_blank"><img
                         src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=376267&amp;theme=dark"
-                        alt="Nomad Living - A curated list of airbnb listings built for remote workers | Product Hunt"></a>
+                        alt="Nomad Stay - A curated list of airbnb listings built for remote workers | Product Hunt"></a>
             </div>
             <div class="flex space-x-6 mt-4"><a href="#" class="text-gray-400 hover:text-gray-500"><span
                         class="sr-only">Instagram</span>
@@ -52,8 +52,8 @@
         <div class="mt-12 grid md:grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
             <div><h3 class="text-lg font-medium text-everglade-500">Nomad Listings</h3>
                 <ul role="list" class="mt-2 space-y-1">
-                    <li><a href="https://settlestays.com" class="text-sm text-gray-500 hover:text-everglade-500">Settle
-                            - by Nomad Living</a></li>
+                    <li><a href="https://boundra.com" class="text-sm text-gray-500 hover:text-everglade-500">Settle
+                            - by Nomad Stay</a></li>
                     <li><a href="/listings" class="text-sm text-gray-500 hover:text-everglade-500">All Listings</a></li>
                     <li><a href="/listings/locations" class="text-sm text-gray-500 hover:text-everglade-500">Listings
                             per Country</a></li>
@@ -80,7 +80,7 @@
     </div>
     <div
         class="mt-12 border-t border-gray-200 pt-8 sm:flex text-center sm:text-left justify-between space-y-4 sm:space-y-0">
-        <p class="mt-6 text-sm text-slate-500 md:mt-0">Copyright © <!-- -->2024<!-- --> Nomad Living, LLC. All rights
+        <p class="mt-6 text-sm text-slate-500 md:mt-0">Copyright © <!-- -->2024<!-- --> Nomad Stay, LLC. All rights
             reserved.</p>
         <div class="font-serif tracking-tighter italic">Produit de France 🇫🇷</div>
     </div>

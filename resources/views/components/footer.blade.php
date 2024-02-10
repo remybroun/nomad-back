@@ -17,7 +17,7 @@
           <nav class="order-1 mb-11 grid gap-5 text-base md:order-2 md:mb-0">
               <h3 class="text-2xl garamond font-bold">Guests</h3>
               <a class="tracking-wide font-display hover:underline" href="/rules">Swap rules</a>
-              <a class="flex items-center gap-3 tracking-wide hover:underline" href="mailto:contact@settlestays.com"
+              <a class="flex items-center gap-3 tracking-wide hover:underline" href="mailto:contact@boundra.com"
               target="_blank" rel="noopener noreferrer">Get in touch</a>
               <a class="tracking-wide font-display hover:underline" href="/terms">Terms</a>
           </nav>

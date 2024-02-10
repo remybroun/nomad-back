@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('FRONTEND_URL', 'https://api.nomadliving.test', 'https://settlestays.com')],
+    'allowed_origins' => [env('FRONTEND_URL', 'https://api.nomadliving.test', 'https://nomadstay.com')],
 
     'allowed_origins_patterns' => [],
 

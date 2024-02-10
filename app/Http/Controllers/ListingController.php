@@ -19,33 +19,49 @@ use App\Models\ListingPrice;
 class ListingController extends Controller
 {
 
-    public function showListings(Request $request){
+    public function showListings(Request $request)
+    {
         $listings = Listing::with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])
             ->orderBy('is_featured', 'DESC')
             ->orderBy('id', 'DESC')
             ->paginate();
-
-
-//        dd($listings->toArray());
-
-
         return view('listings.index', ['listings' => $listings]);
     }
 
-    public function showView(Listing $listing){
+    public function showView(Listing $listing)
+    {
         return view('listings.show', ['listing' => $listing]);
     }
 
-    public function index(Request $request){
+    public function showListingsInAreaView($area)
+    {
+        $asia = ["China", "India", "Indonesia", "Pakistan", "Bangladesh", "Japan", "Philippines", "Vietnam", "Turkey", "Iran", "Thailand", "Myanmar", "South Korea", "Iraq", "Afghanistan", "Saudi Arabia", "Uzbekistan", "Malaysia", "Yemen", "Nepal", "North Korea", "Sri Lanka", "Kazakhstan", "Syria", "Cambodia", "Jordan", "Azerbaijan", "United Arab Emirates", "Tajikistan", "Israel", "Laos", "Lebanon", "Kyrgyzstan", "Turkmenistan", "Singapore", "Oman", "State of Palestine", "Kuwait", "Georgia", "Mongolia", "Armenia", "Qatar", "Bahrain", "Timor-Leste", "Cyprus", "Bhutan", "Maldives", "Brunei"];
+
+        $europe = ["Hungary", "Belarus", "Austria", "Serbia", "Switzerland", "Germany", "Andorra", "Bulgaria", "United", "France", "Montenegro", "Luxembourg", "Italy", "Denmark", "Finland", "Slovakia", "Norway", "Ireland", "Spain", "Malta", "Ukraine", "Croatia", "Moldova", "Monaco", "Liechtenstein", "Poland", "Iceland", "San Marino", "Bosnia", "Albania", "Lithuania", "Slovenia", "Romania", "Latvia", "Netherlands", "Russia", "Estonia", "Belgium", "Czech", "Greece", "Portugal", "Sweden"];
+
+        $south_america = ["Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Costa Rica", "Ecuador", "El Salvador", "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Dominican Republic", "Uruguay"];
+
+        if ($area == "europe")
+            return view('listings.locations.area', ['locations' => $europe, 'area' => $area]);
+        if ($area == "asia")
+            return view('listings.locations.area', ['locations' => $asia, 'area' => $area]);
+
+        return view('listings.locations.area', ['locations' => $south_america, 'area' => $area]);
+
+
+    }
+
+    public function index(Request $request)
+    {
         $limit = request()->get('limit');
         $listings = Listing::with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->orderBy('is_featured', 'DESC')->orderBy('id', 'DESC');
 
-        if(request()->get('page')){
+        if (request()->get('page')) {
             $listings = $listings->paginate();
-        }else{
+        } else {
             $listings = $listings->get();
         }
-        if ($limit){
+        if ($limit) {
             $listings = $listings->take($limit);
         }
 
@@ -54,29 +70,30 @@ class ListingController extends Controller
     }
 
     public static function haversineGreatCircleDistance(
-      $latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
+        $latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
     {
-      // convert from degrees to radians
-      $latFrom = deg2rad($latitudeFrom);
-      $lonFrom = deg2rad($longitudeFrom);
-      $latTo = deg2rad($latitudeTo);
-      $lonTo = deg2rad($longitudeTo);
+        // convert from degrees to radians
+        $latFrom = deg2rad($latitudeFrom);
+        $lonFrom = deg2rad($longitudeFrom);
+        $latTo = deg2rad($latitudeTo);
+        $lonTo = deg2rad($longitudeTo);
 
-      $latDelta = $latTo - $latFrom;
-      $lonDelta = $lonTo - $lonFrom;
+        $latDelta = $latTo - $latFrom;
+        $lonDelta = $lonTo - $lonFrom;
 
-      $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
-        cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
-      return $angle * $earthRadius;
+        $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
+                cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+        return $angle * $earthRadius;
     }
 
-    public static function checkProximityToWework($listing){
+    public static function checkProximityToWework($listing)
+    {
         $weworks = Wework::get();
         foreach ($weworks as $wework) {
             $distance = ListingController::haversineGreatCircleDistance($wework->lat, $wework->lng, $listing->latitude, $listing->longitude);
-            if ($distance < 2000){
+            if ($distance < 2000) {
                 $proximity = WeworkListingProximity::create([
-                    "distance"=>$distance,
+                    "distance" => $distance,
                 ]);
                 $proximity->weworks()->associate($wework);
                 $proximity->listings()->associate($listing);
@@ -85,17 +102,18 @@ class ListingController extends Controller
         }
     }
 
-    public static function checkProximityToCoworking($listing){
+    public static function checkProximityToCoworking($listing)
+    {
         $coworkings = Coworking::get();
         foreach ($coworkings as $coworking) {
             $distance = ListingController::haversineGreatCircleDistance($coworking->lat, $coworking->lng, $listing->latitude, $listing->longitude);
 
-            if ($distance > 2000){
+            if ($distance > 2000) {
                 continue;
             }
 
             $proximity = CoworkingListingProximity::create([
-                "distance"=>$distance,
+                "distance" => $distance,
             ]);
 
             $proximity->coworkings()->associate($coworking);
@@ -105,7 +123,8 @@ class ListingController extends Controller
         }
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         request()->validate([
             'title' => 'string',
             'description' => 'string',
@@ -117,7 +136,7 @@ class ListingController extends Controller
             'arrangements' => 'array',
         ]);
         $listing = Listing::where('external_url', request('external_url'))->get();
-        if (!$listing->isEmpty()){
+        if (!$listing->isEmpty()) {
             return response()->json(['message' => "Listing with this URL is already added"], 422);
         }
         $listing = Listing::create([
@@ -139,16 +158,14 @@ class ListingController extends Controller
         $country = Country::where('name', $country_str)->first();
         $location = Location::where('slug', $location_slug)->first();
 
-        if(!$location){
-            try{
+        if (!$location) {
+            try {
                 $location = Location::create([
-                  "name" => request('location'),
-                  "slug" => $location_slug,
+                    "name" => request('location'),
+                    "slug" => $location_slug,
                 ]);
 
-            }
-
-            catch(QueryException $e){
+            } catch (QueryException $e) {
                 print($e->getMessage());
             }
         }
@@ -156,14 +173,13 @@ class ListingController extends Controller
         $listing->location_slug()->associate($location);
         $listing->save();
 
-        if(!$country){
-            try{
+        if (!$country) {
+            try {
                 $country = Country::create([
-                    "slug"=>ListingController::generateSlug($country_str),
-                    "name"=>$country_str,
+                    "slug" => ListingController::generateSlug($country_str),
+                    "name" => $country_str,
                 ]);
-            }
-            catch(QueryException $e){
+            } catch (QueryException $e) {
                 print($e->getMessage());
             }
         }
@@ -175,7 +191,8 @@ class ListingController extends Controller
         return response()->json(['data' => $listing], 200);
     }
 
-    public static function storeFromObject($listing){
+    public static function storeFromObject($listing)
+    {
 
         $listing = Listing::firstOrCreate([
             'title' => $listing['title'],
@@ -195,16 +212,14 @@ class ListingController extends Controller
         $country = Country::where('name', $country_str)->first();
         $location = Location::where('slug', $location_slug)->first();
 
-        if(!$location){
-            try{
+        if (!$location) {
+            try {
                 $location = Location::create([
-                  "name" => $listing['location'],
-                  "slug" => $location_slug,
+                    "name" => $listing['location'],
+                    "slug" => $location_slug,
                 ]);
 
-            }
-
-            catch(QueryException $e){
+            } catch (QueryException $e) {
                 print($e->getMessage());
             }
         }
@@ -212,14 +227,13 @@ class ListingController extends Controller
         $listing->location_slug()->associate($location);
         $listing->save();
 
-        if(!$country){
-            try{
+        if (!$country) {
+            try {
                 $country = Country::create([
-                    "slug"=>ListingController::generateSlug($country_str),
-                    "name"=>$country_str,
+                    "slug" => ListingController::generateSlug($country_str),
+                    "name" => $country_str,
                 ]);
-            }
-            catch(QueryException $e){
+            } catch (QueryException $e) {
                 print($e->getMessage());
             }
         }
@@ -231,7 +245,8 @@ class ListingController extends Controller
         return $listing;
     }
 
-    public function updatePrice(Listing $listing, Request $request){
+    public function updatePrice(Listing $listing, Request $request)
+    {
 
         request()->validate([
             'price_per_night' => 'string',
@@ -241,7 +256,8 @@ class ListingController extends Controller
         return response()->json(['data' => $listing], 200);
     }
 
-    public function update(Listing $listing, Request $request){
+    public function update(Listing $listing, Request $request)
+    {
 
         request()->validate([
             'title' => 'string',
@@ -310,11 +326,13 @@ class ListingController extends Controller
 
     }
 
-    public static function stripAccents($str) {
+    public static function stripAccents($str)
+    {
         return strtr(utf8_decode($str), utf8_decode('àáâãäçćèéêęëìíîïñńòóôõöùúûüýÿžÅÀÁÂÃÄÇÈÉÊËĠÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'), 'aaaaacceeeeeiiiinnooooouuuuyyzAAAAAACEEEEGIIIINOOOOOUUUUY');
     }
 
-    public static function generateSlug($string){
+    public static function generateSlug($string)
+    {
         $string = explode(",", $string)[0];
         $string = str_replace([',', "'", '.'], '-', $string);
         $string = str_replace([' '], '--', $string);
@@ -329,11 +347,11 @@ class ListingController extends Controller
     {
         $locations = Location::get();
 
-        $countries = $locations->map(function ($location){
+        $countries = $locations->map(function ($location) {
             $name = str($location->name)->explode(', ')->last();
             return [
-                "slug"=>ListingController::generateSlug($name),
-                "name"=>$name,
+                "slug" => ListingController::generateSlug($name),
+                "name" => $name,
             ];
         })->unique()->values();
 
@@ -355,47 +373,81 @@ class ListingController extends Controller
     function showLocationView($location)
     {
         $location = Location::where('slug', $location)->firstOrFail();
-        $listings = Listing::where('location', 'LIKE', '%'.$location->name.'%')->with(["mainListingImage", "location_slug", "close_coworkings","latest_price"])->latest()->paginate();
+        $listings = Listing::where('location', 'LIKE', '%' . $location->name . '%')->with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->latest()->paginate();
         return view('listings.locations.show', compact('location', 'listings'));
     }
 
-    public function showTopThreeListingsForLocation($location){
+    function showCountryView($country)
+    {
 
-        $listings = Listing::where('location', 'LIKE', '%'.$location.'%')->with(["mainListingImage", "location_slug", "close_coworkings","latest_price"])->latest()->take(3)->get();
+        $country_obj = Country::where('slug', $country)->first();
+        $listings = [];
+        $randomListings = [];
+        if ($country_obj) {
+            $listings = Listing::whereHas('location_slug', function ($q) use ($country_obj) {
+                $q->whereHas('country', function ($q) use ($country_obj) {
+                    $q->where('slug', 'LIKE', '%' . $country_obj->slug . '%');
+                });
+            })
+                ->with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])
+                ->latest()->paginate();
+        } //      show 10 random listings if country does not exist
+        else {
+            $randomListings = Listing::with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->inRandomOrder()
+                ->take(10)->get();
+
+        }
+
+        $country = new Country(['name' => $country, 'slug' => $country]);
+
+        return view('listings.locations.country', [
+            "listings" => ListingResource::collection($listings),
+            "randomListings" => ListingResource::collection($randomListings),
+            "country" => $country,
+            "countries" => Country::inRandomOrder()->limit(5)->get(),
+        ]);
+    }
+
+    public function showTopThreeListingsForLocation($location)
+    {
+
+        $listings = Listing::where('location', 'LIKE', '%' . $location . '%')->with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->latest()->take(3)->get();
 
         return ListingResource::collection($listings);
     }
 
-    public function listingsPerLocation($location){
+    public function listingsPerLocation($location)
+    {
 
-        $listings = Listing::whereHas('location_slug', function($q) use($location){
-            $q->where('slug', 'LIKE', '%'.$location.'%');
+        $listings = Listing::whereHas('location_slug', function ($q) use ($location) {
+            $q->where('slug', 'LIKE', '%' . $location . '%');
         })
-        ->with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])
-        ->latest();
-        if(request()->get('page')){
+            ->with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])
+            ->latest();
+        if (request()->get('page')) {
             $listings = $listings->paginate();
-        }else{
+        } else {
             $listings = $listings->get();
         }
 
         return ListingResource::collection($listings);
     }
 
-    public function listingsProximityWework(Request $request){
+    public function listingsProximityWework(Request $request)
+    {
         $results = $request->get('results');
         $city = $request->get('city');
 
-        $listings = Listing::has('close_weworks')->with(["mainListingImage", "location_slug", "close_weworks","latest_price"]);
+        $listings = Listing::has('close_weworks')->with(["mainListingImage", "location_slug", "close_weworks", "latest_price"]);
 
-        if ($city){
+        if ($city) {
             // $listings = $listings->where('location', 'LIKE', '%'.$city.'%');
-            $listings = $listings->whereHas('location_slug', function($q) use($city){
+            $listings = $listings->whereHas('location_slug', function ($q) use ($city) {
                 $q->where('slug', $city);
             });
         }
 
-        if(request()->get('results')){
+        if (request()->get('results')) {
             $listings = $listings->take($results);
         }
 
@@ -404,29 +456,31 @@ class ListingController extends Controller
         return ListingResource::collection($listings);
     }
 
-    public function listingsProximityWeworkLocations(){
-        $locations = Location::whereHas('listings', function($q){
+    public function listingsProximityWeworkLocations()
+    {
+        $locations = Location::whereHas('listings', function ($q) {
             $q->has('close_weworks');
         })->get();
 
         return response()->json($locations);
     }
 
-    public function listingsPerCountry($country){
+    public function listingsPerCountry($country)
+    {
 
         $country = Country::where('slug', $country)->firstOrFail();
 
-        $listings = Listing::whereHas('location_slug', function($q) use($country){
-            $q->whereHas('country', function($q) use($country){
-                $q->where('slug', 'LIKE', '%'.$country->slug.'%');
+        $listings = Listing::whereHas('location_slug', function ($q) use ($country) {
+            $q->whereHas('country', function ($q) use ($country) {
+                $q->where('slug', 'LIKE', '%' . $country->slug . '%');
             });
         })
-        ->with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])
-        ->latest();
+            ->with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])
+            ->latest();
 
-        if(request()->get('page')){
+        if (request()->get('page')) {
             $listings = $listings->paginate();
-        }else{
+        } else {
             $listings = $listings->get();
         }
 
@@ -436,9 +490,10 @@ class ListingController extends Controller
         ]);
     }
 
-    public function CreateUnverifiedListing(Request $request){
+    public function CreateUnverifiedListing(Request $request)
+    {
 
-        if (Listing::where('external_url', "https://www.airbnb.com/rooms".request('airbnb_id'))->exists()) {
+        if (Listing::where('external_url', "https://www.airbnb.com/rooms" . request('airbnb_id'))->exists()) {
             return response()->json(['message' => "Listing with this URL is already added"], 422);
         }
 
@@ -457,7 +512,8 @@ class ListingController extends Controller
         ], 200);
     }
 
-    public function listingPricingHistory(Listing $listing){
+    public function listingPricingHistory(Listing $listing)
+    {
         return ListingPrice::where("listing_id", $listing->id)->get();
     }
 

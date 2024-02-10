@@ -236,7 +236,7 @@
         <div class="sm:my-5 my-4 lg:my-0 lg:col-span-2 lg:px-12 px-5 items-center mx-auto lg:flex">
             <div>
                 <h1 class="font-display text-4xl tracking-tight font-base text-black sm:text-5xl leading-10">
-                    <span class="sr-only">Nomad Living - </span>Find stays equipped for <span
+                    <span class="sr-only">Nomad Stay - </span>Find stays equipped for <span
                         class="font-display font-black">remote workers.</span>
                 </h1>
                 <div
@@ -334,7 +334,7 @@
         <h2 class="font-serif tracking-tight sm:text-3xl text-2xl">Find a place to work remotely</h2>
         <ul class="max-w-screen-xl mx-auto grid grid-cols-1 gap-x-2 gap-y-2 sm:gap-5 md:grid-cols-4">
             <li class="cursor-pointer bg-white col-span-1 flex flex-col max-w-xl locations sm:shadow-sm rounded-3xl hover:bg-gray-50 duration-300">
-                <a href="/listings/area/europe" class="block mt-2 relative">
+                <a href="/listings/locations/area/europe" class="block mt-2 relative">
                     <div class="flex-shrink-0">
                         <div class="hidden sm:block md:h-56 h-48 md:w-56 w-48 mx-auto">
                             <svg id="europe_svg__Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
@@ -515,7 +515,7 @@
                 </a>
             </li>
             <li class="cursor-pointer bg-white col-span-1 flex flex-col max-w-xl locations sm:shadow-sm rounded-3xl hover:bg-gray-50 duration-300">
-                <a href="/listings/area/asia" class="block mt-2 relative">
+                <a href="/listings/locations/area/asia" class="block mt-2 relative">
                     <div class="flex-shrink-0">
                         <div class="hidden sm:block md:h-56 h-48 md:w-56 w-48 mx-auto">
                             <svg id="asia_svg__Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
@@ -664,7 +664,7 @@
                 </a>
             </li>
             <li class="cursor-pointer bg-white col-span-1 flex flex-col max-w-xl locations sm:shadow-sm rounded-3xl hover:bg-gray-50 duration-300">
-                <a href="/listings/area/south-america" class="block mt-2 relative">
+                <a href="/listings/locations/area/south-america" class="block mt-2 relative">
                     <div class="flex-shrink-0">
                         <div class="hidden sm:block md:h-56 h-48 md:w-56 w-48 mx-auto">
                             <svg id="southAmerica_svg__Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
@@ -887,7 +887,7 @@
         <div class="mx-auto md:flex items-center w-full justify-between gap-x-10 sm:px-10 px-4">
             <div class="">
                 <h2 class="font-serif text-3xl lg:text-5xl tracking-tight font-light text-black">
-                    <span class="sr-only">Nomad Living</span>A curated list of locations for the remote class</h2>
+                    <span class="sr-only">Nomad Stay</span>A curated list of locations for the remote class</h2>
                 <div
                     class="my-6 sm:space-y-6 space-y-2 font-display sm:text-lg tracking-tight text-gray-600 text-justify sm:max-w-lg mx-auto">
                     <p>Join a curated list of locations all across the globe. Our selection of <span
@@ -925,7 +925,7 @@
                 </div>
             </div>
             <a class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 w-full bg-everglade-800 max-w-xs mt-5 font-light py-3 text-sm mx-auto lg:mx-0"
-               href="https://settlestays.com">Discover <span class="font-bold mx-1"> Boundra</span> →</a>
+               href="https://boundra.com">Discover <span class="font-bold mx-1"> Boundra</span> →</a>
         </div>
         <div class="col-span-2">
             <img class="object-cover mx-auto w-full max-w-sm rounded-3xl col-span-3 aspect-square align-middle"
@@ -1027,9 +1027,9 @@
             <div class="md:ml-auto md:w-2/3 md:pl-10">
                 <h2 class="text-base font-semibold uppercase tracking-wider text-gray-700">Start hosting nomads</h2>
                 <p class="font-display mt-2 text-black text-3xl font-medium tracking-tight sm:text-4xl">List your
-                    Airbnb on Nomad Living</p>
+                    Airbnb on Nomad Stay</p>
                 <p class="mt-3 text-lg font-display text-gray-600">Once we have certified your listing on Airbnb, we
-                    will promote it on Nomad Living. Our portfolio of Nomad Listings will be accessible to all of our
+                    will promote it on Nomad Stay. Our portfolio of Nomad Listings will be accessible to all of our
                     community.</p>
                 <div class="mt-8">
                     <div class="inline-flex rounded-md shadow">
@@ -1071,7 +1071,7 @@
                     <h2 class="font-serif tracking-tight text-3xl mb-4">Host nomads working in the most remote
                         companies</h2>
                     <p class="font-display text-gray-600">Have you ever been scared that your guest will not be tidy, or
-                        will throw a party in your Airbnb? With Nomad Living, you can be sure this won't happen. Rent
+                        will throw a party in your Airbnb? With Nomad Stay, you can be sure this won't happen. Rent
                         out to nomads who are looking only looking for <span class="font-bold">mid-long stays</span> and
                         who are <span class="font-bold">looking to work</span> out of your Airbnb!</p>
                 </div>
@@ -1115,7 +1115,7 @@
                                 </div>
                                 <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
                                     <p>"After Spending so much time looking for convinient Airbnbs, I decided to found
-                                        Nomad Living. An airbnb curation list driven by a community of nomads. <br> My
+                                        Nomad Stay. An airbnb curation list driven by a community of nomads. <br> My
                                         goal is to ensure that all remote workers find a perfect place to live and work
                                         in harmony."</p>
                                 </blockquote>
@@ -1141,7 +1141,7 @@
                                 <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
                                     <p>"Ever since Google has offered us the chance to work remotely, I have always
                                         dreamed of finding the perfect airbnb made for the remote worker. <br>Now with
-                                        Nomad Living, I don't have one, but hundreds of airbnbs to choose from."</p>
+                                        Nomad Stay, I don't have one, but hundreds of airbnbs to choose from."</p>
                                 </blockquote>
                                 <cite class="block font-bold text-lg not-italic">
                                 </cite>
@@ -1164,7 +1164,7 @@
                                 <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
                                     <p>"I have been a full-time nomad since 2018. I haven't stopped travelling! Work
                                         also can't stop. Multiple times I was at risk of losing my job due to a bad set
-                                        up, poor Wi-Fi or colleagues questionning my whereabouts. Nomad Living seems to
+                                        up, poor Wi-Fi or colleagues questionning my whereabouts. Nomad Stay seems to
                                         be the way to go. I can't wait until I try my first Nomad Listing."</p>
                                 </blockquote>
                                 <cite class="block font-bold text-lg not-italic">

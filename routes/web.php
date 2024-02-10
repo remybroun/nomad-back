@@ -35,6 +35,9 @@ Route::get('listings', [ListingController::class, 'showListings'])->name('listin
 
 //Route::get('/listings/{listing}', [ListingController::class], 'showView')->name('listing.show');
 Route::get('listings/locations', [ListingController::class, 'showLocationsView'])->name('listings-locations');
+Route::get('listings/locations/area/{area}', [ListingController::class, 'showListingsInAreaView'])->name('listings-locations-area');
+Route::get('listings/locations/countries/{country}', [ListingController::class, 'showCountryView'])->name('listings-locations-country');
+
 Route::get('listings/locations/{location}', [ListingController::class, 'showLocationView'])->name('listings-locations-show');
 
 Route::get('listings/{listing}', [ListingController::class, 'showView'])->name('listing.show');
