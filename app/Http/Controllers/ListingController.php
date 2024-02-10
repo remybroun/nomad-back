@@ -456,6 +456,41 @@ class ListingController extends Controller
         return ListingResource::collection($listings);
     }
 
+    public function showProximityWeWorkView()
+    {
+        $locations = Location::whereHas('listings', function ($q) {
+            $q->has('close_weworks');
+        })->limit(8)->get();
+        // Random 6 listings to show for inspiration
+        $randomListings = Listing::with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->has('close_weworks')->inRandomOrder()
+            ->take(6)->get();
+        return view('listings.locations.proximity.wework.index', compact('locations', 'randomListings'));
+    }
+
+//    listings-proximity-wework-city-all
+    public function showProximityWeWorkCityAll()
+    {
+        $locations = Location::whereHas('listings', function ($q) {
+            $q->has('close_weworks');
+        })->get();
+
+        return view('listings.locations.proximity.wework.cities.index', compact('locations'));
+    }
+
+
+//    listings-proximity-wework-city-show
+    function showProximityWeWorkShowView($city)
+    {
+        $location = Location::where('slug', $city)->firstOrFail();
+        $listings = Listing::whereHas('location_slug', function ($q) use ($location) {
+                $q->where('slug', $location->slug);
+            })
+            ->whereHas('close_weworks')
+            ->with(["mainListingImage", "location_slug", "close_weworks", "latest_price"])
+            ->latest()->paginate();
+        return view('listings.locations.proximity.wework.cities.show', compact('location', 'listings'));
+    }
+
     public function listingsProximityWeworkLocations()
     {
         $locations = Location::whereHas('listings', function ($q) {

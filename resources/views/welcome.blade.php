@@ -308,7 +308,8 @@
                     </div>
                     <div class="flex items-center justify-end gap-3">
                         <a class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 bg-everglade-500 flex items-center gap-1 text-xs sm:text-base"
-                           href="/listings/proximity/wework">Browse locations near a Wework
+                           href="{{ route('listings-locations-proximity-wework') }}">
+                           Browse locations near a Wework
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                  stroke="currentColor" class="sm:w-6 w-5 sm:h-6 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -729,7 +730,7 @@
                 </a>
             </li>
             <li class="cursor-pointer bg-white col-span-1 flex flex-col max-w-xl locations sm:shadow-sm rounded-3xl hover:bg-gray-50 duration-300">
-                <a href="/listings/proximity/wework" class="block mt-2 relative">
+                <a href={{ route("listings-locations-proximity-wework") }} class="block mt-2 relative">
                     <div class="flex-shrink-0">
                         <div class="hidden sm:block md:h-56 h-48 md:w-56 w-48 mx-auto">
                             <div class="text-center h-full flex flex-col justify-center">
@@ -887,7 +888,7 @@
         <div class="mx-auto md:flex items-center w-full justify-between gap-x-10 sm:px-10 px-4">
             <div class="">
                 <h2 class="font-serif text-3xl lg:text-5xl tracking-tight font-light text-black">
-                    <span class="sr-only">Nomad Stay</span>A curated list of locations for the remote class</h2>
+                    <span class="sr-only">Nomad Stay</span> A curated list of locations for remote workers</h2>
                 <div
                     class="my-6 sm:space-y-6 space-y-2 font-display sm:text-lg tracking-tight text-gray-600 text-justify sm:max-w-lg mx-auto">
                     <p>Join a curated list of locations all across the globe. Our selection of <span

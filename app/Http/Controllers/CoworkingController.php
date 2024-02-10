@@ -7,12 +7,20 @@ use App\Models\CoworkingListingProximity;
 
 class CoworkingController extends Controller
 {
-    public function show(Coworking $coworking){
-        return new Coworking($coworking);
+    public function show(){
+        $coworkings = Coworking::paginate(10);
+        return view('coworkings.index', [
+            'coworkings' => $coworkings,
+//            'listings' => $coworking->listings()->paginate(10)
+        ]);
     }
 
-    public function proximityListings(Request $request){
-        
+    public function showLocationsView(Request $request){
+        $locations = Coworking::select('city')->distinct()->get();
+        return view('coworkings.locations.index', [
+            'locations' => $locations
+        ]);
     }
+
 
 }

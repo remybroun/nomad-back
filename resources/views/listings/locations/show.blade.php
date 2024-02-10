@@ -1,14 +1,9 @@
 {{-- Layout --}}
 @extends('layouts.app')
+@section('title', 'Best places to work remotely in ' . ucwords($location->name))
 
 {{-- Content --}}
 @section('content')
-    <head>
-        {{-- Dynamic title based on location --}}
-        <title>Best places to work remotely in {{ $location->name }}</title>
-        <meta property="og:title" content="All Nomad Listings in {{ $location->name }}" key="title" />
-    </head>
-
     @include('components.headers.main')
 
     <div class="container min-h-screen mx-auto max-w-screen-xl">

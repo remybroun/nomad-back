@@ -28,54 +28,26 @@
 
         <div>
             <div class="font-display text-2xl font-bold">Where do you want to work remotely from?</div>
-            {{-- SearchField Component --}}
-            {{--            @include('components.searchfield', ['items' => $locations])--}}
         </div>
 
-        {{-- Featured Locations --}}
-        @if(count($featuredLocations) > 0)
-            @foreach($featuredLocations as $location)
-                {{-- Featured Location --}}
-                {{--                @include('components.featuredLocation', ['location' => $location])--}}
-            @endforeach
-        @endif
 
-        {{-- Locations Listing --}}
-
-        {{--            <div class="mx-auto flex justify-center">--}}
-        {{--                --}}{{-- Spinner Component --}}
-        {{--                @include('components.spinner')--}}
-        {{--            </div>--}}
-
-        <div class="space-y-8">
-            {{-- Locations Grid --}}
-            <ul class="grid sm:grid-cols-3 grid-cols-2 gap-x-4 gap-y-6">
-                @foreach($filteredLocations as $location)
-                    <li class="text-everglade-600">
-                        {{-- Location Item --}}
-                        {{--                            @include('components.locationItem', ['location' => $location])--}}
-                    </li>
-                @endforeach
-            </ul>
-        </div>
         <div class="space-y-8">
             {{-- Locations Grid --}}
             <ul class="grid sm:grid-cols-3 grid-cols-2 gap-x-4 gap-y-6">
                 @foreach($locations as $location)
                     <li class="border border-everglade-200 rounded-lg overflow-hidden hover:shadow-lg">
-                        <a href="{{ route('listings-locations-show', [$location->slug]) }}"
+                        <a href="#"
                            class="hover:underline h-full flex items-center w-full">
                             <div
                                 class="bg-everglade-100 px-4 py-4 tracking-wide h-full w-full flex flex-col justify-center">
-                                <div class="text-sm">See all remote work listings in:</div>
-                                <div class="font-semibold">{{ $location->name }}</div>
+                                <div class="text-sm">See all Coworkings listings in:</div>
+                                <div class="font-semibold">{{ $location->city }}</div>
                             </div>
                         </a>
                     </li>
                 @endforeach
             </ul>
         </div>
-
     </div>
 
     {{-- Footer --}}

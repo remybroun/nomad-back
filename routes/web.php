@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CoworkingController;
 use App\Http\Controllers\ListingController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,9 @@ Route::get('listings', [ListingController::class, 'showListings'])->name('listin
 
 //Route::get('/listings/{listing}', [ListingController::class], 'showView')->name('listing.show');
 Route::get('listings/locations', [ListingController::class, 'showLocationsView'])->name('listings-locations');
+Route::get('listings/locations/proximity/wework', [ListingController::class, 'showProximityWeWorkView'])->name('listings-locations-proximity-wework');
+Route::get('listings/locations/proximity/wework/cities', [ListingController::class, 'showProximityWeWorkCityAll'])->name('listings-proximity-wework-city-all');
+Route::get('listings/locations/proximity/wework/cities/{city}', [ListingController::class, 'showProximityWeWorkShowView'])->name('listings-proximity-wework-city-show');
 Route::get('listings/locations/area/{area}', [ListingController::class, 'showListingsInAreaView'])->name('listings-locations-area');
 Route::get('listings/locations/countries/{country}', [ListingController::class, 'showCountryView'])->name('listings-locations-country');
 
@@ -43,3 +47,7 @@ Route::get('listings/locations/{location}', [ListingController::class, 'showLoca
 Route::get('listings/{listing}', [ListingController::class, 'showView'])->name('listing.show');
 
 
+// Coworkings
+Route::get('coworkings', [CoworkingController::class, 'show'])->name('coworkings');
+//coworkings-locations
+Route::get('coworkings/locations', [CoworkingController::class, 'showLocationsView'])->name('coworkings-locations');

@@ -32,7 +32,7 @@ class RemoveOutdatedPhotos extends Command
         $this->info('Starting image check');
 
         // Get a list of images to process
-        $images = ListingImage::where('id', '>', 21100)->get();
+        $images = ListingImage::where('id', '>', 23100)->get();
         $this->info('Found ' . $images->count() . ' images to check');
         foreach ($images as $image) {
             // Call image URL; if it is not 200, then delete the image
