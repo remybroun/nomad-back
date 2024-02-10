@@ -793,7 +793,7 @@
                                     </div>
                                     <div href="/settle"
                                          class="font-display tracking-tight relative bg-white text-xs leading-5 font-medium text-black rounded-full py-0.5 px-3 items-center break truncate flex gap-2 items-center">
-                                        <img src="/_next/static/media/coworking.339743a2.png" width="30" height="376"
+                                        <img src="https://a-step-in.s3.us-east-2.amazonaws.com/nomadstay/coworking.png" width="30" height="376"
                                              decoding="async" data-nimg="future" class=" hidden sm:block"
                                              loading="lazy">
                                         <span class=" mr-1 text-everglade-500 text-xs">
