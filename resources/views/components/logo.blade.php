@@ -15,6 +15,6 @@
          68.4,180.9 200,49.3 331.6,180.9 331.6,400 365.7,400" />
     </svg>
     <h1 class="text-2xl font-bold tracking-tighter font-display text-black font-display">
-        Nomad Stays
+        Nomad Stay
     </h1>
 </div>
