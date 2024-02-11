@@ -887,7 +887,7 @@
     <div class="max-w-screen-xl sm:my-20 mx-auto" id="how-it-works">
         <div class="mx-auto md:flex items-center w-full justify-between gap-x-10 sm:px-10 px-4">
             <div class="">
-                <h2 class="font-serif text-3xl lg:text-5xl tracking-tight font-light text-black">
+                <h2 class="font-display text-3xl lg:text-5xl text-black font-medium">
                     <span class="sr-only">Nomad Stay</span> A curated list of locations for remote workers</h2>
                 <div
                     class="my-6 sm:space-y-6 space-y-2 font-display sm:text-lg tracking-tight text-gray-600 text-justify sm:max-w-lg mx-auto">
