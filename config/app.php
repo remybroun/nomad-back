@@ -56,7 +56,7 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'frontend_url' => env('FRONTEND_URL', 'http://app.nomadliving.app'),
+    'frontend_url' => env('FRONTEND_URL', 'http://nomadstay.test'),
 
     'asset_url' => env('ASSET_URL'),
 

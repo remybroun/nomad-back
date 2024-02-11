@@ -12,9 +12,9 @@
             <div class="absolute inset-0 bg-gray-400 mix-blend-multiply" aria-hidden="true"></div>
         </div>
         <div class="relative px-16 py-24 sm:py-32 leading-4">
-            <h1 class="text-4xl font-display tracking-tighter text-white sm:text-5xl lg:text-6xl">
-                Stays for remote work near a
-                <span class="font-bold">WeWork</span>
+            <h1 class="text-xl font-display text-white">
+                Stays for remote work near a <br>
+                <span class="font-bold text-3xl">WeWork</span>
             </h1>
         </div>
     </div>

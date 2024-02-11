@@ -21,3 +21,5 @@ yarn-error.log
 
 
 storage/logs/
+
+public/sitemap.xml

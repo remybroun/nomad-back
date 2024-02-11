@@ -4,235 +4,234 @@
 
 <main class="w-full mx-auto">
     @include('components.headers.main')
-    <div class="lg:py-20 lg:grid lg:grid-cols-4 lg:max-w-screen-xl mx-auto gap-10">
+    <div class="lg:py-20 lg:grid lg:grid-cols-4 lg:max-w-screen-xl mx-auto gap-10 lg:h-[70vh]">
         <img alt="nomad office" src="https://i.pinimg.com/564x/ed/8d/58/ed8d5864eb043eeed62071d77d8c3887.jpg"
              decoding="async" data-nimg="future"
              class="sm:hidden object-cover mx-auto px-5 col-span-1 sm:p-0 sm:max-h-max max-h-64 w-full">
-        <div class="hidden sm:flex col-span-2 h-full w-full max-h-[340px]">
-            <div class="flex flex-col sm:block mx-auto w-[300px] h-[340px] align-middle">
-                <div class="marquee-container overflow-hidden relative rotate-90">
-                    <div class="animate-marquee whitespace-nowrap -space-x-12 ">
-                        <!-- Listing 1: Kingston, New York, USA -->
-                        <div class="inline-block -rotate-90 py-20">
-                            <a href="/listings/174"
-                               class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                                <div class="flex-shrink-0">
-                                    <img alt="Kingston, New York, USA"
-                                         src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-660253929782506827/original/6a87081d-e6d4-4301-9e2e-5d09b2ac39e6.jpeg?im_w=480"
-                                         width="1000" height="1000" decoding="async"
-                                         class="sm:h-[140px] w-full object-cover rounded-lg"
-                                         loading="lazy">
-                                </div>
-                                <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                    <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                        Kingston, New York, United States</h3>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Listing 2: Napoli, Campania, Italy -->
-                        <div class="inline-block -rotate-90 py-20">
-                            <a href="/listings/254"
-                               class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                                <div class="flex-shrink-0">
-                                    <img alt="Napoli, Campania, Italy"
-                                         src="https://a0.muscache.com/im/pictures/9c62d393-12c2-493e-8cae-ed3294733c85.jpg?im_w=480"
-                                         width="1000" height="1000" decoding="async"
-                                         class="sm:h-[140px] w-full object-cover rounded-lg"
-                                         loading="lazy">
-                                </div>
-                                <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                    <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                        Napoli, Campania, Italy</h3>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Additional listings would follow the same pattern -->
-                        <!-- Listing 3: New York, New York, United States -->
-                        <div class="inline-block -rotate-90 py-20">
-                            <a href="/listings/258"
-                               class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                                <div class="flex-shrink-0">
-                                    <img alt="New York, New York, United States"
-                                         src="https://a0.muscache.com/im/pictures/miso/Hosting-47991737/original/ba417097-30aa-4ae4-87cc-8916c6ebb426.jpeg?im_w=480"
-                                         width="1000" height="1000" decoding="async"
-                                         class="sm:h-[140px] w-full object-cover rounded-lg"
-                                         loading="lazy">
-                                </div>
-                                <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                    <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                        New York, New York, United States</h3>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Listing 4: Medellín, Antioquia, Colombia -->
-                        <div class="inline-block -rotate-90 py-20">
-                            <a href="/listings/521"
-                               class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                                <div class="flex-shrink-0">
-                                    <img alt="Medellín, Antioquia, Colombia"
-                                         src="https://a0.muscache.com/im/pictures/3f84b40a-34ee-45a2-bb5b-5e7234729c49.jpg?im_w=480"
-                                         width="1000" height="1000" decoding="async"
-                                         class="sm:h-[140px] w-full object-cover rounded-lg"
-                                         loading="lazy">
-                                </div>
-                                <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                    <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                        Medellín, Antioquia, Colombia</h3>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Listing 5: Mexico City, Ciudad de México, Mexico -->
-                        <div class="inline-block -rotate-90 py-20">
-                            <a href="/listings/608"
-                               class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                                <div class="flex-shrink-0">
-                                    <img alt="Mexico City, Ciudad de México, Mexico"
-                                         src="https://a0.muscache.com/im/pictures/fcdb25a2-b3a8-42b8-9dba-76fee1d58d19.jpg?im_w=480"
-                                         width="1000" height="1000" decoding="async"
-                                         class="sm:h-[140px] w-full object-cover rounded-lg"
-                                         loading="lazy">
-                                </div>
-                                <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                    <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                        Mexico City, Ciudad de México, Mexico</h3>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Listing 6: Tulum, Quintana Roo, Mexico -->
-                        <div class="inline-block -rotate-90 py-20">
-                            <a href="/listings/622"
-                               class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                                <div class="flex-shrink-0">
-                                    <img alt="Tulum, Quintana Roo, Mexico"
-                                         src="https://a0.muscache.com/im/pictures/miso/Hosting-47091025/original/5fea364b-0d4e-49f4-b386-e919b72569fa.jpeg?im_w=480"
-                                         width="1000" height="1000" decoding="async"
-                                         class="sm:h-[140px] w-full object-cover rounded-lg"
-                                         loading="lazy">
-                                </div>
-                                <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                    <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                        Tulum, Quintana Roo, Mexico</h3>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Continue with additional listings as needed -->
+        <div class="hidden sm:flex col-span-2 h-full w-full max-h-[450px] md:max-h-[600] overflow-hidden">
+            <div class=" overflow-hidden flex items-center h-full w-full relative rotate-90">
+                <div class="animate-marquee whitespace-nowrap ">
+                    <!-- Listing 1: Kingston, New York, USA -->
+                    <div class="inline-block -rotate-90 py-10">
+                        <a href="/listings/174"
+                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
+                            <div class="flex-shrink-0">
+                                <img alt="Kingston, New York, USA"
+                                     src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-660253929782506827/original/6a87081d-e6d4-4301-9e2e-5d09b2ac39e6.jpeg?im_w=480"
+                                     width="1000" height="1000" decoding="async"
+                                     class="sm:h-[140px] w-full object-cover rounded-lg"
+                                     loading="lazy">
+                            </div>
+                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
+                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
+                                    Kingston, New York, United States</h3>
+                            </div>
+                        </a>
                     </div>
+                    <!-- Listing 2: Napoli, Campania, Italy -->
+                    <div class="inline-block -rotate-90 py-10">
+                        <a href="/listings/254"
+                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
+                            <div class="flex-shrink-0">
+                                <img alt="Napoli, Campania, Italy"
+                                     src="https://a0.muscache.com/im/pictures/9c62d393-12c2-493e-8cae-ed3294733c85.jpg?im_w=480"
+                                     width="1000" height="1000" decoding="async"
+                                     class="sm:h-[140px] w-full object-cover rounded-lg"
+                                     loading="lazy">
+                            </div>
+                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
+                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
+                                    Napoli, Campania, Italy</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Additional listings would follow the same pattern -->
+                    <!-- Listing 3: New York, New York, United States -->
+                    <div class="inline-block -rotate-90 py-10">
+                        <a href="/listings/258"
+                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
+                            <div class="flex-shrink-0">
+                                <img alt="New York, New York, United States"
+                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-47991737/original/ba417097-30aa-4ae4-87cc-8916c6ebb426.jpeg?im_w=480"
+                                     width="1000" height="1000" decoding="async"
+                                     class="sm:h-[140px] w-full object-cover rounded-lg"
+                                     loading="lazy">
+                            </div>
+                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
+                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
+                                    New York, New York, United States</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Listing 4: Medellín, Antioquia, Colombia -->
+                    <div class="inline-block -rotate-90 py-10">
+                        <a href="/listings/521"
+                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
+                            <div class="flex-shrink-0">
+                                <img alt="Medellín, Antioquia, Colombia"
+                                     src="https://a0.muscache.com/im/pictures/3f84b40a-34ee-45a2-bb5b-5e7234729c49.jpg?im_w=480"
+                                     width="1000" height="1000" decoding="async"
+                                     class="sm:h-[140px] w-full object-cover rounded-lg"
+                                     loading="lazy">
+                            </div>
+                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
+                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
+                                    Medellín, Antioquia, Colombia</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Listing 5: Mexico City, Ciudad de México, Mexico -->
+                    <div class="inline-block -rotate-90 py-10">
+                        <a href="/listings/608"
+                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
+                            <div class="flex-shrink-0">
+                                <img alt="Mexico City, Ciudad de México, Mexico"
+                                     src="https://a0.muscache.com/im/pictures/fcdb25a2-b3a8-42b8-9dba-76fee1d58d19.jpg?im_w=480"
+                                     width="1000" height="1000" decoding="async"
+                                     class="sm:h-[140px] w-full object-cover rounded-lg"
+                                     loading="lazy">
+                            </div>
+                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
+                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
+                                    Mexico City, Ciudad de México, Mexico</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Listing 6: Tulum, Quintana Roo, Mexico -->
+                    <div class="inline-block -rotate-90 py-10">
+                        <a href="/listings/622"
+                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
+                            <div class="flex-shrink-0">
+                                <img alt="Tulum, Quintana Roo, Mexico"
+                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-47091025/original/5fea364b-0d4e-49f4-b386-e919b72569fa.jpeg?im_w=480"
+                                     width="1000" height="1000" decoding="async"
+                                     class="sm:h-[140px] w-full object-cover rounded-lg"
+                                     loading="lazy">
+                            </div>
+                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
+                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
+                                    Tulum, Quintana Roo, Mexico</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Continue with additional listings as needed -->
                 </div>
             </div>
-            <div class="flex flex-col sm:block mx-auto w-[300px] h-[340px] align-middle">
-                <div class="marquee-container overflow-hidden relative -rotate-90">
-                    <div class="animate-marquee whitespace-nowrap -space-x-12 ">
-                        <!-- Listing 1: Kingston, New York, USA -->
-                        <!-- Tulum, Quintana Roo, Mexico -->
-                        <div class="inline-block rotate-90 py-20">
-                            <a href="/listings/622"
-                               class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                                <div class="flex-shrink-0">
-                                    <img alt="Tulum, Quintana Roo, Mexico"
-                                         src="https://a0.muscache.com/im/pictures/miso/Hosting-47091025/original/5fea364b-0d4e-49f4-b386-e919b72569fa.jpeg?im_w=480"
-                                         width="1000" height="1000" decoding="async"
-                                         class="sm:h-[140px] w-full object-cover rounded-lg"
-                                         loading="lazy">
-                                </div>
-                                <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                    <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                        Tulum, Quintana Roo, Mexico</h3>
-                                </div>
-                            </a>
-                        </div>
 
-                        <!-- Mexico City, Ciudad de México, Mexico -->
-                        <div class="inline-block rotate-90 py-20">
-                            <a href="/listings/657"
-                               class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                                <div class="flex-shrink-0">
-                                    <img alt="Mexico City, Ciudad de México, Mexico"
-                                         src="https://a0.muscache.com/im/pictures/70f15ceb-49f1-4f23-ab61-d711f9a09b57.jpg?im_w=480"
-                                         width="1000" height="1000" decoding="async"
-                                         class="sm:h-[140px] w-full object-cover rounded-lg"
-                                         loading="lazy">
-                                </div>
-                                <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                    <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                        Mexico City, Ciudad de México, Mexico</h3>
-                                </div>
-                            </a>
-                        </div>
 
-                        <!-- Barcelona, Catalunya, Spain -->
-                        <div class="inline-block rotate-90 py-20">
-                            <a href="/listings/1543"
-                               class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                                <div class="flex-shrink-0">
-                                    <img alt="Barcelona, Catalunya, Spain"
-                                         src="https://a0.muscache.com/im/pictures/miso/Hosting-812959360329830809/original/5cc6f191-bfa7-420a-9892-1d5b3fe4a98d.jpeg?im_w=480"
-                                         width="1000" height="1000" decoding="async"
-                                         class="sm:h-[140px] w-full object-cover rounded-lg"
-                                         loading="lazy">
-                                </div>
-                                <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                    <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                        Barcelona, Catalunya, Spain</h3>
-                                </div>
-                            </a>
-                        </div>
-
-                        <!-- Listing 4: Medellín, Antioquia, Colombia -->
-                        <div class="inline-block rotate-90 py-20">
-                            <a href="/listings/521"
-                               class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                                <div class="flex-shrink-0">
-                                    <img alt="Medellín, Antioquia, Colombia"
-                                         src="https://a0.muscache.com/im/pictures/3f84b40a-34ee-45a2-bb5b-5e7234729c49.jpg?im_w=480"
-                                         width="1000" height="1000" decoding="async"
-                                         class="sm:h-[140px] w-full object-cover rounded-lg"
-                                         loading="lazy">
-                                </div>
-                                <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                    <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                        Medellín, Antioquia, Colombia</h3>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Listing 5: Mexico City, Ciudad de México, Mexico -->
-                        <div class="inline-block rotate-90 py-20">
-                            <a href="/listings/608"
-                               class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                                <div class="flex-shrink-0">
-                                    <img alt="Mexico City, Ciudad de México, Mexico"
-                                         src="https://a0.muscache.com/im/pictures/fcdb25a2-b3a8-42b8-9dba-76fee1d58d19.jpg?im_w=480"
-                                         width="1000" height="1000" decoding="async"
-                                         class="sm:h-[140px] w-full object-cover rounded-lg"
-                                         loading="lazy">
-                                </div>
-                                <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                    <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                        Mexico City, Ciudad de México, Mexico</h3>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Listing 6: Tulum, Quintana Roo, Mexico -->
-                        <div class="inline-block rotate-90 py-20">
-                            <a href="/listings/622"
-                               class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                                <div class="flex-shrink-0">
-                                    <img alt="Tulum, Quintana Roo, Mexico"
-                                         src="https://a0.muscache.com/im/pictures/miso/Hosting-47091025/original/5fea364b-0d4e-49f4-b386-e919b72569fa.jpeg?im_w=480"
-                                         width="1000" height="1000" decoding="async"
-                                         class="sm:h-[140px] w-full object-cover rounded-lg"
-                                         loading="lazy">
-                                </div>
-                                <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                    <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                        Tulum, Quintana Roo, Mexico</h3>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Continue with additional listings as needed -->
+            <div class=" overflow-hidden flex items-center h-full w-full relative -rotate-90">
+                <div class="animate-marquee whitespace-nowrap ">
+                    <!-- Listing 1: Kingston, New York, USA -->
+                    <!-- Tulum, Quintana Roo, Mexico -->
+                    <div class="inline-block rotate-90 py-10">
+                        <a href="/listings/622"
+                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
+                            <div class="flex-shrink-0">
+                                <img alt="Tulum, Quintana Roo, Mexico"
+                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-47091025/original/5fea364b-0d4e-49f4-b386-e919b72569fa.jpeg?im_w=480"
+                                     width="1000" height="1000" decoding="async"
+                                     class="sm:h-[140px] w-full object-cover rounded-lg"
+                                     loading="lazy">
+                            </div>
+                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
+                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
+                                    Tulum, Quintana Roo, Mexico</h3>
+                            </div>
+                        </a>
                     </div>
+
+                    <!-- Mexico City, Ciudad de México, Mexico -->
+                    <div class="inline-block rotate-90 py-10">
+                        <a href="/listings/657"
+                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
+                            <div class="flex-shrink-0">
+                                <img alt="Mexico City, Ciudad de México, Mexico"
+                                     src="https://a0.muscache.com/im/pictures/70f15ceb-49f1-4f23-ab61-d711f9a09b57.jpg?im_w=480"
+                                     width="1000" height="1000" decoding="async"
+                                     class="sm:h-[140px] w-full object-cover rounded-lg"
+                                     loading="lazy">
+                            </div>
+                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
+                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
+                                    Mexico City, Ciudad de México, Mexico</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Barcelona, Catalunya, Spain -->
+                    <div class="inline-block rotate-90 py-10">
+                        <a href="/listings/1543"
+                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
+                            <div class="flex-shrink-0">
+                                <img alt="Barcelona, Catalunya, Spain"
+                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-812959360329830809/original/5cc6f191-bfa7-420a-9892-1d5b3fe4a98d.jpeg?im_w=480"
+                                     width="1000" height="1000" decoding="async"
+                                     class="sm:h-[140px] w-full object-cover rounded-lg"
+                                     loading="lazy">
+                            </div>
+                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
+                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
+                                    Barcelona, Catalunya, Spain</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Listing 4: Medellín, Antioquia, Colombia -->
+                    <div class="inline-block rotate-90 py-10">
+                        <a href="/listings/521"
+                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
+                            <div class="flex-shrink-0">
+                                <img alt="Medellín, Antioquia, Colombia"
+                                     src="https://a0.muscache.com/im/pictures/3f84b40a-34ee-45a2-bb5b-5e7234729c49.jpg?im_w=480"
+                                     width="1000" height="1000" decoding="async"
+                                     class="sm:h-[140px] w-full object-cover rounded-lg"
+                                     loading="lazy">
+                            </div>
+                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
+                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
+                                    Medellín, Antioquia, Colombia</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Listing 5: Mexico City, Ciudad de México, Mexico -->
+                    <div class="inline-block rotate-90 py-10">
+                        <a href="/listings/608"
+                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
+                            <div class="flex-shrink-0">
+                                <img alt="Mexico City, Ciudad de México, Mexico"
+                                     src="https://a0.muscache.com/im/pictures/fcdb25a2-b3a8-42b8-9dba-76fee1d58d19.jpg?im_w=480"
+                                     width="1000" height="1000" decoding="async"
+                                     class="sm:h-[140px] w-full object-cover rounded-lg"
+                                     loading="lazy">
+                            </div>
+                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
+                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
+                                    Mexico City, Ciudad de México, Mexico</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Listing 6: Tulum, Quintana Roo, Mexico -->
+                    <div class="inline-block rotate-90 py-10">
+                        <a href="/listings/622"
+                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
+                            <div class="flex-shrink-0">
+                                <img alt="Tulum, Quintana Roo, Mexico"
+                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-47091025/original/5fea364b-0d4e-49f4-b386-e919b72569fa.jpeg?im_w=480"
+                                     width="1000" height="1000" decoding="async"
+                                     class="sm:h-[140px] w-full object-cover rounded-lg"
+                                     loading="lazy">
+                            </div>
+                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
+                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
+                                    Tulum, Quintana Roo, Mexico</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Continue with additional listings as needed -->
                 </div>
             </div>
         </div>
+
         <div class="sm:my-5 my-4 lg:my-0 lg:col-span-2 lg:px-12 px-5 items-center mx-auto lg:flex">
             <div>
                 <h1 class="font-display text-4xl tracking-tight font-base text-black sm:text-5xl leading-10">
@@ -309,7 +308,7 @@
                     <div class="flex items-center justify-end gap-3">
                         <a class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 bg-everglade-500 flex items-center gap-1 text-xs sm:text-base"
                            href="{{ route('listings-locations-proximity-wework') }}">
-                           Browse locations near a Wework
+                            Browse locations near a Wework
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                  stroke="currentColor" class="sm:w-6 w-5 sm:h-6 h-5">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -731,21 +730,21 @@
             </li>
             <li class="cursor-pointer bg-white col-span-1 flex flex-col max-w-xl locations sm:shadow-sm rounded-3xl hover:bg-gray-50 duration-300">
                 <a href={{ route("listings-locations-proximity-wework") }} class="block mt-2 relative">
-                    <div class="flex-shrink-0">
-                        <div class="hidden sm:block md:h-56 h-48 md:w-56 w-48 mx-auto">
-                            <div class="text-center h-full flex flex-col justify-center">
-                                <h3 class="text-lg font-bold font-display text-everglade-600 tracking-tight leading-12">
-                                    Locations near a <br> <br> <br> <br> <br> <span
-                                        class="text-3xl font-serif text-black">Wework</span></h3>
-                            </div>
+                <div class="flex-shrink-0">
+                    <div class="hidden sm:block md:h-56 h-48 md:w-56 w-48 mx-auto">
+                        <div class="text-center h-full flex flex-col justify-center">
+                            <h3 class="text-lg font-bold font-display text-everglade-600 tracking-tight leading-12">
+                                Locations near a <br> <br> <br> <br> <br> <span
+                                    class="text-3xl font-serif text-black">Wework</span></h3>
                         </div>
                     </div>
-                    <div class="top-0 sm:absolute flex-col flex justify-center h-full w-full text-center">
-                        <h3 class="gap-1 inline-flex items-center justify-center px-3 py-2 border border-transparent text-sm font-bold rounded-md text-white bg-everglade-600 hover:bg-everglade-500 w-fit mx-auto">
-                            Explore Near Weworks<!-- -->
-                            <div class="" aria-hidden="true">→</div>
-                        </h3>
-                    </div>
+                </div>
+                <div class="top-0 sm:absolute flex-col flex justify-center h-full w-full text-center">
+                    <h3 class="gap-1 inline-flex items-center justify-center px-3 py-2 border border-transparent text-sm font-bold rounded-md text-white bg-everglade-600 hover:bg-everglade-500 w-fit mx-auto">
+                        Explore Near Weworks<!-- -->
+                        <div class="" aria-hidden="true">→</div>
+                    </h3>
+                </div>
                 </a>
             </li>
         </ul>
@@ -793,7 +792,8 @@
                                     </div>
                                     <div href="/settle"
                                          class="font-display tracking-tight relative bg-white text-xs leading-5 font-medium text-black rounded-full py-0.5 px-3 items-center break truncate flex gap-2 items-center">
-                                        <img src="https://a-step-in.s3.us-east-2.amazonaws.com/nomadstay/coworking.png" width="30" height="376"
+                                        <img src="https://a-step-in.s3.us-east-2.amazonaws.com/nomadstay/coworking.png"
+                                             width="30" height="376"
                                              decoding="async" data-nimg="future" class=" hidden sm:block"
                                              loading="lazy">
                                         <span class=" mr-1 text-everglade-500 text-xs">
@@ -929,7 +929,7 @@
                href="https://boundra.com">Discover <span class="font-bold mx-1"> Boundra</span> →</a>
         </div>
         <div class="col-span-2">
-            <img class="object-cover mx-auto w-full max-w-sm rounded-3xl col-span-3 aspect-square align-middle"
+            <img class="object-cover mx-auto w-full max-w-sm col-span-3 aspect-square align-middle"
                  alt="nomad setup with screen, chair and desk"
                  src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/settle/pilot/f4b5e877655267.5c8e5635d97e8.webp"
                  decoding="async" data-nimg="future">
@@ -981,7 +981,7 @@
             </div>
             <div class="col-span-full md:col-span-3 hidden sm:block">
                 <img alt="nomad office" src="https://i.pinimg.com/564x/e1/eb/28/e1eb28c90f4bbd9dffc35182d9606c0c.jpg"
-                     width="400" decoding="async" data-nimg="future" class="object-cover mx-auto border-4 border-black">
+                     width="400" decoding="async" data-nimg="future" class="object-cover mx-auto">
             </div>
             <div
                 class="px-4 mx-auto font-medium flex flex-col gap-10 col-span-full md:col-span-2 w-full grid grid-cols-2 sm:grid-cols-1">
@@ -1020,7 +1020,7 @@
     </div>
     <div class="relative sm:my-20 my-5 font-display max-w-screen-xl mx-auto">
         <div class="h-56 bg-white sm:h-72 md:absolute md:left-0 md:h-full md:w-1/3">
-            <img class="w-full h-full object-cover rounded-3xl"
+            <img class="w-full h-full object-cover"
                  src="https://www.contemporist.com/wp-content/uploads/2018/04/cantilevered-home-office-windows-modern-house-300418-315-03.jpg"
                  alt="">
         </div>
@@ -1100,83 +1100,82 @@
             </div>
             <h3 class="max-w-screen-lg mx-auto w-full mt-6 font-display md:text-3xl text-xl font-bold">Join a community
                 of remote workers</h3>
-            <div class=" marquee-container" style="--pause-on-hover: paused; --pause-on-click: paused;">
-                <div class="marquee"
-                     style="--play: running; --direction: normal; --duration: 23s; --delay: 0s; --iteration-count: infinite;">
-                    <div class="max-w-screen-xl flex mx-auto gap-y-10 gap-x-10 my-8 items-center">
-                        <a href="https://www.linkedin.com/in/remybroun"
-                           class="relative flex items-start w-full cursor-pointer">
-                            <div
-                                class="py-6 pt-16 px-4 md:mx-0 bg-white border-4 border-everglade-600 rounded-2xl text-gray-900">
-                                <div class="absolute top-0 -mt-8 transform">
-                                    <img alt="Testimonial 01"
-                                         src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/nomadremy.webp"
-                                         width="120" height="120" decoding="async" data-nimg="future"
-                                         class="relative rounded-full border-4 border-everglade-700" loading="lazy">
-                                </div>
-                                <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
-                                    <p>"After Spending so much time looking for convinient Airbnbs, I decided to found
-                                        Nomad Stay. An airbnb curation list driven by a community of nomads. <br> My
-                                        goal is to ensure that all remote workers find a perfect place to live and work
-                                        in harmony."</p>
-                                </blockquote>
-                                <cite class="block font-bold text-lg not-italic">
-                                </cite>
-                                <div class="text-everglade-700 text-sm font-bold">
-                                    <p class="text-xs italic mb-2">Founding Nomad </p>
-                                    <span>Software Engineer </span>
-                                    <div class="text-everglade-600 hover:underline">@Apple</div>
-                                </div>
+
+            <div class="marquee"
+                 style="--play: running; --direction: normal; --duration: 23s; --delay: 0s; --iteration-count: infinite;">
+                <div class="max-w-screen-xl flex mx-auto gap-y-10 gap-x-10 my-8 items-center">
+                    <a href="https://www.linkedin.com/in/remybroun"
+                       class="relative flex items-start w-full cursor-pointer">
+                        <div
+                            class="py-6 pt-16 px-4 md:mx-0 bg-white border-4 border-everglade-600 rounded-2xl text-gray-900">
+                            <div class="absolute top-0 -mt-8 transform">
+                                <img alt="Testimonial 01"
+                                     src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/nomadremy.webp"
+                                     width="120" height="120" decoding="async" data-nimg="future"
+                                     class="relative rounded-full border-4 border-everglade-700" loading="lazy">
                             </div>
-                        </a>
-                        <a href="https://www.linkedin.com/in/emrick-donadei/"
-                           class="relative flex items-start w-full cursor-pointer">
-                            <div
-                                class="py-6 pt-16 px-4 md:mx-0 bg-white border-4 border-everglade-600 rounded-2xl text-gray-900">
-                                <div class="absolute top-0 -mt-8 transform">
-                                    <img alt="Testimonial 01"
-                                         src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/1590874819807.webp"
-                                         width="120" height="120" decoding="async" data-nimg="future"
-                                         class="relative rounded-full border-4 border-everglade-700" loading="lazy">
-                                </div>
-                                <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
-                                    <p>"Ever since Google has offered us the chance to work remotely, I have always
-                                        dreamed of finding the perfect airbnb made for the remote worker. <br>Now with
-                                        Nomad Stay, I don't have one, but hundreds of airbnbs to choose from."</p>
-                                </blockquote>
-                                <cite class="block font-bold text-lg not-italic">
-                                </cite>
-                                <div class="text-everglade-700 text-sm font-bold">
-                                    <span>Software Engineer </span>
-                                    <div class="text-everglade-600 hover:underline">@Google</div>
-                                </div>
+                            <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
+                                <p>"After Spending so much time looking for convinient Airbnbs, I decided to found
+                                    Nomad Stay. An airbnb curation list driven by a community of nomads. <br> My
+                                    goal is to ensure that all remote workers find a perfect place to live and work
+                                    in harmony."</p>
+                            </blockquote>
+                            <cite class="block font-bold text-lg not-italic">
+                            </cite>
+                            <div class="text-everglade-700 text-sm font-bold">
+                                <p class="text-xs italic mb-2">Founding Nomad </p>
+                                <span>Software Engineer </span>
+                                <div class="text-everglade-600 hover:underline">@Apple</div>
                             </div>
-                        </a>
-                        <a href="https://www.linkedin.com/in/josh-balard-7b299b212"
-                           class="relative flex items-start w-full cursor-pointer">
-                            <div
-                                class="py-6 pt-16 px-4 md:mx-0 bg-white border-4 border-everglade-600 rounded-2xl text-gray-900">
-                                <div class="absolute top-0 -mt-8 transform">
-                                    <img alt="Testimonial 01"
-                                         src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/1627333510820.webp"
-                                         width="120" height="120" decoding="async" data-nimg="future"
-                                         class="relative rounded-full border-4 border-everglade-700" loading="lazy">
-                                </div>
-                                <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
-                                    <p>"I have been a full-time nomad since 2018. I haven't stopped travelling! Work
-                                        also can't stop. Multiple times I was at risk of losing my job due to a bad set
-                                        up, poor Wi-Fi or colleagues questionning my whereabouts. Nomad Stay seems to
-                                        be the way to go. I can't wait until I try my first Nomad Listing."</p>
-                                </blockquote>
-                                <cite class="block font-bold text-lg not-italic">
-                                </cite>
-                                <div class="text-everglade-700 text-sm font-bold">
-                                    <span>Software Engineer </span>
-                                    <div class="text-everglade-600 hover:underline">@Google</div>
-                                </div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/emrick-donadei/"
+                       class="relative flex items-start w-full cursor-pointer">
+                        <div
+                            class="py-6 pt-16 px-4 md:mx-0 bg-white border-4 border-everglade-600 rounded-2xl text-gray-900">
+                            <div class="absolute top-0 -mt-8 transform">
+                                <img alt="Testimonial 01"
+                                     src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/1590874819807.webp"
+                                     width="120" height="120" decoding="async" data-nimg="future"
+                                     class="relative rounded-full border-4 border-everglade-700" loading="lazy">
                             </div>
-                        </a>
-                    </div>
+                            <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
+                                <p>"Ever since Google has offered us the chance to work remotely, I have always
+                                    dreamed of finding the perfect airbnb made for the remote worker. <br>Now with
+                                    Nomad Stay, I don't have one, but hundreds of airbnbs to choose from."</p>
+                            </blockquote>
+                            <cite class="block font-bold text-lg not-italic">
+                            </cite>
+                            <div class="text-everglade-700 text-sm font-bold">
+                                <span>Software Engineer </span>
+                                <div class="text-everglade-600 hover:underline">@Google</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/josh-balard-7b299b212"
+                       class="relative flex items-start w-full cursor-pointer">
+                        <div
+                            class="py-6 pt-16 px-4 md:mx-0 bg-white border-4 border-everglade-600 rounded-2xl text-gray-900">
+                            <div class="absolute top-0 -mt-8 transform">
+                                <img alt="Testimonial 01"
+                                     src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/1627333510820.webp"
+                                     width="120" height="120" decoding="async" data-nimg="future"
+                                     class="relative rounded-full border-4 border-everglade-700" loading="lazy">
+                            </div>
+                            <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
+                                <p>"I have been a full-time nomad since 2018. I haven't stopped travelling! Work
+                                    also can't stop. Multiple times I was at risk of losing my job due to a bad set
+                                    up, poor Wi-Fi or colleagues questionning my whereabouts. Nomad Stay seems to
+                                    be the way to go. I can't wait until I try my first Nomad Listing."</p>
+                            </blockquote>
+                            <cite class="block font-bold text-lg not-italic">
+                            </cite>
+                            <div class="text-everglade-700 text-sm font-bold">
+                                <span>Software Engineer </span>
+                                <div class="text-everglade-600 hover:underline">@Google</div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

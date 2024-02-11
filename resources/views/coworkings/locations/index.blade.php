@@ -36,12 +36,12 @@
             <ul class="grid sm:grid-cols-3 grid-cols-2 gap-x-4 gap-y-6">
                 @foreach($locations as $location)
                     <li class="border border-everglade-200 rounded-lg overflow-hidden hover:shadow-lg">
-                        <a href="#"
+                        <a href="{{route('coworkings-by-city', ['city' => $location?->location_slug?->name])}}"
                            class="hover:underline h-full flex items-center w-full">
                             <div
                                 class="bg-everglade-100 px-4 py-4 tracking-wide h-full w-full flex flex-col justify-center">
                                 <div class="text-sm">See all Coworkings listings in:</div>
-                                <div class="font-semibold">{{ $location->city }}</div>
+                                <div class="font-semibold">{{ $location->location_slug->name }}</div>
                             </div>
                         </a>
                     </li>

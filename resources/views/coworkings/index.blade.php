@@ -15,12 +15,10 @@
                     <div class="absolute inset-0 bg-gray-400 mix-blend-multiply" aria-hidden="true"></div>
                 </div>
                 <div class="relative max-w-screen-xl mx-auto py-24 sm:py-32 sm:px-10 px-4">
-                    <h1 class="sm:text-4xl text-2xl font-serif tracking-tighter text-white sm:text-5xl lg:text-6xl">
-                        All Coworking Spaces
+                    <h1 class="text-xl font-display font-bold text-white sm:text-2xl lg:text-3xl">
+                        All Coworking Spaces <br>
+                        <span class="text-xl font-normal">Discover coworking spaces validated by fellow nomads for work purposes.</span>
                     </h1>
-                    <p class="mt-2 sm:text-xl text-white max-w-3xl font-display">
-                        Discover coworking spaces validated by fellow nomads for work purposes.
-                    </p>
                     <div class="absolute sm:bottom-5 sm:left-5 bottom-3 left-3 flex gap-2">
                         <a href="{{ route('coworkings-locations') }}"
                            class="bg-white text-black rounded-xl sm:px-4 sm:py-2 px-3 py-1 flex items-center gap-2 font-medium font-display text-sm sm:text-base">

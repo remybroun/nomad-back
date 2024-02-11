@@ -223,10 +223,12 @@
                 </h2>
                 <div class="mt-8 flex justify-center">
                     <div class="inline-flex rounded-md shadow">
-                        <button
+                        <a
+                            href="{{$listing?->external_url}}"
+                            target="_blank"
                             class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-everglade-600 hover:bg-everglade-500">
                             Reserve this location with Airbnb
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

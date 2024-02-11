@@ -27,6 +27,10 @@ Route::get('/', function () {
 Route::prefix('auth')->group(base_path('routes/auth.php'));
 // require __DIR__.'/auth.php';
 
+Route::get('/sitemap.xml', function () {
+    return File::get(public_path() . '/sitemap.xml');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -51,3 +55,4 @@ Route::get('listings/{listing}', [ListingController::class, 'showView'])->name('
 Route::get('coworkings', [CoworkingController::class, 'show'])->name('coworkings');
 //coworkings-locations
 Route::get('coworkings/locations', [CoworkingController::class, 'showLocationsView'])->name('coworkings-locations');
+Route::get('coworkings/locations/cities/{city}', [CoworkingController::class, 'showCoworkingsbyCityView'])->name('coworkings-by-city');

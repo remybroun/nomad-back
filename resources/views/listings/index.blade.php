@@ -35,9 +35,8 @@
                     </div>
                 </div>
             </div>
-
             @include('components.listingGrid', ['listings' => $listings])
-            <div class="mt-4">
+            <div class="mt-4 w-full">
                 {{ $listings->links() }}
             </div>
 
