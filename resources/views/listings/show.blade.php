@@ -8,9 +8,7 @@
         <div class="space-y-2">
             <div class="space-y-2 w-full justify-between sm:p-0 px-2 grid grid-cols-2">
                 <h1
-                    class="font-display tracking-tighter text-lg sm:text-xl col-span-1">Modern Paradise with Pool across
-                    8
-                    Secluded Acres</h1>
+                    class="font-display tracking-tighter text-lg sm:text-xl col-span-1">{{$listing->title}}</h1>
                 <div class="col-span-1 flex justify-end">
                     <div class="font-display tracking-tighter flex items-center gap-2 text-sm justify-end">Nomad
                         Validated
