@@ -16,19 +16,17 @@
                 <div class="absolute inset-0 bg-gray-400 mix-blend-multiply" aria-hidden="true"></div>
             </div>
             <div class="relative px-16 py-24 sm:py-32 leading-4">
-                <h1 class="text-4xl font-display tracking-tighter text-white sm:text-5xl lg:text-6xl">
-                    {{ $location->name }}
+                <h1 class="text-xl font-display font-bold text-white sm:text-2xl lg:text-3xl">
+                    All Listings in <br>
+                    <span class="text-xl font-normal">{{ $location->name }} {{ $location->country->name }}</span>
                 </h1>
-                <h2 class="text-lg font-medium font-serif tracking-tighter text-everglade-100">{{ $location->country->name }}</h2>
             </div>
         </div>
         <div class="mt-4">
-
             @include('components.listingGrid', ['listings' => $listings])
             <div class="mt-4">
                 {{ $listings->links() }}
             </div>
-
         </div>
     </div>
 

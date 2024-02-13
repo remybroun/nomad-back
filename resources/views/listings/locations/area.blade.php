@@ -21,17 +21,21 @@
         </div>
     </div>
 
-    <ul class="grid sm:grid-cols-3 grid-cols-2 gap-10 max-w-screen-xl mx-auto my-10">
+    <ul class="grid sm:grid-cols-3 grid-cols-2 gap-x-4 gap-y-6 max-w-screen-xl mx-auto my-10">
         @foreach ($locations as $index => $country)
-            <li class="text-everglade-600">
-                <div class="font-medium text-base uppercase font-display">
-                    <a href="/listings/locations/countries/{{ strtolower($country) }}" class="hover:underline">
-                        All listings in <strong>{{ $country }}</strong>
-                    </a>
-                </div>
+            <li class="border border-everglade-200 rounded-lg overflow-hidden hover:shadow-lg">
+                <a href="{{ route('listings-locations-country', [$country]) }}"
+                   class="hover:underline h-full flex items-center w-full">
+                    <div
+                        class="bg-everglade-100 px-4 py-4 tracking-wide h-full w-full flex flex-col justify-center">
+                        <div class="text-sm">See all remote work listings in:</div>
+                        <div class="font-semibold">{{ $country }}</div>
+                    </div>
+                </a>
             </li>
         @endforeach
     </ul>
+
 
     @include('components.footers.main')
 </div>

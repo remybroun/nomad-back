@@ -33,7 +33,8 @@ Route::get('/sitemap.xml', function () {
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    $featuredListings = \App\Models\Listing::with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->orderBy('is_featured', 'DESC')->orderBy('id', 'DESC')->limit(3)->get();
+    return view('welcome', ['featuredListings' => $featuredListings]);
 });
 
 //Route::get('/listings', [ListingController::class], 'showListings')->name('listings');

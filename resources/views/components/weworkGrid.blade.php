@@ -8,13 +8,10 @@
                             class="cursor-pointer bg-white col-span-1 flex flex-col max-w-xl">
                             <a href="{{ ("/listings/" . $coworking->slug) }}" class="block">
                                 <div class="flex-shrink-0 relative">
-                                    {{--                                    {{dd($coworking->mainListingImage->url)}}--}}
-                                    <Image
+                                    <img
                                         class="sm:h-48 h-64 w-full object-cover rounded-lg"
                                         src="{{ str_replace('w=1200', 'w=480', $coworking->main_image) ?: asset('images/round-logo.png') }}"
                                         alt=""
-                                        width={1000}
-                                        height={1000}
                                     />
                                 </div>
                                 <div class="flex-1 py-4 flex flex-col justify-between">

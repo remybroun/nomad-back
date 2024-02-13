@@ -43,8 +43,9 @@
         </div>
         {{-- Main Image   --}}
         <div class="relative w-full h-[36em] sm:p-0 px-2">
-            <img src="{{Str::replace('w=720', 'w=1920',$listing?->mainListingImage?->url) ?: asset('images/round-logo.png')}}"
-                 class="w-full h-full object-cover rounded-lg" alt="">
+            <img
+                src="{{Str::replace('w=720', 'w=1920',$listing?->mainListingImage?->url) ?: asset('images/round-logo.png')}}"
+                class="w-full h-full object-cover rounded-lg" alt="">
         </div>
 
         <div id="descriptionContainer" class="max-h-40 overflow-hidden max-w-screen-xl">
@@ -178,19 +179,17 @@
             <div class="font-display tracking-tighter text-2xl font-medium gap-2 flex items-baseline mt-10 sm:p-0 px-2">
                 Sleeping<span class="text-sm sm:text-lg italic text-everglade-600 font-serif tracking-tighter">Rooms and beds</span>
             </div>
-            <div class="my-4 max-w-3xl font-serif tracking-tighter grid grid-cols-2 gap-x-5 gap-y-2 sm:p-0 px-2">
-                <div
-                    class="text-sm sm:text-lg shadow-sm border-gray-500 border hover:bg-gray-100 duration-100 rounded-lg px-5 py-5 text-base">
-                    <div class="text-lg font-display">Bedroom 1</div>
-                    <div class="text-sm italic text-everglade-700">1 Double Bed</div>
-                </div>
-                <div
-                    class="text-sm sm:text-lg shadow-sm border-gray-500 border hover:bg-gray-100 duration-100 rounded-lg px-5 py-5 text-base">
-                    <div class="text-lg font-display">Bedroom 2</div>
-                    <div class="text-sm italic text-everglade-700">1 Single Bed</div>
-                </div>
+            <div class="my-4 max-w-screen-xl font-serif tracking-tighter grid grid-cols-3 gap-x-5 gap-y-2 sm:p-0 px-2">
+                @foreach($listing['arrangements'] as $room)
+                    <div
+                        class="text-sm sm:text-lg shadow-sm border-gray-500 border hover:bg-gray-100 duration-100 rounded-lg px-5 py-5 text-base">
+                        <div class="text-lg font-display">{{ $room['title'] }}</div>
+                        <div class="text-sm italic text-everglade-700">{{ $room['subtitle'] }}</div>
+                    </div>
+                @endforeach
             </div>
         </div>
+
         <div class="w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-screen-xl mx-auto overflow-hidden">
             <div class="font-display tracking-tighter text-2xl font-medium gap-2 flex items-baseline mt-10 sm:p-0 px-2">
                 Photos of this location

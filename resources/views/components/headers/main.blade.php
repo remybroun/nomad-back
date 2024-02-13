@@ -8,8 +8,14 @@
                 <!-- Add other header content, navigation, and links here -->
                 <nav class="sm:flex items-center space-x-4">
                     <a href="/listings" class="text-gray-900 hover:text-everglade-500">Listings</a>
-                    <a href="{{ route('listings-locations') }}" class="text-gray-900 hover:text-everglade-500">Locations</a>
-                    <a href="/coworkings" class="text-gray-900 hover:text-everglade-500">Coworkings</a>
+                    <a href="{{ route('listings-locations') }}"
+                       class="text-gray-900 hover:text-everglade-500">Locations</a>
+                    @include('components.dropdown', ['buttonTitle' => 'Coworkings', 'items' => [
+                        'All Coworkings' => route('coworkings'),
+                        'Wework Locations' => route('wework-locations'),
+                        'All Coworking Locations' => route('coworkings-locations'),
+                    ]])
+
                 </nav>
             </div>
         </div>

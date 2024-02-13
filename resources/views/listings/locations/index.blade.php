@@ -20,7 +20,7 @@
                 <div class="absolute inset-0 bg-gray-400 mix-blend-multiply" aria-hidden="true"></div>
             </div>
             <div class="relative px-16 py-24 leading-4">
-                <h1 class="text-4xl font-display tracking-tighter text-white sm:text-5xl lg:text-6xl">
+                <h1 class="text-xl font-display font-bold text-white sm:text-2xl lg:text-3xl">
                     All locations
                 </h1>
             </div>
@@ -47,17 +47,17 @@
         {{--                @include('components.spinner')--}}
         {{--            </div>--}}
 
-        <div class="space-y-8">
-            {{-- Locations Grid --}}
-            <ul class="grid sm:grid-cols-3 grid-cols-2 gap-x-4 gap-y-6">
-                @foreach($filteredLocations as $location)
-                    <li class="text-everglade-600">
-                        {{-- Location Item --}}
-                        {{--                            @include('components.locationItem', ['location' => $location])--}}
-                    </li>
-                @endforeach
-            </ul>
-        </div>
+        {{--        <div class="space-y-8">--}}
+        {{--            --}}{{-- Locations Grid --}}
+        {{--            <ul class="grid sm:grid-cols-3 grid-cols-2 gap-x-4 gap-y-6">--}}
+        {{--                @foreach($filteredLocations as $location)--}}
+        {{--                    <li class="text-everglade-600">--}}
+        {{--                        --}}{{-- Location Item --}}
+        {{--                        --}}{{--                            @include('components.locationItem', ['location' => $location])--}}
+        {{--                    </li>--}}
+        {{--                @endforeach--}}
+        {{--            </ul>--}}
+        {{--        </div>--}}
         <div class="space-y-8">
             {{-- Locations Grid --}}
             <ul class="grid sm:grid-cols-3 grid-cols-2 gap-x-4 gap-y-6">

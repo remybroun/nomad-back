@@ -41,7 +41,8 @@ class CoworkingController extends Controller
 
     public function showCoworkingsbyCityView($city)
     {
-        $location = Location::where('name', 'LIKE', $city)->first();
+        $slug = ListingController::generateSlug($city);
+        $location = Location::where('slug', 'LIKE', $slug)->first();
         $coworkings = Coworking::with('location_slug')->where('location_id', $location->id)->paginate(15);
         return view('coworkings.locations.cities.show', [
             'coworkings' => $coworkings,
