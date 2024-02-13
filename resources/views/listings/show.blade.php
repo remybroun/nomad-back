@@ -43,10 +43,11 @@
         </div>
         {{-- Main Image   --}}
         <div class="relative w-full h-[36em] sm:p-0 px-2">
-            <img src="{{$listing?->mainListingImage?->url}}" class="w-full h-full object-cover rounded-lg" alt="">
+            <img src="{{Str::replace('w=720', 'w=1920',$listing?->mainListingImage?->url) ?: asset('images/round-logo.png')}}"
+                 class="w-full h-full object-cover rounded-lg" alt="">
         </div>
 
-        <div id="descriptionContainer" class="max-h-40 overflow-hidden">
+        <div id="descriptionContainer" class="max-h-40 overflow-hidden max-w-screen-xl">
             <div class="font-display tracking-tighter text-2xl font-medium gap-2 flex items-baseline mt-10 sm:p-0 px-2">
                 Description<span class="text-sm sm:text-lg italic text-everglade-600 font-serif tracking-tighter">Why is this stay fit for a remote worker</span>
             </div>
@@ -198,7 +199,9 @@
                 <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 w-full mx-auto gap-1">
                     @foreach($listing->listingImages as $image)
                         <div class="relative w-full h-40 sm:h-60 md:h-80 lg:h-96">
-                            <img src="{{$image->url}}" class="w-full h-full object-cover rounded-lg" alt="">
+                            <a href="#photoModal" data-bs-toggle="modal" data-index="{{$loop->index}}">
+                                <img src="{{$image->url}}" class="w-full h-full object-cover rounded-lg" alt="">
+                            </a>
                         </div>
                     @endforeach
                 </div>

@@ -39,7 +39,7 @@
                                         @if ($listing->close_coworkings->count())
                                             <div class="relative group mt-2 w-fit">
                                                 <div class="group-hover:opacity-100 duration-200 opacity-75 absolute bg-gradient-to-br from-yellow-500 to-cyan-500 -inset-0 rounded-full blur"></div>
-                                                <div href="/settle" class='font-display tracking-tighter relative bg-white text-xs leading-5 font-medium text-black rounded-full py-0.5 px-3 items-center break truncate flex gap-2 items-center'>
+                                                <div href="/boundra" class='font-display tracking-tighter relative bg-white text-xs leading-5 font-medium text-black rounded-full py-0.5 px-3 items-center break truncate flex gap-2 items-center'>
                                                     <img src="https://a-step-in.s3.us-east-2.amazonaws.com/nomadstay/coworking.png" class="hidden sm:block w-6 h-6"/>
                                                     <span class="mr-1 text-everglade-500 text-xs">
                                                         <span class="font-bold text-base mr-1">{{ $listing->close_coworkings->count() }}</span>
@@ -51,7 +51,7 @@
                                         @if ($listing->close_weworks->count())
                                             <div class="relative group mt-2 w-fit">
                                                 <div class="group-hover:opacity-100 duration-200 opacity-75 absolute bg-gradient-to-br from-yellow-500 to-cyan-500 -inset-0 rounded-full blur"></div>
-                                                <div href="/settle" class='font-display tracking-tighter relative bg-white text-xs leading-5 font-medium text-black rounded-full py-0.5 px-3 items-center break truncate flex gap-2 items-center'>
+                                                <div href="/boundra" class='font-display tracking-tighter relative bg-white text-xs leading-5 font-medium text-black rounded-full py-0.5 px-3 items-center break truncate flex gap-2 items-center'>
                                                     <span class="font-display text-black text-lg font-bold hidden sm:block">W</span>
                                                     <span class="mr-1 text-everglade-500 text-xs">
                                                         <span class="font-bold text-base mr-1">{{ $listing->close_weworks->count() }}</span>

@@ -1110,9 +1110,8 @@
                             class="py-6 pt-16 px-4 md:mx-0 bg-white border-4 border-everglade-600 rounded-2xl text-gray-900">
                             <div class="absolute top-0 -mt-8 transform">
                                 <img alt="Testimonial 01"
-                                     src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/nomadremy.webp"
-                                     width="120" height="120" decoding="async" data-nimg="future"
-                                     class="relative rounded-full border-4 border-everglade-700" loading="lazy">
+                                     src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/nomadremy.webp" decoding="async" data-nimg="future"
+                                     class="relative rounded-full border-4 border-everglade-700 h-20 w-20" loading="lazy">
                             </div>
                             <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
                                 <p>"After Spending so much time looking for convinient Airbnbs, I decided to found
@@ -1137,7 +1136,7 @@
                                 <img alt="Testimonial 01"
                                      src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/1590874819807.webp"
                                      width="120" height="120" decoding="async" data-nimg="future"
-                                     class="relative rounded-full border-4 border-everglade-700" loading="lazy">
+                                     class="relative rounded-full border-4 border-everglade-700 h-20 w-20" loading="lazy">
                             </div>
                             <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
                                 <p>"Ever since Google has offered us the chance to work remotely, I have always
@@ -1160,7 +1159,7 @@
                                 <img alt="Testimonial 01"
                                      src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/1627333510820.webp"
                                      width="120" height="120" decoding="async" data-nimg="future"
-                                     class="relative rounded-full border-4 border-everglade-700" loading="lazy">
+                                     class="relative rounded-full border-4 border-everglade-700 h-20 w-20" loading="lazy">
                             </div>
                             <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
                                 <p>"I have been a full-time nomad since 2018. I haven't stopped travelling! Work
