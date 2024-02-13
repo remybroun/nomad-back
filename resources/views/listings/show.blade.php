@@ -3,7 +3,7 @@
 
 <div>
     @include('components.headers.main')
-    <div class="max-w-screen-xl mx-auto space-y-5" x-data="{ amenitiesDialogOpen: false }">
+    <div class="max-w-screen-xl mx-auto space-y-5 px-4 xl:px-0" x-data="{ amenitiesDialogOpen: false }">
 
         <div class="space-y-2">
             <div class="space-y-2 w-full justify-between sm:p-0 px-2 grid grid-cols-2">
@@ -190,7 +190,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-max max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-screen-xl mx-auto overflow-hidden">
+        <div class="w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-screen-xl mx-auto overflow-hidden">
             <div class="font-display tracking-tighter text-2xl font-medium gap-2 flex items-baseline mt-10 sm:p-0 px-2">
                 Photos of this location
             </div>

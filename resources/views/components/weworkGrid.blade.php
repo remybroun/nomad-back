@@ -6,11 +6,12 @@
                     @forelse ($coworkings as $coworking)
                         <li key="{{ $coworking->name }}"
                             class="cursor-pointer bg-white col-span-1 flex flex-col max-w-xl">
-                            <a href="{{ route('coworkings-show', $coworking->slug) }}" class="flex flex-col h-full">
+                            <a href="{{ ("/listings/" . $coworking->slug) }}" class="block">
                                 <div class="flex-shrink-0 relative">
-                                    <img
+                                    {{--                                    {{dd($coworking->mainListingImage->url)}}--}}
+                                    <Image
                                         class="sm:h-48 h-64 w-full object-cover rounded-lg"
-                                        src="{{ str_replace('w=1200', 'w=480', $coworking->image_url) ?: asset('images/round-logo.png') }}"
+                                        src="{{ str_replace('w=1200', 'w=480', $coworking->main_image) ?: asset('images/round-logo.png') }}"
                                         alt=""
                                         width={1000}
                                         height={1000}

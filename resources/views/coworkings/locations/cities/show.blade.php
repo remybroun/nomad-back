@@ -4,8 +4,8 @@
 
 @section('content')
 
-    <body class="">
-    @extends('components.headers.main')
+
+    @include('components.headers.main')
     <div class="max-w-screen-xl mx-auto min-h-screen space-y-6 px-4">
         <div class="relative bg-indigo-400 rounded-lg overflow-hidden mx-auto">
             <div class="absolute inset-0">
@@ -22,10 +22,16 @@
             </div>
         </div>
 
+        {{--    Coworking Grid @include --}}
+
+        @include('components.coworkingGrid', ['coworkings' => $coworkings])
+        <div class="mt-4">
+            {{ $coworkings->links() }}
+        </div>
 
 
     </div>
 
-    {{--@extends('components.footers.main')--}}
-    </body>
+    @include('components.footers.main')
+
 @endsection

@@ -64,7 +64,7 @@
                 <ul role="list" class="mt-2 space-y-1">
                     <li><a href="/coworkings/wework-ranking" class="text-sm text-gray-500 hover:text-everglade-500">Wework
                             Location Ranking</a></li>
-                    <li><a href="/community/join" class="text-sm text-gray-500 hover:text-everglade-500">Join a club of
+                    <li><a href="https://boundra.com/community" class="text-sm text-gray-500 hover:text-everglade-500">Join a club of
                             remote workers</a></li>
                     <li><a href="/house" class="text-sm text-gray-500 hover:text-everglade-500">Nomad House</a></li>
                 </ul>

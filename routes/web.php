@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CoworkingController;
+use App\Http\Controllers\WeworkController;
 use App\Http\Controllers\ListingController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,7 +53,21 @@ Route::get('listings/{listing}', [ListingController::class, 'showView'])->name('
 
 
 // Coworkings
-Route::get('coworkings', [CoworkingController::class, 'show'])->name('coworkings');
+Route::get('coworkings', [CoworkingController::class, 'index'])->name('coworkings');
 //coworkings-locations
 Route::get('coworkings/locations', [CoworkingController::class, 'showLocationsView'])->name('coworkings-locations');
 Route::get('coworkings/locations/cities/{city}', [CoworkingController::class, 'showCoworkingsbyCityView'])->name('coworkings-by-city');
+Route::get('coworkings/locations/{coworking}', [CoworkingController::class, 'show'])->name('coworkings-show');
+
+
+// Weworks
+
+//wework-locations-country
+Route::get('coworkings/wework/locations', [WeworkController::class, 'index'])->name('wework-locations');
+Route::get('coworkings/wework/locations/countries', [WeworkController::class, 'showCountries'])->name('wework-locations-countries');
+Route::get('coworkings/wework/locations/countries/{country}', [WeworkController::class, 'showCountry'])->name('wework-locations-country');
+Route::get('coworkings/wework/locations/cities', [WeworkController::class, 'showCities'])->name('wework-locations-cities');
+Route::get('coworkings/wework/locations/cities/{city}', [WeworkController::class, 'showCity'])->name('wework-locations-city');
+Route::get('coworkings/wework/locations/{wework}', [WeworkController::class, 'show'])->name('wework-locations-show');
+
+//wework-locations-city
