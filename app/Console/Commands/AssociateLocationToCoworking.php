@@ -6,6 +6,7 @@ use App\Http\Controllers\ListingController;
 use App\Models\Country;
 use App\Models\Coworking;
 use App\Models\Location;
+use App\Models\Wework;
 use Illuminate\Console\Command;
 
 class AssociateLocationToCoworking extends Command
@@ -60,13 +61,16 @@ class AssociateLocationToCoworking extends Command
      */
     public function handle()
     {
-        $coworkings = Coworking::get();
+        $coworkings = Coworking::where('location_id', '=', null)->get();
+//        $coworkings = Wework::where('location_id', '=', null)->get();
+//        $coworkings = array_combine($coworkings, $weworks);
+
         foreach ($coworkings as $coworking) {
 
             if ($coworking->location_id) {
                 continue;
             }
-
+            $this->line($coworking->name);
             $slug = ListingController::generateSlug($coworking->city);
 
 

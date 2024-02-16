@@ -69,6 +69,6 @@ Route::get('coworkings/wework/locations/countries', [WeworkController::class, 's
 Route::get('coworkings/wework/locations/countries/{country}', [WeworkController::class, 'showCountry'])->name('wework-locations-country');
 Route::get('coworkings/wework/locations/cities', [WeworkController::class, 'showCities'])->name('wework-locations-cities');
 Route::get('coworkings/wework/locations/cities/{city}', [WeworkController::class, 'showCity'])->name('wework-locations-city');
-Route::get('coworkings/wework/locations/{wework}', [WeworkController::class, 'show'])->name('wework-locations-show');
+Route::get('coworkings/wework/locations/{wework}', [WeworkController::class, 'weWorkLocationsShow'])->name('wework-location-show');
 
 //wework-locations-city

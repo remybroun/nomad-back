@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Wework extends Model
 {
     use HasFactory;
+
     protected $guarded = [];
     protected $fillable = ['score'];
     public $timestamps = false;
@@ -17,5 +18,11 @@ class Wework extends Model
     {
         return $this->hasMany(WeworkImage::class);
     }
+
+    public function location_slug()
+    {
+        return $this->belongsTo(Location::class, 'location_id', 'id', 'locations');
+    }
+
 
 }

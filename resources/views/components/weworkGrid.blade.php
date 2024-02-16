@@ -1,3 +1,4 @@
+
 <div class="w-full mx-auto">
     <div class="relative">
         <div class="relative max-w-screen-xl mx-auto">
@@ -6,17 +7,17 @@
                     @forelse ($coworkings as $coworking)
                         <li key="{{ $coworking->name }}"
                             class="cursor-pointer bg-white col-span-1 flex flex-col max-w-xl">
-                            <a href="{{ ("/listings/" . $coworking->slug) }}" class="block">
+                            <a href="{{ route('wework-location-show', $coworking->slug) }}" class="block">
                                 <div class="flex-shrink-0 relative">
                                     <img
                                         class="sm:h-48 h-64 w-full object-cover rounded-lg"
-                                        src="{{ str_replace('w=1200', 'w=480', $coworking->main_image) ?: asset('images/round-logo.png') }}"
-                                        alt=""
+                                        src="{{ str_replace('w=1200', 'w=480', $coworking->image_url) ?: asset('images/round-logo.png') }}"
+                                        alt={{"Coworking for remote work in ".$coworking?->location." - ".$coworking?->location}}
                                     />
                                 </div>
                                 <div class="flex-1 py-4 flex flex-col justify-between">
                                     <div class="flex-1">
-                                        @if ($coworking->location)
+                                        @if ($coworking?->location_slug?->name)
                                             <div class="flex items-center gap-x-1 text-gray-500">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                      fill="currentColor" class="w-4 h-4 text-everglade-600">
@@ -25,7 +26,7 @@
                                                           clip-rule="evenodd"/>
                                                 </svg>
                                                 <h4 class="text-xs font-display uppercase font-bold leading-4">
-                                                    {{ $coworking?->location }}
+                                                    {{ $coworking?->location_slug?->name }}
                                                 </h4>
                                             </div>
                                         @endif

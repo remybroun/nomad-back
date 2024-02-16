@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-            @include('components.coworkingGrid', ['coworkings' => $weworks])
+            @include('components.weworkGrid', ['coworkings' => $weworks])
             <div class="mt-4">
                 {{ $weworks->links() }}
             </div>

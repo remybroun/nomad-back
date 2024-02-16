@@ -51,6 +51,7 @@ class WeworkController extends Controller
     {
         // Return a single wework
         $wework = Wework::with("images")->where('slug', $wework_slug)->first();
+
         $closeListings = WeworkListingProximity::where('wework_id', $wework->id)
             ->leftJoin('listings', 'listings.id', '=', 'wework_listing_proximities.listing_id')
             ->get();

@@ -6,17 +6,15 @@
                     @forelse ($coworkings as $coworking)
                         <li key="{{ $coworking->name }}"
                             class="cursor-pointer bg-white col-span-1 flex flex-col max-w-xl">
-                            <a href="{{ route('coworkings-show', $coworking->slug) }}" class="flex flex-col h-full">
+                            <a href="{{ route('coworkings-show', $coworking->slug) }}" class="flex flex-col h-full space-y-2">
                                 <div class="flex-shrink-0 relative">
                                     <img
                                         class="sm:h-48 h-64 w-full object-cover rounded-lg"
                                         src="{{ str_replace('w=1200', 'w=480', $coworking->image_url) ?: asset('images/round-logo.png') }}"
-                                        alt=""
-                                        width={1000}
-                                        height={1000}
+                                        alt={{"Coworking for remote work in ".$coworking?->location." - ".$coworking?->location}}
                                     />
                                 </div>
-                                <div class="flex-1 py-4 flex flex-col justify-between">
+                                <div class="flex-1 flex flex-col justify-between">
                                     <div class="flex-1">
                                         @if ($coworking->location)
                                             <div class="flex items-center gap-x-1 text-gray-500">
@@ -37,7 +35,10 @@
                             </a>
                         </li>
                     @empty
-                        <p>No listings available.</p>
+                        <p>No Coworking spaces in this location.</p>
+{{--                        TODO ADD INSPIRATION SECTION--}}
+
+
                     @endforelse
                 </ul>
             </div>

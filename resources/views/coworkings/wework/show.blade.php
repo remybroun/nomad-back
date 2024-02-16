@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'All Coworking Spaces')
+@section('title', 'All Wework Coworking Spaces')
 @section('content')
 
     <div>
@@ -8,9 +8,9 @@
 
             <div class="">
                 <div class="space-y-2 w-full justify-between sm:p-0 px-2 grid grid-cols-2">
-                    <h1 class="font-display tracking-tighter text-lg sm:text-2xl col-span-1">{{ $coworking->name }}</h1>
+                    <h1 class="font-display tracking-tighter text-lg sm:text-2xl col-span-1">{{ $wework->name }}</h1>
                     <div class="col-span-1 flex justify-end">
-                        <a href="{{ $coworking->url }}" target="_blank" class="flex items-center gap-x-1 text-gray-400">
+                        <a href="{{ $wework->url }}" target="_blank" class="flex items-center gap-x-1 text-gray-400">
                             <h4 class=" font-display bg-everglade-500 px-4 py-2 text-white rounded-xl">Visit Website
                                 &rarr;</h4>
                         </a>
@@ -19,14 +19,14 @@
                 <div class="flex justify-between w-full">
                     <h4 class="text-lg font-display ">
                         Coworking Space in
-                        {{ $coworking->city }}, {{ $coworking->country }}
+                        {{ $wework->city }}, {{ $wework->country }}
                     </h4>
                 </div>
             </div>
             {{-- Main Image --}}
             <div class="relative w-full h-[36em] sm:p-0 px-2">
-                <img src="{{ $coworking->image_url }}" class="w-full h-full object-cover rounded-lg"
-                     alt="{{ $coworking->name }}">
+                <img src="{{ $wework->image_url }}" class="w-full h-full object-cover rounded-lg"
+                     alt="{{ $wework->name }}">
             </div>
 
 
@@ -62,10 +62,10 @@
             <div class="bg-white">
                 <div class="max-w-7xl mx-auto text-center pt-12 px-4 sm:px-6 lg:pt-16 lg:px-8">
                     <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl sm:tracking-tight font-display space-y-3">
-                        <span class="block">Looking for a good place to work in {{ $coworking->city }}?</span>
-                        <a href="{{ route('coworkings-by-city', $coworking->city) }}"
+                        <span class="block">Looking for a good place to work in {{ $wework->city }}?</span>
+                        <a href="{{ route('coworkings-by-city', $wework->city) }}"
                            class="block text-lg font-normal sm:text-2xl italics text-everglade-600 font-serif tracking-tighter">
-                            Discover the best coworking spaces in {{ $coworking->city }}, {{ $coworking->country }}
+                            Discover the best coworking spaces in {{ $wework->city }}, {{ $wework->country }}
                         </a>
                     </h2>
                 </div>
