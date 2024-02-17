@@ -11,7 +11,7 @@
                                 <div class="flex-shrink-0 relative">
                                     <img
                                         class="sm:h-48 h-64 w-full object-cover rounded-lg"
-                                        src="{{ str_replace('w=1200', 'w=480', $coworking->image_url) ?: asset('images/round-logo.png') }}"
+                                        src="{{ $coworking->image_url.'?width=400' }}"
                                         alt={{"Coworking for remote work in ".$coworking?->location." - ".$coworking?->location}}
                                     />
                                 </div>

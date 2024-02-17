@@ -11,7 +11,7 @@ class WeworkController extends Controller
     public function index()
     {
         // Return all weworks paginated ordered by location name
-        $weworks = Wework::orderBy('city', 'DESC')->paginate(50);
+        $weworks = Wework::orderBy('city', 'DESC')->paginate(30);
         return view('coworkings.wework.index', compact('weworks'));
     }
 

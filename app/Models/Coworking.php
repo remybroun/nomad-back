@@ -18,4 +18,10 @@ class Coworking extends Model
     function coworkingImages(){
 
     }
+
+//    function listings()
+//    {
+//        return $this->hasMany(Listing::class);
+//    }
+
 }
