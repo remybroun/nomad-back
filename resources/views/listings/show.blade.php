@@ -180,7 +180,7 @@
                 Sleeping<span class="text-sm sm:text-lg italic text-everglade-600 font-serif tracking-tighter">Rooms and beds</span>
             </div>
             <div class="my-4 max-w-screen-xl font-serif tracking-tighter grid grid-cols-3 gap-x-5 gap-y-2 sm:p-0 px-2">
-                @if($listing?->arrangements?->count() > 0)
+                @if(count($listing->arrangements ?? []) > 0)
                     @foreach($listing?->arrangements as $room)
                         <div
                             class="text-sm sm:text-lg shadow-sm border-gray-500 border hover:bg-gray-100 duration-100 rounded-lg px-5 py-5 text-base">
