@@ -1,4 +1,4 @@
-<div class="py-8 text-center">
+<div class="text-center">
     <div
         x-data="{ dropdownOpen: false }"
         x-cloak

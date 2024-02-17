@@ -4,7 +4,7 @@
 <div>
     @include('components.headers.main')
 
-    <div class="max-w-screen-xl mx-auto pt-8 px-4 sm:px-0">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-0">
         <div class="relative bg-indigo-400 rounded-lg overflow-hidden mx-auto mb-10">
             <div class="absolute inset-0">
                 <img class="w-full h-full object-cover"
@@ -18,24 +18,56 @@
                     <span class="text-xl font-normal">{{ ucwords(str_replace('-', ' ', $area)) }}</span>
                 </h1>
             </div>
+            <div class="relative bottom-4 left-6 space-y-2">
+                <h3 class="text-white text-lg font-semibold">Find remote work accommodations in:</h3>
+                <div class="flex flex-wrap items-center gap-2 max-w-lg md:max-w-full">
+                    <a href="{{ route('listings-locations-area', ['europe']) }}"
+                       class="bg-everglade-100 rounded-full px-4 py-2 text-sm font-semibold text-everglade-600">
+                        Europe
+                    </a>
+                    <a href="{{ route('listings-locations-area', ['north-america']) }}"
+                       class="bg-everglade-100 rounded-full px-4 py-2 text-sm font-semibold text-everglade-600">
+                        North America
+                    </a>
+                    <a href="{{ route('listings-locations-area', ['south-america']) }}"
+                       class="bg-everglade-100 rounded-full px-4 py-2 text-sm font-semibold text-everglade-600">
+                        South America
+                    </a>
+                    <a href="{{ route('listings-locations-area', ['africa']) }}"
+                       class="bg-everglade-100 rounded-full px-4 py-2 text-sm font-semibold text-everglade-600">
+                        Africa
+                    </a>
+                    <a href="{{ route('listings-locations-area', ['oceania']) }}"
+                       class="bg-everglade-100 rounded-full px-4 py-2 text-sm font-semibold text-everglade-600">
+                        Oceania
+                    </a>
+                    <a href="{{ route('listings-locations-area', ['asia']) }}"
+                       class="bg-everglade-100 rounded-full px-4 py-2 text-sm font-semibold text-everglade-600">
+                        Asia
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-
-    <ul class="grid sm:grid-cols-3 grid-cols-2 gap-x-4 gap-y-6 max-w-screen-xl mx-auto my-10">
-        @foreach ($locations as $index => $country)
-            <li class="border border-everglade-200 rounded-lg overflow-hidden hover:shadow-lg">
-                <a href="{{ route('listings-locations-country', [$country]) }}"
-                   class="hover:underline h-full flex items-center w-full">
-                    <div
-                        class="bg-everglade-100 px-4 py-4 tracking-wide h-full w-full flex flex-col justify-center">
-                        <div class="text-sm">See all remote work listings in:</div>
-                        <div class="font-semibold">{{ $country }}</div>
-                    </div>
-                </a>
-            </li>
-        @endforeach
-    </ul>
-
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-0">
+        <ul class="grid sm:grid-cols-3 grid-cols-2 gap-x-4 gap-y-6 max-w-screen-xl mx-auto my-10">
+            @foreach ($locations as $index => $country)
+                <li class="border border-everglade-200 rounded-lg overflow-hidden hover:shadow-lg">
+                    <a href="{{ route('listings-locations-country', [$country]) }}"
+                       class="hover:underline h-full flex items-center w-full bg-everglade-100 px-4 py-4 gap-4">
+                        <img src="{{ asset('vendor/blade-flags/country-'.$country->code.'.svg') }}" width="32"
+                             height="32"
+                             alt="{{ $country->name }}">
+                        <div
+                            class="tracking-wide h-full w-full flex flex-col justify-center">
+                            <div class="text-sm">See all remote work listings in:</div>
+                            <div class="font-semibold">{{ $country->name }}</div>
+                        </div>
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
 
     @include('components.footers.main')
 </div>

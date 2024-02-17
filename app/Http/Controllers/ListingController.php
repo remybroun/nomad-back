@@ -35,18 +35,28 @@ class ListingController extends Controller
 
     public function showListingsInAreaView($area)
     {
-        $asia = ["China", "India", "Indonesia", "Pakistan", "Bangladesh", "Japan", "Philippines", "Vietnam", "Turkey", "Iran", "Thailand", "Myanmar", "South Korea", "Iraq", "Afghanistan", "Saudi Arabia", "Uzbekistan", "Malaysia", "Yemen", "Nepal", "North Korea", "Sri Lanka", "Kazakhstan", "Syria", "Cambodia", "Jordan", "Azerbaijan", "United Arab Emirates", "Tajikistan", "Israel", "Laos", "Lebanon", "Kyrgyzstan", "Turkmenistan", "Singapore", "Oman", "State of Palestine", "Kuwait", "Georgia", "Mongolia", "Armenia", "Qatar", "Bahrain", "Timor-Leste", "Cyprus", "Bhutan", "Maldives", "Brunei"];
+        $asia = Country::where('continent', 'Asia')->get();
+        $europe = Country::where('continent', 'Europe')->get();
+        $south_america = Country::where('continent', 'South America')->get();
+        $oceania = Country::where('continent', 'Oceania')->get();
+        $africa = Country::where('continent', 'Africa')->get();
+        $north_america = Country::where('continent', 'North America')->get();
 
-        $europe = ["Hungary", "Belarus", "Austria", "Serbia", "Switzerland", "Germany", "Andorra", "Bulgaria", "United", "France", "Montenegro", "Luxembourg", "Italy", "Denmark", "Finland", "Slovakia", "Norway", "Ireland", "Spain", "Malta", "Ukraine", "Croatia", "Moldova", "Monaco", "Liechtenstein", "Poland", "Iceland", "San Marino", "Bosnia", "Albania", "Lithuania", "Slovenia", "Romania", "Latvia", "Netherlands", "Russia", "Estonia", "Belgium", "Czech", "Greece", "Portugal", "Sweden"];
-
-        $south_america = ["Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Costa Rica", "Ecuador", "El Salvador", "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Dominican Republic", "Uruguay"];
 
         if ($area == "europe")
             return view('listings.locations.area', ['locations' => $europe, 'area' => $area]);
         if ($area == "asia")
             return view('listings.locations.area', ['locations' => $asia, 'area' => $area]);
+        if ($area == "south-america")
+            return view('listings.locations.area', ['locations' => $south_america, 'area' => $area]);
+        if ($area == "oceania")
+            return view('listings.locations.area', ['locations' => $oceania, 'area' => $area]);
+        if ($area == "africa")
+            return view('listings.locations.area', ['locations' => $africa, 'area' => $area]);
+        if ($area == "north-america")
+            return view('listings.locations.area', ['locations' => $north_america, 'area' => $area]);
 
-        return view('listings.locations.area', ['locations' => $south_america, 'area' => $area]);
+        return view('listings.locations.area', ['locations' => Country::all(), 'area' => $area]);
 
 
     }

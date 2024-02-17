@@ -13,6 +13,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/telescope": "^4.17",
         "laravel/tinker": "^2.8",
+        "outhebox/blade-flags": "^1.2",
         "spatie/laravel-sitemap": "^7.1"
     },
     "require-dev": {
