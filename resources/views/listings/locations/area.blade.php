@@ -55,7 +55,7 @@
                 <li class="border border-everglade-200 rounded-lg overflow-hidden hover:shadow-lg">
                     <a href="{{ route('listings-locations-country', [$country]) }}"
                        class="hover:underline h-full flex items-center w-full bg-everglade-100 px-4 py-4 gap-4">
-                        <x-icon name="flag-country-{{ $country->code }}" width="40" height="40"/>
+                        <x-icon name="flag-country-{{ strtolower($country->code) }}" width="40" height="40"/>
 {{--                        <img src="{{ asset('vendor/blade-flags/country-'.$country->code.'.svg') }}" width="32"--}}
 {{--                             height="32"--}}
 {{--                             alt="{{ $country->name }}">--}}
