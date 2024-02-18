@@ -191,20 +191,51 @@
                 @endif
             </div>
         </div>
-
-        <div class="w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-screen-xl mx-auto overflow-hidden">
-            <div class="font-display tracking-tighter text-2xl font-medium gap-2 flex items-baseline mt-10 sm:p-0 px-2">
+        <div x-data="photoGallery()"
+             class="w-full max-w-none md:max-w-lg lg:max-w-screen-xl px-4 mx-auto overflow-hidden">
+            <div class="text-2xl font-medium gap-2 flex items-baseline mt-10 sm:p-0 px-2">
                 Photos of this location
             </div>
             <div id="photoContainer" class="max-h-64 overflow-hidden rounded-3xl">
-                <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 w-full mx-auto gap-1">
-                    @foreach($listing->listingImages as $image)
+                <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-1">
+                    <template x-for="(image, index) in images" :key="index">
                         <div class="relative w-full h-40 sm:h-60 md:h-80 lg:h-96">
-                            <a href="#photoModal" data-bs-toggle="modal" data-index="{{$loop->index}}">
-                                <img src="{{$image->url}}" class="w-full h-full object-cover rounded-lg" alt="">
-                            </a>
+                            <img x-bind:src="image.url" @click="openModal(index)"
+                                 class="w-full h-full object-cover rounded-lg cursor-pointer" alt="">
                         </div>
-                    @endforeach
+                    </template>
+                </div>
+            </div>
+            <div x-show="modalOpen" @click.away="closeModal()"
+                 class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4">
+                <div class="bg-white rounded-lg max-w-5xl mx-auto" x-show="modalOpen" @click.away="closeModal()">
+                    <div class="relative">
+                        <!-- Carousel Controls -->
+                        <button @click="prevPhoto()"
+                                class="absolute top-1/2 left-4 transform -translate-y-1/2 px-4 py-2 bg-everglade-600 text-white rounded-lg flex items-center justify-center">
+                            <!-- Left Arrow SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                        <button @click="nextPhoto()"
+                                class="absolute top-1/2 right-4 transform -translate-y-1/2 px-4 py-2 bg-everglade-600 text-white rounded-lg flex items-center justify-center">
+                            <!-- Right Arrow SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                        <button @click="closeModal()"
+                                class="absolute bottom-4 right-4 px-5 py-2 bg-white text-black rounded-lg">
+                            Close
+                        </button>
+
+                        <!-- Photo -->
+                        <img x-bind:src="images[activePhoto].url" class="w-full h-full object-cover rounded-lg" alt="">
+                    </div>
                 </div>
             </div>
             <div class="flex justify-center py-4">
@@ -214,6 +245,7 @@
                 </button>
             </div>
         </div>
+
 
         <div class="bg-white">
             <div class="max-w-7xl mx-auto text-center pt-12 px-4 sm:px-6 lg:pt-16 lg:px-8">
@@ -273,5 +305,28 @@
 
             }
         });
+    </script>
+
+    <script>
+        function photoGallery() {
+            return {
+                images: @json($listing->listingImages),
+                modalOpen: false,
+                activePhoto: 0,
+                openModal(index) {
+                    this.activePhoto = index;
+                    this.modalOpen = true;
+                },
+                closeModal() {
+                    this.modalOpen = false;
+                },
+                nextPhoto() {
+                    this.activePhoto = (this.activePhoto + 1) % this.images.length;
+                },
+                prevPhoto() {
+                    this.activePhoto = (this.activePhoto + this.images.length - 1) % this.images.length;
+                },
+            }
+        }
     </script>
 @endpush

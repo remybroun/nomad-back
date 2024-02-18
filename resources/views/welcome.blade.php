@@ -982,7 +982,7 @@
 
             <div class="marquee"
                  style="--play: running; --direction: normal; --duration: 23s; --delay: 0s; --iteration-count: infinite;">
-                <div class="max-w-screen-xl flex mx-auto gap-y-10 gap-x-10 my-8 items-center">
+                <div class="max-w-screen-xl sm:flex mx-auto space-y-10 sm:gap-x-10 my-8 items-center">
                     <a href="https://www.linkedin.com/in/remybroun"
                        class="relative flex items-start w-full cursor-pointer">
                         <div

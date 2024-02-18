@@ -18,7 +18,7 @@
                     <span class="text-xl font-normal">{{ ucwords(str_replace('-', ' ', $area)) }}</span>
                 </h1>
             </div>
-            <div class="relative bottom-4 left-6 space-y-2">
+            <div class="z-20 bottom-4 left-6 space-y-2">
                 <h3 class="text-white text-lg font-semibold">Find remote work accommodations in:</h3>
                 <div class="flex flex-wrap items-center gap-2 max-w-lg md:max-w-full">
                     <a href="{{ route('listings-locations-area', ['europe']) }}"
@@ -56,9 +56,6 @@
                     <a href="{{ route('listings-locations-country', [$country]) }}"
                        class="hover:underline h-full flex items-center w-full bg-everglade-100 px-4 py-4 gap-4">
                         <x-icon name="flag-country-{{ strtolower($country->code) }}" width="40" height="40"/>
-{{--                        <img src="{{ asset('vendor/blade-flags/country-'.$country->code.'.svg') }}" width="32"--}}
-{{--                             height="32"--}}
-{{--                             alt="{{ $country->name }}">--}}
                         <div
                             class="tracking-wide h-full w-full flex flex-col justify-center">
                             <div class="text-sm">See all remote work listings in:</div>

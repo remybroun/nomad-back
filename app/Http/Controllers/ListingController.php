@@ -374,9 +374,10 @@ class ListingController extends Controller
 
     function showLocationsView()
     {
-        $locations = Location::all();
+        $locations = Location::with('country')->paginate(30);
         $filteredLocations = [];
         $featuredLocations = [];
+
         return view('listings.locations.index', compact('locations', 'filteredLocations', 'featuredLocations'));
     }
 

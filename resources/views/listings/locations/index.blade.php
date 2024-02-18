@@ -10,7 +10,7 @@
     {{-- Header --}}
     @include('components.headers.main')
 
-    <div class="max-w-screen-xl mx-auto min-h-screen space-y-6 px-4">
+    <div class="max-w-screen-xl mx-auto min-h-screen space-y-6 px-4 w-full">
         <div class="relative bg-indigo-400 rounded-lg overflow-hidden mx-auto">
             {{-- Background Image --}}
             <div class="absolute inset-0">
@@ -64,18 +64,22 @@
                 @foreach($locations as $location)
                     <li class="border border-everglade-200 rounded-lg overflow-hidden hover:shadow-lg">
                         <a href="{{ route('listings-locations-show', [$location->slug]) }}"
-                           class="hover:underline h-full flex items-center w-full">
+                           class="hover:underline h-full flex items-center w-full bg-everglade-100 sm:p-4 p-2 gap-2 sm:gap-4">
+                            <x-icon name="flag-country-{{ strtolower($location->country->code) }}" width="40"
+                                    height="40"/>
                             <div
-                                class="bg-everglade-100 px-4 py-4 tracking-wide h-full w-full flex flex-col justify-center">
-                                <div class="text-sm">See all remote work listings in:</div>
-                                <div class="font-semibold">{{ $location->name }}</div>
+                                class="tracking-wide h-full w-full flex flex-col justify-center">
+                                <div class="sm:text-sm text-xs leading-4">See all remote work listings in:</div>
+                                <div class="font-semibold sm:text-lg text-sm">{{ $location->name }}</div>
                             </div>
                         </a>
                     </li>
                 @endforeach
             </ul>
+            <div class="mx-auto flex w-full justify-between">
+                {{$locations->links()}}
+            </div>
         </div>
-
     </div>
 
     {{-- Footer --}}
