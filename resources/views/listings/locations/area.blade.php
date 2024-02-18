@@ -55,9 +55,10 @@
                 <li class="border border-everglade-200 rounded-lg overflow-hidden hover:shadow-lg">
                     <a href="{{ route('listings-locations-country', [$country]) }}"
                        class="hover:underline h-full flex items-center w-full bg-everglade-100 px-4 py-4 gap-4">
-                        <img src="{{ asset('vendor/blade-flags/country-'.$country->code.'.svg') }}" width="32"
-                             height="32"
-                             alt="{{ $country->name }}">
+                        <x-icon name="flag-country-{{ $country->code }}" width="40" height="40"/>
+{{--                        <img src="{{ asset('vendor/blade-flags/country-'.$country->code.'.svg') }}" width="32"--}}
+{{--                             height="32"--}}
+{{--                             alt="{{ $country->name }}">--}}
                         <div
                             class="tracking-wide h-full w-full flex flex-col justify-center">
                             <div class="text-sm">See all remote work listings in:</div>
