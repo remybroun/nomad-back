@@ -72,3 +72,7 @@ Route::get('coworkings/wework/locations/cities/{city}', [WeworkController::class
 Route::get('coworkings/wework/locations/{wework}', [WeworkController::class, 'weWorkLocationsShow'])->name('wework-location-show');
 
 //wework-locations-city
+
+//Locations
+
+Route::get('/search/locations', [App\Http\Controllers\LocationController::class, 'liveSearch'])->name('search.locations');

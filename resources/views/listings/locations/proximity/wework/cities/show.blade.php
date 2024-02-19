@@ -11,7 +11,7 @@
                     <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/99a6b259101577.5a3e1fcab5fd1.jpg" alt="Nomad Stays background image" style="object-fit: cover; width: 100%; height: 100%;">
                     <div class="absolute inset-0 bg-gray-400 mix-blend-multiply" aria-hidden="true"></div>
                 </div>
-                <div class="relative px-16 py-24 sm:py-32 leading-4">
+                <div class="relative px-16 py-16 sm:py-32 leading-4">
                     <h1 class="text-4xl font-display tracking-tighter text-white sm:text-5xl lg:text-6xl">
                         Stays for remote work in near a WeWork in
                     </h1>

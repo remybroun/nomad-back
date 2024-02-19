@@ -15,7 +15,7 @@
                  alt="">
             <div class="absolute inset-0 bg-gray-400 mix-blend-multiply" aria-hidden="true"></div>
         </div>
-        <div class="relative px-16 py-24 sm:py-32 leading-4">
+        <div class="relative px-16 py-16 sm:py-32 leading-4">
             <h1 class="text-xl font-display font-bold text-white sm:text-2xl lg:text-3xl">
                 Stays for remote work in <br>
                 <span class="text-xl font-normal">{{ ucwords($country->name) }}</span>

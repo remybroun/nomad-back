@@ -32,7 +32,7 @@
                               clip-rule="evenodd">
                         </path>
                     </svg>
-                    <h4 class="text-xs font-display uppercase font-bold">Kingston, New York, United States</h4>
+                    <h4 class="text-xs font-display uppercase font-bold">{{$listing->location_slug->name}}</h4>
                 </a>
                 <div class="font-display tracking-tighter text-3xl font-medium sm:p-0 px-2">
                     ${{ $listing->latest_price?->price_per_night }}
@@ -246,29 +246,67 @@
             </div>
         </div>
 
-
-        <div class="bg-white">
-            <div class="max-w-7xl mx-auto text-center pt-12 px-4 sm:px-6 lg:pt-16 lg:px-8">
-                <h2
-                    class="text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl sm:tracking-tight font-display space-y-3">
-                    <span class="block">Do you think you can work here?</span>
-                    <span
-                        class="block text-lg font-normal sm:text-2xl italReserve with a coworking space text-everglade-600 font-serif tracking-tighter">Check out the listing below</span>
-                </h2>
-                <div class="mt-8 flex justify-center">
-                    <div class="inline-flex rounded-md shadow">
-                        <a
-                            href="{{$listing?->external_url}}"
-                            target="_blank"
-                            class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-everglade-600 hover:bg-everglade-500">
-                            Reserve this location with Airbnb
+        {{--    Close Wework and Coworking section    --}}
+        <div class="space-y-10">
+            <div class="font-display tracking-tighter text-2xl font-medium gap-2 flex items-baseline mt-10 sm:p-0 px-2">
+                <h3>Close Coworking Spaces<span
+                        class="text-sm sm:text-lg italic text-everglade-600 font-serif tracking-tighter">The essentials for a remote worker</span>
+                </h3>
+            </div>
+            <ul class=" max-w-lg divide-y border shadow rounded max-h-[500px] overflow-y-scroll">
+                @if($close_coworkings->count() > 0)
+                    @foreach($close_coworkings as $close_coworking)
+                        <a href="{{ '/coworkings/locations/' . $close_coworking->coworkings->slug }}"
+                           class="p-4 justify-between flex gap-4 items-center hover:bg-gray-50">
+                            <div class="space-y-2 text-center w-12 flex flex-col items-center text-xs">
+                                <img src="https://a-step-in.s3.us-east-2.amazonaws.com/nomadstay/coworking.png" alt=""
+                                     class="w-10 h-10">
+                                <p class="text-xs">{{ round($close_coworking->distance, 0) }}m</p>
+                            </div>
+                            <div class="flex flex-col flex-grow">
+                                <h5 class="font-display font-medium leading-5 tracking-tight">{{ $close_coworking->coworkings->name }}</h5>
+                                <p class="font-display text-sm text-everglade-700 tracking-tight">{{ $listing->location_slug->name }}</p>
+                            </div>
+                            <div>
+                            <span class="h-7 w-7 text-everglade-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                     class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+                                </svg>
+                            </span>
+                            </div>
                         </a>
-                    </div>
+                    @endforeach
+                @endif
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="bg-white">
+        <div class="max-w-7xl mx-auto text-center pt-12 px-4 sm:px-6 lg:pt-16 lg:px-8">
+            <h2
+                class="text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl sm:tracking-tight font-display space-y-3">
+                <span class="block">Do you think you can work here?</span>
+                <span
+                    class="block text-lg font-normal sm:text-2xl italReserve with a coworking space text-everglade-600 font-serif tracking-tighter">Check out the listing below</span>
+            </h2>
+            <div class="mt-8 flex justify-center">
+                <div class="inline-flex rounded-md shadow">
+                    <a
+                        href="{{$listing?->external_url}}"
+                        target="_blank"
+                        class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-everglade-600 hover:bg-everglade-500">
+                        Reserve this location with Airbnb
+                    </a>
                 </div>
             </div>
         </div>
-        @include('components.footers.main')
     </div>
+    @include('components.footers.main')
+</div>
 </div>
 
 

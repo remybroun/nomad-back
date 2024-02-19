@@ -28,17 +28,14 @@
                                 </div>
                                 <div class="flex-1 py-4 flex flex-col justify-between">
                                     <div class="flex-1">
-                                        @if ($listing->location)
-                                            <div class="flex items-center gap-x-1 text-gray-500">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                     fill="currentColor" class="w-4 h-4 text-everglade-600">
-                                                    <path fill-rule="evenodd"
-                                                          d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-                                                          clip-rule="evenodd"/>
-                                                </svg>
+                                        @if ($listing?->location)
+                                            <div class="flex items-center gap-x-2 text-gray-500">
+                                                <x-icon name="flag-country-{{ strtolower($listing->location_slug->country->code) }}" width="20" height="20"/>
                                                 <h4 class="text-xs font-display uppercase font-bold leading-4">
                                                     {{ $listing?->location }}
                                                 </h4>
+
+
                                             </div>
                                         @endif
                                         <h3 class="text-lg line-clamp-1 text-gray-900 font-display tracking-tighter leading-6 mt-1">{{ $listing->title }}</h3>

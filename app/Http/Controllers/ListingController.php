@@ -30,7 +30,10 @@ class ListingController extends Controller
 
     public function showView(Listing $listing)
     {
-        return view('listings.show', ['listing' => $listing]);
+//        Load Coworking and coworking location (load in load method)
+        $listing->load(['mainListingImage', "latest_price", "location_slug"])->get();
+        $close_coworkings = CoworkingListingProximity::where('listing_id', $listing->id)->with('coworkings')->get();
+        return view('listings.show', compact('listing', 'close_coworkings'));
     }
 
     public function showListingsInAreaView($area)

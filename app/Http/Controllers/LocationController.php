@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Location;
 use App\Models\Country;
 
@@ -9,13 +10,13 @@ use Illuminate\Http\Request;
 class LocationController extends Controller
 {
     public function showLocations()
-    {   
+    {
         $locations = Location::with("country")->get();
-        $countries = $locations->map(function ($location){
+        $countries = $locations->map(function ($location) {
             info($location->id);
             return [
-                "slug"=>$location->country->slug,
-                "name"=>$location->country->name,
+                "slug" => $location->country->slug,
+                "name" => $location->country->name,
             ];
         });
 
@@ -26,12 +27,12 @@ class LocationController extends Controller
     }
 
     public function showCountries()
-    {   
+    {
         $countries = Country::get();
         return response()->json($countries, 200);
     }
 
-    
+
     public function locationsPerArea($area)
     {
         $asia = ["Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Costa Rica", "Ecuador", "El Salvador", "Guatemala", "Honduras", "Mexico", "Nicaragua", "Panama", "Paraguay", "Peru", "Dominican Republic", "Uruguay"];
@@ -47,4 +48,15 @@ class LocationController extends Controller
 
         return $south_america;
     }
+
+    public function liveSearch(Request $request)
+    {
+        $query = $request->input('query');
+        if (!$query) return response()->json([], 200);
+
+        $locations = Location::where('name', 'like', "%$query%")->limit(5)->get();
+        return response()->json($locations, 200);
+    }
+
+
 }

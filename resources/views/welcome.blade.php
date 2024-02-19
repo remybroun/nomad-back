@@ -296,11 +296,11 @@
                                             </path>
                                         </svg>
                                     </button>
-                                    <input type="text"
-                                           class="w-full py-2 font-display font-medium pl-12 text-sm leading-9 text-gray-900 focus:ring-0 rounded-full"
-                                           placeholder="Enter a city, region or country"
-                                           id="headlessui-combobox-input-4" role="combobox" aria-expanded="false"
-                                           aria-autocomplete="list" data-headlessui-state="" value="">
+                                    @include('components.searchBar', [
+                                                'class' => 'w-full py-2 font-display font-medium pl-12 text-sm leading-9 text-gray-900 focus:ring-0 rounded-full',
+                                                'placeholder' => 'Enter a city, region or country'
+                                                ])
+
                                 </div>
                             </div>
                         </div>
