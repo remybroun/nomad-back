@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'All Nomad Listings')
+@section('title', 'Accommodations for remote workers, digital nomads and workations - Nomad Stay')
 
 
 <main class="w-full mx-auto">
