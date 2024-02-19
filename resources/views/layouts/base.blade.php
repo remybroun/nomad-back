@@ -55,18 +55,16 @@
 
     <!-- Google tag (gtag.js) -->
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9DQVTTLN1V"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=TAG_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-        gtag('js', new Date());
-
-        gtag('config', 'G-9DQVTTLN1V');
-    </script>
+    gtag('config', 'G-FE03BJ67DM');
+  </script>
     <!-- Meta Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
