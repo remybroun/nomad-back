@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CoworkingController;
+use App\Http\Controllers\ListController;
+use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\WeworkController;
 use App\Http\Controllers\ListingController;
 use Illuminate\Support\Facades\Route;
@@ -51,6 +53,11 @@ Route::get('listings/locations/countries/{country}', [ListingController::class, 
 Route::get('listings/locations/{location}', [ListingController::class, 'showLocationView'])->name('listings-locations-show');
 
 Route::get('listings/{listing}', [ListingController::class, 'showView'])->name('listing.show');
+
+Route::get('list', [ListController::class, 'showListForm'])->name('list');
+Route::post('/owners/join', [OwnerController::class, 'join'])->name('owner-join');
+
+
 
 
 // Coworkings

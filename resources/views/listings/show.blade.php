@@ -245,7 +245,7 @@
                 </button>
             </div>
         </div>
-        
+
         @if(isset($listing->$close_coworkings))
             {{--    Close Wework and Coworking section    --}}
             <div class="space-y-10">
