@@ -206,9 +206,9 @@
                     </template>
                 </div>
             </div>
-            <div x-show="modalOpen" @click.away="closeModal()"
+            <div x-cloak x-show="modalOpen" @click.away="closeModal()"
                  class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4">
-                <div class="bg-white rounded-lg max-w-5xl mx-auto" x-show="modalOpen" @click.away="closeModal()">
+                <div class="bg-white rounded-lg max-w-5xl mx-auto" x-cloak x-show="modalOpen" @click.away="closeModal()">
                     <div class="relative">
                         <!-- Carousel Controls -->
                         <button @click="prevPhoto()"
