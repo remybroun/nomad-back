@@ -11,6 +11,8 @@ class WeworkListingProximity extends Model
     public $timestamps = false;
     protected $guarded = [];
 
+    protected $table = 'wework_listing_proximity';
+
     public function weworks()
     {
         return $this->belongsTo(Wework::class, 'wework_id', 'id', 'weworks');
