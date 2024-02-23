@@ -53,7 +53,7 @@ class WeworkController extends Controller
         $wework = Wework::with("images")->where('slug', $wework_slug)->first();
 
         $closeListings = WeworkListingProximity::where('wework_id', $wework->id)
-            ->leftJoin('listings', 'listings.id', '=', 'wework_listing_proximities.listing_id')
+            ->leftJoin('listings', 'listings.id', '=', 'wework_listing_proximity.listing_id')
             ->get();
 
         return view('coworkings.wework.show', compact('wework', 'closeListings'));
@@ -62,7 +62,7 @@ class WeworkController extends Controller
     public function show($wework_slug){
         $wework = Wework::with("images")->where('slug', $wework_slug)->first();
         $closeListings = WeworkListingProximity::where('wework_id', $wework->id)
-            ->leftJoin('listings', 'listings.id', '=', 'wework_listing_proximities.listing_id')
+            ->leftJoin('listings', 'listings.id', '=', 'wework_listing_proximity.listing_id')
             ->get();
 
         return response()->json([
