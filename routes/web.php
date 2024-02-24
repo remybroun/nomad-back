@@ -5,6 +5,7 @@ use App\Http\Controllers\ListController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\WeworkController;
 use App\Http\Controllers\ListingController;
+use App\Jobs\LaunchRemovePhotosCommand;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -83,3 +84,9 @@ Route::get('coworkings/wework/locations/{wework}', [WeworkController::class, 'we
 //Locations
 
 Route::get('/search/locations', [App\Http\Controllers\LocationController::class, 'liveSearch'])->name('search.locations');
+
+// Launch commands
+Route::get('/launch/remove-photos', function () {
+    LaunchRemovePhotosCommand::dispatch();
+    return 'Photos removed';
+});
