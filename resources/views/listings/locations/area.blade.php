@@ -53,7 +53,7 @@
         <ul class="grid sm:grid-cols-3 grid-cols-2 gap-x-4 gap-y-6 max-w-screen-xl mx-auto my-10">
             @foreach ($locations as $index => $country)
                 <li class="border border-everglade-200 rounded-lg overflow-hidden hover:shadow-lg">
-                    <a href="{{ route('listings-locations-country', [$country]) }}"
+                    <a href="{{ route('listings-locations-country', [$country->slug]) }}"
                        class="hover:underline h-full flex items-center w-full bg-everglade-100 px-4 py-4 gap-4">
                         <x-icon name="flag-country-{{ strtolower($country->code) }}" width="40" height="40"/>
                         <div
