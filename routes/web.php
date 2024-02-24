@@ -3,6 +3,7 @@
 use App\Http\Controllers\CoworkingController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\PricingController;
 use App\Http\Controllers\WeworkController;
 use App\Http\Controllers\ListingController;
 use App\Jobs\LaunchRemovePhotosCommand;
@@ -59,6 +60,7 @@ Route::get('list', [ListController::class, 'showListForm'])->name('list');
 Route::post('/owners/join', [OwnerController::class, 'join'])->name('owner-join');
 
 
+Route::get('/pricing', [PricingController::class, 'index']);
 
 
 // Coworkings
