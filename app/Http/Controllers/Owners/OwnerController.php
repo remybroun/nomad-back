@@ -58,7 +58,7 @@ class OwnerController extends Controller
             $user->notify(new WelcomeUser());
         }
 
-        return redirect(route('home'));
+        return redirect(route('welcome'));
     }
 
     public function join()
