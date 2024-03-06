@@ -4,332 +4,335 @@
 
 <main class="w-full mx-auto">
     @include('components.headers.main')
-    <div class="lg:py-20 lg:grid lg:grid-cols-4 lg:max-w-screen-xl mx-auto gap-10 lg:h-[70vh]">
-        <img alt="nomad office" src="https://i.pinimg.com/564x/ed/8d/58/ed8d5864eb043eeed62071d77d8c3887.jpg"
-             decoding="async" data-nimg="future"
-             class="sm:hidden object-cover mx-auto px-5 col-span-1 sm:p-0 sm:max-h-max max-h-64 w-full">
-        <div class="hidden sm:flex col-span-2 h-full w-full max-h-[450px] md:max-h-[600] overflow-hidden">
-            <div class=" overflow-hidden flex items-center h-full w-full relative rotate-90">
-                <div class="animate-marquee whitespace-nowrap ">
-                    <!-- Listing 1: Kingston, New York, USA -->
-                    <div class="inline-block -rotate-90 py-10">
-                        <a href="/listings/174"
-                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                            <div class="flex-shrink-0">
-                                <img alt="Kingston, New York, USA"
-                                     src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-660253929782506827/original/6a87081d-e6d4-4301-9e2e-5d09b2ac39e6.jpeg?im_w=480"
-                                     width="1000" height="1000" decoding="async"
-                                     class="sm:h-[140px] w-full object-cover rounded-lg"
-                                     loading="lazy">
-                            </div>
-                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                    Kingston, New York, United States</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Listing 2: Napoli, Campania, Italy -->
-                    <div class="inline-block -rotate-90 py-10">
-                        <a href="/listings/254"
-                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                            <div class="flex-shrink-0">
-                                <img alt="Napoli, Campania, Italy"
-                                     src="https://a0.muscache.com/im/pictures/9c62d393-12c2-493e-8cae-ed3294733c85.jpg?im_w=480"
-                                     width="1000" height="1000" decoding="async"
-                                     class="sm:h-[140px] w-full object-cover rounded-lg"
-                                     loading="lazy">
-                            </div>
-                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                    Napoli, Campania, Italy</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Additional listings would follow the same pattern -->
-                    <!-- Listing 3: New York, New York, United States -->
-                    <div class="inline-block -rotate-90 py-10">
-                        <a href="/listings/258"
-                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                            <div class="flex-shrink-0">
-                                <img alt="New York, New York, United States"
-                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-47991737/original/ba417097-30aa-4ae4-87cc-8916c6ebb426.jpeg?im_w=480"
-                                     width="1000" height="1000" decoding="async"
-                                     class="sm:h-[140px] w-full object-cover rounded-lg"
-                                     loading="lazy">
-                            </div>
-                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                    New York, New York, United States</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Listing 4: Medellín, Antioquia, Colombia -->
-                    <div class="inline-block -rotate-90 py-10">
-                        <a href="/listings/521"
-                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                            <div class="flex-shrink-0">
-                                <img alt="Medellín, Antioquia, Colombia"
-                                     src="https://a0.muscache.com/im/pictures/3f84b40a-34ee-45a2-bb5b-5e7234729c49.jpg?im_w=480"
-                                     width="1000" height="1000" decoding="async"
-                                     class="sm:h-[140px] w-full object-cover rounded-lg"
-                                     loading="lazy">
-                            </div>
-                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                    Medellín, Antioquia, Colombia</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Listing 5: Mexico City, Ciudad de México, Mexico -->
-                    <div class="inline-block -rotate-90 py-10">
-                        <a href="/listings/608"
-                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                            <div class="flex-shrink-0">
-                                <img alt="Mexico City, Ciudad de México, Mexico"
-                                     src="https://a0.muscache.com/im/pictures/fcdb25a2-b3a8-42b8-9dba-76fee1d58d19.jpg?im_w=480"
-                                     width="1000" height="1000" decoding="async"
-                                     class="sm:h-[140px] w-full object-cover rounded-lg"
-                                     loading="lazy">
-                            </div>
-                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                    Mexico City, Ciudad de México, Mexico</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Listing 6: Tulum, Quintana Roo, Mexico -->
-                    <div class="inline-block -rotate-90 py-10">
-                        <a href="/listings/622"
-                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                            <div class="flex-shrink-0">
-                                <img alt="Tulum, Quintana Roo, Mexico"
-                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-47091025/original/5fea364b-0d4e-49f4-b386-e919b72569fa.jpeg?im_w=480"
-                                     width="1000" height="1000" decoding="async"
-                                     class="sm:h-[140px] w-full object-cover rounded-lg"
-                                     loading="lazy">
-                            </div>
-                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                    Tulum, Quintana Roo, Mexico</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Continue with additional listings as needed -->
-                </div>
-            </div>
+{{--    <div class="lg:py-20 lg:grid lg:grid-cols-4 lg:max-w-screen-xl mx-auto gap-10 lg:h-[70vh]">--}}
+{{--        <img alt="nomad office" src="https://i.pinimg.com/564x/ed/8d/58/ed8d5864eb043eeed62071d77d8c3887.jpg"--}}
+{{--             decoding="async" data-nimg="future"--}}
+{{--             class="sm:hidden object-cover mx-auto px-5 col-span-1 sm:p-0 sm:max-h-max max-h-64 w-full">--}}
+{{--        <div class="hidden sm:flex col-span-2 h-full w-full max-h-[450px] md:max-h-[600] overflow-hidden">--}}
+{{--            <div class=" overflow-hidden flex items-center h-full w-full relative rotate-90">--}}
+{{--                <div class="animate-marquee whitespace-nowrap ">--}}
+{{--                    <!-- Listing 1: Kingston, New York, USA -->--}}
+{{--                    <div class="inline-block -rotate-90 py-10">--}}
+{{--                        <a href="/listings/174"--}}
+{{--                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">--}}
+{{--                            <div class="flex-shrink-0">--}}
+{{--                                <img alt="Kingston, New York, USA"--}}
+{{--                                     src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-660253929782506827/original/6a87081d-e6d4-4301-9e2e-5d09b2ac39e6.jpeg?im_w=480"--}}
+{{--                                     width="1000" height="1000" decoding="async"--}}
+{{--                                     class="sm:h-[140px] w-full object-cover rounded-lg"--}}
+{{--                                     loading="lazy">--}}
+{{--                            </div>--}}
+{{--                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">--}}
+{{--                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">--}}
+{{--                                    Kingston, New York, United States</h3>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <!-- Listing 2: Napoli, Campania, Italy -->--}}
+{{--                    <div class="inline-block -rotate-90 py-10">--}}
+{{--                        <a href="/listings/254"--}}
+{{--                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">--}}
+{{--                            <div class="flex-shrink-0">--}}
+{{--                                <img alt="Napoli, Campania, Italy"--}}
+{{--                                     src="https://a0.muscache.com/im/pictures/9c62d393-12c2-493e-8cae-ed3294733c85.jpg?im_w=480"--}}
+{{--                                     width="1000" height="1000" decoding="async"--}}
+{{--                                     class="sm:h-[140px] w-full object-cover rounded-lg"--}}
+{{--                                     loading="lazy">--}}
+{{--                            </div>--}}
+{{--                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">--}}
+{{--                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">--}}
+{{--                                    Napoli, Campania, Italy</h3>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <!-- Additional listings would follow the same pattern -->--}}
+{{--                    <!-- Listing 3: New York, New York, United States -->--}}
+{{--                    <div class="inline-block -rotate-90 py-10">--}}
+{{--                        <a href="/listings/258"--}}
+{{--                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">--}}
+{{--                            <div class="flex-shrink-0">--}}
+{{--                                <img alt="New York, New York, United States"--}}
+{{--                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-47991737/original/ba417097-30aa-4ae4-87cc-8916c6ebb426.jpeg?im_w=480"--}}
+{{--                                     width="1000" height="1000" decoding="async"--}}
+{{--                                     class="sm:h-[140px] w-full object-cover rounded-lg"--}}
+{{--                                     loading="lazy">--}}
+{{--                            </div>--}}
+{{--                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">--}}
+{{--                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">--}}
+{{--                                    New York, New York, United States</h3>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <!-- Listing 4: Medellín, Antioquia, Colombia -->--}}
+{{--                    <div class="inline-block -rotate-90 py-10">--}}
+{{--                        <a href="/listings/521"--}}
+{{--                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">--}}
+{{--                            <div class="flex-shrink-0">--}}
+{{--                                <img alt="Medellín, Antioquia, Colombia"--}}
+{{--                                     src="https://a0.muscache.com/im/pictures/3f84b40a-34ee-45a2-bb5b-5e7234729c49.jpg?im_w=480"--}}
+{{--                                     width="1000" height="1000" decoding="async"--}}
+{{--                                     class="sm:h-[140px] w-full object-cover rounded-lg"--}}
+{{--                                     loading="lazy">--}}
+{{--                            </div>--}}
+{{--                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">--}}
+{{--                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">--}}
+{{--                                    Medellín, Antioquia, Colombia</h3>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <!-- Listing 5: Mexico City, Ciudad de México, Mexico -->--}}
+{{--                    <div class="inline-block -rotate-90 py-10">--}}
+{{--                        <a href="/listings/608"--}}
+{{--                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">--}}
+{{--                            <div class="flex-shrink-0">--}}
+{{--                                <img alt="Mexico City, Ciudad de México, Mexico"--}}
+{{--                                     src="https://a0.muscache.com/im/pictures/fcdb25a2-b3a8-42b8-9dba-76fee1d58d19.jpg?im_w=480"--}}
+{{--                                     width="1000" height="1000" decoding="async"--}}
+{{--                                     class="sm:h-[140px] w-full object-cover rounded-lg"--}}
+{{--                                     loading="lazy">--}}
+{{--                            </div>--}}
+{{--                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">--}}
+{{--                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">--}}
+{{--                                    Mexico City, Ciudad de México, Mexico</h3>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <!-- Listing 6: Tulum, Quintana Roo, Mexico -->--}}
+{{--                    <div class="inline-block -rotate-90 py-10">--}}
+{{--                        <a href="/listings/622"--}}
+{{--                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">--}}
+{{--                            <div class="flex-shrink-0">--}}
+{{--                                <img alt="Tulum, Quintana Roo, Mexico"--}}
+{{--                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-47091025/original/5fea364b-0d4e-49f4-b386-e919b72569fa.jpeg?im_w=480"--}}
+{{--                                     width="1000" height="1000" decoding="async"--}}
+{{--                                     class="sm:h-[140px] w-full object-cover rounded-lg"--}}
+{{--                                     loading="lazy">--}}
+{{--                            </div>--}}
+{{--                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">--}}
+{{--                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">--}}
+{{--                                    Tulum, Quintana Roo, Mexico</h3>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <!-- Continue with additional listings as needed -->--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
 
-            <div class=" overflow-hidden flex items-center h-full w-full relative -rotate-90">
-                <div class="animate-marquee whitespace-nowrap ">
-                    <!-- Listing 1: Kingston, New York, USA -->
-                    <!-- Tulum, Quintana Roo, Mexico -->
-                    <div class="inline-block rotate-90 py-10">
-                        <a href="/listings/622"
-                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                            <div class="flex-shrink-0">
-                                <img alt="Tulum, Quintana Roo, Mexico"
-                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-47091025/original/5fea364b-0d4e-49f4-b386-e919b72569fa.jpeg?im_w=480"
-                                     width="1000" height="1000" decoding="async"
-                                     class="sm:h-[140px] w-full object-cover rounded-lg"
-                                     loading="lazy">
-                            </div>
-                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                    Tulum, Quintana Roo, Mexico</h3>
-                            </div>
-                        </a>
-                    </div>
+{{--            <div class=" overflow-hidden flex items-center h-full w-full relative -rotate-90">--}}
+{{--                <div class="animate-marquee whitespace-nowrap ">--}}
+{{--                    <!-- Listing 1: Kingston, New York, USA -->--}}
+{{--                    <!-- Tulum, Quintana Roo, Mexico -->--}}
+{{--                    <div class="inline-block rotate-90 py-10">--}}
+{{--                        <a href="/listings/622"--}}
+{{--                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">--}}
+{{--                            <div class="flex-shrink-0">--}}
+{{--                                <img alt="Tulum, Quintana Roo, Mexico"--}}
+{{--                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-47091025/original/5fea364b-0d4e-49f4-b386-e919b72569fa.jpeg?im_w=480"--}}
+{{--                                     width="1000" height="1000" decoding="async"--}}
+{{--                                     class="sm:h-[140px] w-full object-cover rounded-lg"--}}
+{{--                                     loading="lazy">--}}
+{{--                            </div>--}}
+{{--                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">--}}
+{{--                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">--}}
+{{--                                    Tulum, Quintana Roo, Mexico</h3>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
 
-                    <!-- Mexico City, Ciudad de México, Mexico -->
-                    <div class="inline-block rotate-90 py-10">
-                        <a href="/listings/657"
-                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                            <div class="flex-shrink-0">
-                                <img alt="Mexico City, Ciudad de México, Mexico"
-                                     src="https://a0.muscache.com/im/pictures/70f15ceb-49f1-4f23-ab61-d711f9a09b57.jpg?im_w=480"
-                                     width="1000" height="1000" decoding="async"
-                                     class="sm:h-[140px] w-full object-cover rounded-lg"
-                                     loading="lazy">
-                            </div>
-                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                    Mexico City, Ciudad de México, Mexico</h3>
-                            </div>
-                        </a>
-                    </div>
+{{--                    <!-- Mexico City, Ciudad de México, Mexico -->--}}
+{{--                    <div class="inline-block rotate-90 py-10">--}}
+{{--                        <a href="/listings/657"--}}
+{{--                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">--}}
+{{--                            <div class="flex-shrink-0">--}}
+{{--                                <img alt="Mexico City, Ciudad de México, Mexico"--}}
+{{--                                     src="https://a0.muscache.com/im/pictures/70f15ceb-49f1-4f23-ab61-d711f9a09b57.jpg?im_w=480"--}}
+{{--                                     width="1000" height="1000" decoding="async"--}}
+{{--                                     class="sm:h-[140px] w-full object-cover rounded-lg"--}}
+{{--                                     loading="lazy">--}}
+{{--                            </div>--}}
+{{--                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">--}}
+{{--                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">--}}
+{{--                                    Mexico City, Ciudad de México, Mexico</h3>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
 
-                    <!-- Barcelona, Catalunya, Spain -->
-                    <div class="inline-block rotate-90 py-10">
-                        <a href="/listings/1543"
-                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                            <div class="flex-shrink-0">
-                                <img alt="Barcelona, Catalunya, Spain"
-                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-812959360329830809/original/5cc6f191-bfa7-420a-9892-1d5b3fe4a98d.jpeg?im_w=480"
-                                     width="1000" height="1000" decoding="async"
-                                     class="sm:h-[140px] w-full object-cover rounded-lg"
-                                     loading="lazy">
-                            </div>
-                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                    Barcelona, Catalunya, Spain</h3>
-                            </div>
-                        </a>
-                    </div>
+{{--                    <!-- Barcelona, Catalunya, Spain -->--}}
+{{--                    <div class="inline-block rotate-90 py-10">--}}
+{{--                        <a href="/listings/1543"--}}
+{{--                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">--}}
+{{--                            <div class="flex-shrink-0">--}}
+{{--                                <img alt="Barcelona, Catalunya, Spain"--}}
+{{--                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-812959360329830809/original/5cc6f191-bfa7-420a-9892-1d5b3fe4a98d.jpeg?im_w=480"--}}
+{{--                                     width="1000" height="1000" decoding="async"--}}
+{{--                                     class="sm:h-[140px] w-full object-cover rounded-lg"--}}
+{{--                                     loading="lazy">--}}
+{{--                            </div>--}}
+{{--                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">--}}
+{{--                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">--}}
+{{--                                    Barcelona, Catalunya, Spain</h3>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
 
-                    <!-- Listing 4: Medellín, Antioquia, Colombia -->
-                    <div class="inline-block rotate-90 py-10">
-                        <a href="/listings/521"
-                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                            <div class="flex-shrink-0">
-                                <img alt="Medellín, Antioquia, Colombia"
-                                     src="https://a0.muscache.com/im/pictures/3f84b40a-34ee-45a2-bb5b-5e7234729c49.jpg?im_w=480"
-                                     width="1000" height="1000" decoding="async"
-                                     class="sm:h-[140px] w-full object-cover rounded-lg"
-                                     loading="lazy">
-                            </div>
-                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                    Medellín, Antioquia, Colombia</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Listing 5: Mexico City, Ciudad de México, Mexico -->
-                    <div class="inline-block rotate-90 py-10">
-                        <a href="/listings/608"
-                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                            <div class="flex-shrink-0">
-                                <img alt="Mexico City, Ciudad de México, Mexico"
-                                     src="https://a0.muscache.com/im/pictures/fcdb25a2-b3a8-42b8-9dba-76fee1d58d19.jpg?im_w=480"
-                                     width="1000" height="1000" decoding="async"
-                                     class="sm:h-[140px] w-full object-cover rounded-lg"
-                                     loading="lazy">
-                            </div>
-                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                    Mexico City, Ciudad de México, Mexico</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Listing 6: Tulum, Quintana Roo, Mexico -->
-                    <div class="inline-block rotate-90 py-10">
-                        <a href="/listings/622"
-                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">
-                            <div class="flex-shrink-0">
-                                <img alt="Tulum, Quintana Roo, Mexico"
-                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-47091025/original/5fea364b-0d4e-49f4-b386-e919b72569fa.jpeg?im_w=480"
-                                     width="1000" height="1000" decoding="async"
-                                     class="sm:h-[140px] w-full object-cover rounded-lg"
-                                     loading="lazy">
-                            </div>
-                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">
-                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">
-                                    Tulum, Quintana Roo, Mexico</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Continue with additional listings as needed -->
-                </div>
-            </div>
-        </div>
+{{--                    <!-- Listing 4: Medellín, Antioquia, Colombia -->--}}
+{{--                    <div class="inline-block rotate-90 py-10">--}}
+{{--                        <a href="/listings/521"--}}
+{{--                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">--}}
+{{--                            <div class="flex-shrink-0">--}}
+{{--                                <img alt="Medellín, Antioquia, Colombia"--}}
+{{--                                     src="https://a0.muscache.com/im/pictures/3f84b40a-34ee-45a2-bb5b-5e7234729c49.jpg?im_w=480"--}}
+{{--                                     width="1000" height="1000" decoding="async"--}}
+{{--                                     class="sm:h-[140px] w-full object-cover rounded-lg"--}}
+{{--                                     loading="lazy">--}}
+{{--                            </div>--}}
+{{--                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">--}}
+{{--                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">--}}
+{{--                                    Medellín, Antioquia, Colombia</h3>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <!-- Listing 5: Mexico City, Ciudad de México, Mexico -->--}}
+{{--                    <div class="inline-block rotate-90 py-10">--}}
+{{--                        <a href="/listings/608"--}}
+{{--                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">--}}
+{{--                            <div class="flex-shrink-0">--}}
+{{--                                <img alt="Mexico City, Ciudad de México, Mexico"--}}
+{{--                                     src="https://a0.muscache.com/im/pictures/fcdb25a2-b3a8-42b8-9dba-76fee1d58d19.jpg?im_w=480"--}}
+{{--                                     width="1000" height="1000" decoding="async"--}}
+{{--                                     class="sm:h-[140px] w-full object-cover rounded-lg"--}}
+{{--                                     loading="lazy">--}}
+{{--                            </div>--}}
+{{--                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">--}}
+{{--                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">--}}
+{{--                                    Mexico City, Ciudad de México, Mexico</h3>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <!-- Listing 6: Tulum, Quintana Roo, Mexico -->--}}
+{{--                    <div class="inline-block rotate-90 py-10">--}}
+{{--                        <a href="/listings/622"--}}
+{{--                           class="block p-2 shadow-lg hover:shadow-xl rounded-lg bg-white w-64">--}}
+{{--                            <div class="flex-shrink-0">--}}
+{{--                                <img alt="Tulum, Quintana Roo, Mexico"--}}
+{{--                                     src="https://a0.muscache.com/im/pictures/miso/Hosting-47091025/original/5fea364b-0d4e-49f4-b386-e919b72569fa.jpeg?im_w=480"--}}
+{{--                                     width="1000" height="1000" decoding="async"--}}
+{{--                                     class="sm:h-[140px] w-full object-cover rounded-lg"--}}
+{{--                                     loading="lazy">--}}
+{{--                            </div>--}}
+{{--                            <div class="flex-1 py-2 flex flex-col justify-between pt-2">--}}
+{{--                                <h3 class="text-xs font-display tracking-tight line-clamp-1 text-gray-900 font-serif tracking-tight leading-3 w-full line-clamp-2">--}}
+{{--                                    Tulum, Quintana Roo, Mexico</h3>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <!-- Continue with additional listings as needed -->--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
-        <div class="sm:my-5 my-4 lg:my-0 lg:col-span-2 lg:px-12 px-5 items-center mx-auto lg:flex">
-            <div>
-                <h1 class="font-display text-4xl tracking-tight font-base text-black sm:text-5xl leading-10">
-                    <span class="sr-only">Nomad Stay - </span>Find stays equipped for <span
-                        class="font-display font-black">remote workers.</span>
-                </h1>
-                <div
-                    class="sm:mt-4 mt-4 sm:space-y-6 space-y-4 font-display text-lg sm:text-xl tracking-tight text-black text-justify">
-                    <div class="grid xl:grid-cols-2 gap-x-4 gap-y-1 text-xs sm:text-sm">
-                        <div class="flex gap-1 items-center">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 text-everglade-600">
-                                <path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2"
-                                      stroke-linecap="round" stroke-linejoin="round">
-                                </path>
-                            </svg>
-                            <div>Housing equipped for <span class="font-bold">remote workers</span>
-                            </div>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 text-everglade-600">
-                                <path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2"
-                                      stroke-linecap="round" stroke-linejoin="round">
-                                </path>
-                            </svg>
-                            <div>
-                                <span class="font-bold">High Speed</span> Wifi
-                            </div>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 text-everglade-600">
-                                <path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2"
-                                      stroke-linecap="round" stroke-linejoin="round">
-                                </path>
-                            </svg>
-                            <div>
-                                <span class="font-bold">World-class</span> locations
-                            </div>
-                        </div>
-                        <div class="flex gap-1 items-center">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 text-everglade-600">
-                                <path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2"
-                                      stroke-linecap="round" stroke-linejoin="round">
-                                </path>
-                            </svg>
-                            <div>No more problems being <span class="font-bold">productive</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="">
-                        <div class="font-display">
-                            <div class="relative mt-1">
-                                <div
-                                    class="relative w-full cursor-default bg-white border-2 border-everglade-400 rounded-full text-left focus:outline-none sm:text-sm">
-                                    <button class="absolute inset-y-0 left-2 flex items-center pl-2"
-                                            id="headlessui-combobox-button-3" type="button" tabindex="-1"
-                                            aria-haspopup="listbox" aria-expanded="false" data-headlessui-state="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                             aria-hidden="true" class="h-5 w-5 text-gray-400">
-                                            <path fill-rule="evenodd"
-                                                  d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
-                                                  clip-rule="evenodd">
-                                            </path>
-                                        </svg>
-                                    </button>
-                                    @include('components.searchBar', [
-                                                'class' => 'w-full py-2 font-display font-medium pl-12 text-sm leading-9 text-gray-900 focus:ring-0 rounded-full',
-                                                'placeholder' => 'Enter a city, region or country'
-                                                ])
+{{--        <div class="sm:my-5 my-4 lg:my-0 lg:col-span-2 lg:px-12 px-5 items-center mx-auto lg:flex">--}}
+{{--            <div>--}}
+{{--                <h1 class="font-display text-4xl tracking-tight font-base text-black sm:text-5xl leading-10">--}}
+{{--                    <span class="sr-only">Nomad Stay - </span>Find stays equipped for <span--}}
+{{--                        class="font-display font-black">remote workers.</span>--}}
+{{--                </h1>--}}
+{{--                <div--}}
+{{--                    class="sm:mt-4 mt-4 sm:space-y-6 space-y-4 font-display text-lg sm:text-xl tracking-tight text-black text-justify">--}}
+{{--                    <div class="grid xl:grid-cols-2 gap-x-4 gap-y-1 text-xs sm:text-sm">--}}
+{{--                        <div class="flex gap-1 items-center">--}}
+{{--                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 text-everglade-600">--}}
+{{--                                <path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2"--}}
+{{--                                      stroke-linecap="round" stroke-linejoin="round">--}}
+{{--                                </path>--}}
+{{--                            </svg>--}}
+{{--                            <div>Housing equipped for <span class="font-bold">remote workers</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="flex gap-1 items-center">--}}
+{{--                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 text-everglade-600">--}}
+{{--                                <path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2"--}}
+{{--                                      stroke-linecap="round" stroke-linejoin="round">--}}
+{{--                                </path>--}}
+{{--                            </svg>--}}
+{{--                            <div>--}}
+{{--                                <span class="font-bold">High Speed</span> Wifi--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="flex gap-1 items-center">--}}
+{{--                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 text-everglade-600">--}}
+{{--                                <path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2"--}}
+{{--                                      stroke-linecap="round" stroke-linejoin="round">--}}
+{{--                                </path>--}}
+{{--                            </svg>--}}
+{{--                            <div>--}}
+{{--                                <span class="font-bold">World-class</span> locations--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="flex gap-1 items-center">--}}
+{{--                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 text-everglade-600">--}}
+{{--                                <path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2"--}}
+{{--                                      stroke-linecap="round" stroke-linejoin="round">--}}
+{{--                                </path>--}}
+{{--                            </svg>--}}
+{{--                            <div>No more problems being <span class="font-bold">productive</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="">--}}
+{{--                        <div class="font-display">--}}
+{{--                            <div class="relative mt-1">--}}
+{{--                                <div--}}
+{{--                                    class="relative w-full cursor-default bg-white border-2 border-everglade-400 rounded-full text-left focus:outline-none sm:text-sm">--}}
+{{--                                    <button class="absolute inset-y-0 left-2 flex items-center pl-2"--}}
+{{--                                            id="headlessui-combobox-button-3" type="button" tabindex="-1"--}}
+{{--                                            aria-haspopup="listbox" aria-expanded="false" data-headlessui-state="">--}}
+{{--                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"--}}
+{{--                                             aria-hidden="true" class="h-5 w-5 text-gray-400">--}}
+{{--                                            <path fill-rule="evenodd"--}}
+{{--                                                  d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"--}}
+{{--                                                  clip-rule="evenodd">--}}
+{{--                                            </path>--}}
+{{--                                        </svg>--}}
+{{--                                    </button>--}}
+{{--                                    @include('components.searchBar', [--}}
+{{--                                                'class' => 'w-full py-2 font-display font-medium pl-12 text-sm leading-9 text-gray-900 focus:ring-0 rounded-full',--}}
+{{--                                                'placeholder' => 'Enter a city, region or country'--}}
+{{--                                                ])--}}
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-end gap-3">
-                        <a class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 bg-everglade-500 flex items-center gap-1 text-xs sm:text-base"
-                           href="{{ route('listings-locations-proximity-wework') }}">
-                            Browse locations near a Wework
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                 stroke="currentColor" class="sm:w-6 w-5 sm:h-6 h-5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 bg-everglade-500 flex items-center gap-1 text-xs sm:text-base"
-                           href="/listings/locations">Browse all locations
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                 stroke="currentColor" class="sm:w-6 w-5 sm:h-6 h-5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="flex items-center justify-end gap-3">--}}
+{{--                        <a class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 bg-everglade-500 flex items-center gap-1 text-xs sm:text-base"--}}
+{{--                           href="{{ route('listings-locations-proximity-wework') }}">--}}
+{{--                            Browse locations near a Wework--}}
+{{--                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"--}}
+{{--                                 stroke="currentColor" class="sm:w-6 w-5 sm:h-6 h-5">--}}
+{{--                                <path stroke-linecap="round" stroke-linejoin="round"--}}
+{{--                                      d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z">--}}
+{{--                                </path>--}}
+{{--                            </svg>--}}
+{{--                        </a>--}}
+{{--                        <a class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 bg-everglade-500 flex items-center gap-1 text-xs sm:text-base"--}}
+{{--                           href="/listings/locations">Browse all locations--}}
+{{--                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"--}}
+{{--                                 stroke="currentColor" class="sm:w-6 w-5 sm:h-6 h-5">--}}
+{{--                                <path stroke-linecap="round" stroke-linejoin="round"--}}
+{{--                                      d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418">--}}
+{{--                                </path>--}}
+{{--                            </svg>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+
+    @include('components.landingPiece')
+
     <div class="max-w-screen-xl mx-2 sm:mx-auto space-y-10">
         <h2 class="font-serif tracking-tight sm:text-3xl text-2xl">Find a place to work remotely</h2>
         <ul class="max-w-screen-xl mx-auto grid grid-cols-1 gap-x-2 gap-y-2 sm:gap-5 md:grid-cols-4">
@@ -763,36 +766,36 @@
                href="/listings">See all our Nomad Listings</a>
         </div>
     </div>
-    <div class="max-w-screen-xl sm:my-20 mx-auto" id="how-it-works">
-        <div class="mx-auto md:flex items-center w-full justify-between gap-x-10 sm:px-10 px-4">
-            <div class="">
-                <h2 class="font-display text-3xl lg:text-5xl text-black font-medium">
-                    <span class="sr-only">Nomad Stay</span> A curated list of locations for remote workers</h2>
-                <div
-                    class="my-6 sm:space-y-6 space-y-2 font-display sm:text-lg tracking-tight text-gray-600 text-justify sm:max-w-lg mx-auto">
-                    <p>Join a curated list of locations all across the globe. Our selection of <span
-                            class="font-bold text-green-700">Airbnb listings </span>and <span
-                            class="font-bold text-green-700"> select locations</span> have all been verified and fill
-                        all the requirements for the modern day nomad.</p>
-                    <p>We install the latest tech and insure the most comfortable setup for our community of nomads.
-                        With our certification, you will attract the highest talent of remote workers to your
-                        location.</p>
-                    <div class="w-full flex mx-auto my-2 sm:justify-center">
-                        <a class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 inline-flex items-center justify-center px-5 py-3 border border-transparent text-sm sm:text-base rounded-md text-white bg-everglade-600 hover:bg-everglade-500"
-                           variant="solid" href="/pricing">
-									<span>Get featured <span aria-hidden="true">→</span>
-								</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full">
-                <img
-                    src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/settle/pilot/bf876277655267.5c8f6539aac51.webp"
-                    alt="Nomad setup with screen, chair and desk">
-            </div>
-        </div>
-    </div>
+{{--    <div class="max-w-screen-xl sm:my-20 mx-auto" id="how-it-works">--}}
+{{--        <div class="mx-auto md:flex items-center w-full justify-between gap-x-10 sm:px-10 px-4">--}}
+{{--            <div class="">--}}
+{{--                <h2 class="font-display text-3xl lg:text-5xl text-black font-medium">--}}
+{{--                    <span class="sr-only">Nomad Stay</span> A curated list of locations for remote workers</h2>--}}
+{{--                <div--}}
+{{--                    class="my-6 sm:space-y-6 space-y-2 font-display sm:text-lg tracking-tight text-gray-600 text-justify sm:max-w-lg mx-auto">--}}
+{{--                    <p>Join a curated list of locations all across the globe. Our selection of <span--}}
+{{--                            class="font-bold text-green-700">Airbnb listings </span>and <span--}}
+{{--                            class="font-bold text-green-700"> select locations</span> have all been verified and fill--}}
+{{--                        all the requirements for the modern day nomad.</p>--}}
+{{--                    <p>We install the latest tech and insure the most comfortable setup for our community of nomads.--}}
+{{--                        With our certification, you will attract the highest talent of remote workers to your--}}
+{{--                        location.</p>--}}
+{{--                    <div class="w-full flex mx-auto my-2 sm:justify-center">--}}
+{{--                        <a class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 inline-flex items-center justify-center px-5 py-3 border border-transparent text-sm sm:text-base rounded-md text-white bg-everglade-600 hover:bg-everglade-500"--}}
+{{--                           variant="solid" href="/pricing">--}}
+{{--									<span>Get featured <span aria-hidden="true">→</span>--}}
+{{--								</span>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="w-full">--}}
+{{--                <img--}}
+{{--                    src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/settle/pilot/bf876277655267.5c8f6539aac51.webp"--}}
+{{--                    alt="Nomad setup with screen, chair and desk">--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="lg:grid lg:grid-cols-4 flex flex-col-reverse gap-y-10 max-w-screen-2xl mx-auto my-20">
         <div class="lg:col-span-2 col-span-7 mx-auto flex flex-col justify-center">
             <span class="rounded-full bg-everglade-600 text-sm text-white px-3 py-1 h-fit w-fit my-2">New</span>

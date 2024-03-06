@@ -47,6 +47,6 @@ class OwnerController extends Controller
 //            $user->notify(new WelcomeUser());
         }
 
-        return redirect(route('owner-dashboard'));
+        return redirect(route('home'));
     }
 }
