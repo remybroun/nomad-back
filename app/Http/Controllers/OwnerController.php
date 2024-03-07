@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class OwnerController extends Controller
 {
-        public function join(Request $request)
+    public function joinForm(Request $request)
     {
         $new_owner = $request->validate([
             'first_name' => 'required',
@@ -21,6 +21,7 @@ class OwnerController extends Controller
         $existingUser = User::where('email', $request->email)->first();
 
         if ($existingUser) {
+//            update user details
             $existingUser->update([
                 'first_name' => $request->first_name,
                 'phone' => $request->phone ?? null,
@@ -43,10 +44,13 @@ class OwnerController extends Controller
                 'is_owner' => true,
             ]);
 
-
-//            $user->notify(new WelcomeUser());
         }
 
         return redirect(route('welcome'));
+    }
+
+    public function join()
+    {
+        return view('owners.join');
     }
 }

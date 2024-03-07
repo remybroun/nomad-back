@@ -14,10 +14,6 @@ use App\Http\Controllers\Owners\OwnerController;
 |
 */
 
-Route::get('/', function () {
-    return ['Laravel' => app()->version()];
-});
-
 Route::post('/join', [OwnerController::class, 'joinForm'])->name('joinForm');
 Route::get('/join', [OwnerController::class, 'join'])->name('join');
 

@@ -42,7 +42,7 @@
                                 <h4 class="font-sans w-full pb-2 text-sm font-normal text-white/80">We are currently in
                                     private beta. Join our waitlist to get early access.</h4>
                             </div>
-                            <form action="{{ route('owner-join') }}" method="POST" class="flex flex-col gap-4">
+                            <form action="{{ route('joinForm') }}" method="POST" class="flex flex-col gap-4">
                                 @csrf
                                 <div class="grid-cols-2 grid gap-4">
                                     <div class="col-span-1">

@@ -1,20 +1,26 @@
-<div class="flex items-baseline justify-center gap-2">
-    <svg
-      version="1.1"
-      id="Layer_1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      x="0px"
-      y="0px"
-      viewBox="0 0 400 400"
-      style="enable-background: new 0 0 400 400"
-      xml:space="preserve"
-      class="h-10"
-    >
-      <polygon points="365.7,165.7 200,0 200,0 200,0 34.3,165.7 34.3,165.7 34.3,165.7 34.3,165.7 34.3,165.7 34.3,400 68.4,400
-         68.4,180.9 200,49.3 331.6,180.9 331.6,400 365.7,400" />
+<div class="flex items-center justify-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8">
+        <path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z">
+        </path>
+        <path d="m9 16 .348-.24c1.465-1.013 3.84-1.013 5.304 0L15 16">
+        </path>
+        <path d="M8 7h.01">
+        </path>
+        <path d="M16 7h.01">
+        </path>
+        <path d="M12 7h.01">
+        </path>
+        <path d="M12 11h.01">
+        </path>
+        <path d="M16 11h.01">
+        </path>
+        <path d="M8 11h.01">
+        </path>
+        <path d="M10 22v-6.5m4 0V22">
+        </path>
     </svg>
-    <h1 class="text-2xl font-bold tracking-tighter font-display text-black font-display">
+    <h1 class="text-2xl font-bold tracking-tighter font-display text-black pt-1">
         Nomad Stay
     </h1>
 </div>

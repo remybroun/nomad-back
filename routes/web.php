@@ -24,10 +24,10 @@ use Illuminate\Support\Facades\Route;
 //    return ['Laravel' => app()->version()];
 //});
 
-#Serve Inertia App
-Route::get('/', function () {
-    return Inertia\Inertia::render('Welcome');
-})->name('welcome');
+//#Serve Inertia App
+//Route::get('/', function () {
+//    return Inertia\Inertia::render('Welcome');
+//})->name('welcome');
 
 Route::prefix('auth')->group(base_path('routes/auth.php'));
 // require __DIR__.'/auth.php';
@@ -39,7 +39,7 @@ Route::get('/sitemap.xml', function () {
 Route::get('/', function () {
     $featuredListings = \App\Models\Listing::with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->orderBy('is_featured', 'DESC')->orderBy('id', 'DESC')->limit(3)->get();
     return view('welcome', ['featuredListings' => $featuredListings]);
-});
+})->name('welcome');
 
 //Route::get('/listings', [ListingController::class], 'showListings')->name('listings');
 Route::get('listings', [ListingController::class, 'showListings'])->name('listings');
@@ -57,7 +57,8 @@ Route::get('listings/locations/{location}', [ListingController::class, 'showLoca
 Route::get('listings/{listing}', [ListingController::class, 'showView'])->name('listing.show');
 
 Route::get('list', [ListController::class, 'showListForm'])->name('list');
-Route::post('/owners/join', [OwnerController::class, 'join'])->name('owner-join');
+//Route::post('/owners/join', [OwnerController::class, 'join'])->name('owner-join');
+Route::post('/owners/join', [OwnerController::class, 'joinForm'])->name('joinForm');
 
 
 Route::get('/pricing', [PricingController::class, 'index']);
