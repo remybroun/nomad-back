@@ -7,6 +7,7 @@ use App\Http\Controllers\PricingController;
 use App\Http\Controllers\WeworkController;
 use App\Http\Controllers\ListingController;
 use App\Jobs\LaunchRemovePhotosCommand;
+use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,7 +38,7 @@ Route::get('/sitemap.xml', function () {
 });
 
 Route::get('/', function () {
-    $featuredListings = \App\Models\Listing::with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->orderBy('is_featured', 'DESC')->orderBy('id', 'DESC')->limit(3)->get();
+    $featuredListings = Listing::with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->orderBy('is_featured', 'DESC')->orderBy('id', 'DESC')->limit(12)->get();
     return view('welcome', ['featuredListings' => $featuredListings]);
 })->name('welcome');
 

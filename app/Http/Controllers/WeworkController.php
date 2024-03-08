@@ -71,6 +71,11 @@ class WeworkController extends Controller
         ], 200);
     }
 
+    function showCities(){
+        $cities = Wework::select('city')->distinct()->paginate(50);
+        return view('coworkings.wework.cities.index', compact('cities'));
+    }
+
     public function ranking(Request $request){
         $weworks = Wework::orderBy('score', 'DESC')->orderBy('country', 'ASC');
 

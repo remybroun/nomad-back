@@ -1,8 +1,8 @@
 <div class="w-full mx-auto">
     <div class="relative">
-        <div class="relative max-w-screen-xl mx-auto">
+        <div class="relative max-w-screen-2xl mx-auto">
             <div class="mt-4">
-                <ul class="max-w-screen-xl mx-auto grid grid-cols-1 gap-x-5 gap-y-2 sm:gap-x-5 md:grid-cols-2 lg:grid-cols-3">
+                <ul class="mx-auto grid grid-cols-1 gap-x-5 gap-y-2 sm:gap-x-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     @forelse ($listings as $listing)
 
                         <li key="{{ $listing->title }}"

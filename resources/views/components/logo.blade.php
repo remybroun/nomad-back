@@ -20,7 +20,7 @@
         <path d="M10 22v-6.5m4 0V22">
         </path>
     </svg>
-    <h1 class="text-2xl font-bold tracking-tighter font-display text-black pt-1">
+    <h1 class="text-2xl font-bold tracking-tighter font-display text-black pt-1 whitespace-nowrap">
         Nomad Stay
     </h1>
 </div>
