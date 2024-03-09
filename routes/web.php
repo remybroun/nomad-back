@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CoworkingController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\OwnerController;
@@ -61,6 +62,7 @@ Route::get('list', [ListController::class, 'showListForm'])->name('list');
 //Route::post('/owners/join', [OwnerController::class, 'join'])->name('owner-join');
 Route::post('/owners/join', [OwnerController::class, 'joinForm'])->name('joinForm');
 
+Route::post('/join-newsletter', [ContactController::class, 'joinNewsletter'])->name('join-newsletter');
 
 Route::get('/pricing', [PricingController::class, 'index']);
 

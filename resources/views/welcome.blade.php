@@ -308,7 +308,8 @@
                             <p class="mt-4 text-lg tracking-tight text-white">Get notified when we add new locations to
                                 our collection. You will receive promo codes and lifestyle hacks as well.</p>
                         </div>
-                        <form name="newsletter2">
+                        <form name="newsletter2" method="POST" action="{{ route('join-newsletter') }}"
+                              class="flex flex-col gap-4 sm:gap-8">
                             @csrf
                             <h3 class="text-lg font-semibold tracking-tight text-white">Sign up to our newsletter <span
                                     aria-hidden="true">↓</span>

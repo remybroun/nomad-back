@@ -4,14 +4,13 @@
             <div class="mb-4">
                 <h2 class="text-lg font-bold text-gray-900">Enter Your Email</h2>
             </div>
-            <form @submit.prevent="$refs.submitButton.click()">
-                <input type="email" required placeholder="Your email..."
+            <form @submit.prevent="submitForm" action="{{ route('join-newsletter') }}" method="POST">
+                <input type="email" name="email" value="" required="" placeholder="Email address"
                        class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                        x-ref="emailInput">
                 <div class="mt-5 sm:flex sm:flex-row-reverse">
             <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-              <button @click="$refs.emailInput.value && (window.location.href = '{{$listing?->external_url}}');"
-                      x-ref="submitButton"
+              <button type="submit"
                       class="inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white bg-everglade-600 border border-transparent rounded-md hover:bg-everglade-500 focus:outline-none focus:border-everglade-700 focus:shadow-outline-everglade sm:text-sm sm:leading-5">
                 Submit
               </button>
@@ -27,3 +26,32 @@
         </div>
     </div>
 </div>
+
+<script>
+    function submitForm() {
+        // Get the email input value
+        var email = this.$refs.emailInput.value;
+
+        // call join-newsletter route
+        fetch('{{ route('join-newsletter') }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email,
+                _token: '{{ csrf_token() }}'
+            }),
+            
+        })
+
+        .then(function (response) {
+            // Redirect to the desired page upon successful submission
+            window.location.href = '{{ $listing->external_url }}';
+        })
+        .catch(function (error) {
+            console.error(error);
+            // Handle errors if needed
+        });
+    }
+</script>

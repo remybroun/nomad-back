@@ -19,7 +19,7 @@
             'longitude' => $coworking->lng,
         ];
     });
-    $coworkings = $close_weworks->merge($coworkings);
+    $coworkings = $close_weworks->concat($coworkings);
 
     // Dummy data for coworking spaces
 //    $coworkings = collect([
@@ -126,7 +126,7 @@
     {{--    Map view--}}
 
     <div class="w-full bg-gray-100 col-span-2 rounded overflow-clip">
-        <div id="mapid" style="height: 500px; width: 100%;"></div>
+        <div class="z-10" id="mapid" style="height: 500px; width: 100%;"></div>
     </div>
 
 
