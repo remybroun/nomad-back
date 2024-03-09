@@ -9,7 +9,7 @@ use App\Models\CoworkingListingProximity;
 class CoworkingController extends Controller
 {
     public function index(){
-        $coworkings = Coworking::paginate(15);
+        $coworkings = Coworking::with(['location_slug', 'closeListings'])->paginate(15);
         return view('coworkings.index', [
             'coworkings' => $coworkings,
 //            'listings' => $coworking->listings()->paginate(10)
@@ -18,7 +18,7 @@ class CoworkingController extends Controller
 
     public function show($coworking)
     {
-        $coworking = Coworking::where('slug', $coworking)->first();
+        $coworking = Coworking::with(['location_slug', 'closeListings'])->where('slug', $coworking)->first();
         return view('coworkings.show', [
             'coworking' => $coworking,
 //            'listings' => $coworking->listings()->paginate(10)

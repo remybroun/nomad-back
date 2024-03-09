@@ -19,6 +19,11 @@ class Coworking extends Model
 
     }
 
+    public function closeListings()
+    {
+        return $this->hasMany(CoworkingListingProximity::class, 'coworking_id', 'id');
+    }
+
 //    function listings()
 //    {
 //        return $this->hasMany(Listing::class);
