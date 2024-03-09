@@ -42,7 +42,7 @@
                 email: email,
                 _token: '{{ csrf_token() }}'
             }),
-            
+
         })
 
         .then(function (response) {
