@@ -17,7 +17,7 @@
                                     <img
                                         class="sm:h-48 h-64 w-full object-cover rounded-lg"
                                         src="{{ str_replace('w=1200', 'w=480', $coworking->image_url) ?: asset('images/round-logo.png') }}"
-                                        alt={{"Coworking for remote work in ".$coworking?->location_slug->name}}
+                                        alt={{"Coworking for remote work in ".$coworking?->location_slug?->name}}
                                     />
                                 </div>
                                 <div class="flex items-start justify-between gap-4 py-2">
@@ -25,7 +25,7 @@
                                         <h2 class="font-semibold text-xl">{{$coworking?->name}}</h2>
                                         <div class="flex items-center gap-x-2 text-gray-500">
                                             <x-icon name="flag-country-{{ strtolower($coworking->location_slug?->country?->code) }}" width="20" height="20"/>
-                                            <p class="text-sm text-gray-500 dark:text-gray-400">{{$coworking?->location_slug->name}}</p>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400">{{$coworking?->location_slug?->name}}</p>
                                         </div>
                                         <div class="px-4 py-2 text-sm font-medium bg-gray-100 rounded-md w-fit">
                                             <p class="text-gray-500 dark:text-gray-400">
