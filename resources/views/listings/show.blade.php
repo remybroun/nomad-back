@@ -5,10 +5,9 @@
     @include('components.headers.main')
     <div class="max-w-screen-xl mx-auto space-y-5 px-4 xl:px-0" x-data="{ amenitiesDialogOpen: false }">
 
-        <div class="space-y-2">
+        <div class="space-y-2 mt-10">
             <div class="space-y-2 w-full justify-between sm:p-0 px-2 grid grid-cols-2">
-                <h1
-                    class="font-display tracking-tighter text-lg sm:text-xl col-span-1">{{$listing->title}}</h1>
+                <h1 class="font-display tracking-tighter text-lg sm:text-xl col-span-1">{{$listing->title}}</h1>
                 <div class="col-span-1 flex justify-end">
                     <div class="font-display tracking-tighter flex items-center gap-2 text-sm justify-end">Nomad
                         Validated
@@ -24,7 +23,7 @@
             </div>
             <div class="flex justify-between w-full">
                 <a class="flex items-center gap-x-1 text-gray-400"
-                   href="/listings/locations/kingston">
+                   href="{{ route('listings-locations-show', $listing->location_slug->slug) }}">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                          class="w-4 h-4 text-everglade-600">
                         <path fill-rule="evenodd"
@@ -41,11 +40,25 @@
                 </div>
             </div>
         </div>
-        {{-- Main Image   --}}
-        <div class="relative sm:p-0 px-2">
-            <img
-                src="{{Str::replace('w=720', 'w=1920',$listing?->mainListingImage?->url) ?: asset('images/round-logo.png')}}"
-                class="w-full object-cover rounded-lg h-[20em]" alt="">
+
+        <div class="grid md:grid-cols-3 md:gap-4">
+            <div class="aspect-video w-full md:col-span-2">
+                <img
+                    src="{{Str::replace('w=720', 'w=1920',$listing?->mainListingImage?->url) ?: asset('images/round-logo.png')}}"
+                    alt="Apartment" width="1200"
+                    height="600" class="aspect-video object-cover rounded">
+            </div>
+            <div class="grid md:grid-rows-2 md:gap-4">
+                @if($listing->listingImages->count() > 0)
+                    <img
+                        src="{{Str::replace('w=720', 'w=1920',$listing?->listingImages[0]?->url) ?: asset('images/round-logo.png')}}"
+                        alt="Apartment" width="600"
+                        class="aspect-video object-cover rounded">
+                    <img
+                        src="{{Str::replace('w=720', 'w=1920',$listing?->listingImages[1]?->url) ?: asset('images/round-logo.png')}}"
+                        alt="Apartment" width="600" class="aspect-video object-cover rounded">
+                @endif
+            </div>
         </div>
 
         <div id="descriptionContainer" class="max-h-40 overflow-hidden max-w-screen-xl">
@@ -208,7 +221,8 @@
             </div>
             <div x-cloak x-show="modalOpen" @click.away="closeModal()"
                  class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4">
-                <div class="bg-white rounded-lg max-w-5xl mx-auto" x-cloak x-show="modalOpen" @click.away="closeModal()">
+                <div class="bg-white rounded-lg max-w-5xl mx-auto" x-cloak x-show="modalOpen"
+                     @click.away="closeModal()">
                     <div class="relative">
                         <!-- Carousel Controls -->
                         <button @click="prevPhoto()"
@@ -249,7 +263,8 @@
         @if(isset($listing->$close_coworkings))
             {{--    Close Wework and Coworking section    --}}
             <div class="space-y-10">
-                <div class="font-display tracking-tighter text-2xl font-medium gap-2 flex items-baseline mt-10 sm:p-0 px-2">
+                <div
+                    class="font-display tracking-tighter text-2xl font-medium gap-2 flex items-baseline mt-10 sm:p-0 px-2">
                     <h3>
                         Close Coworking Spaces
                         <span class="text-sm sm:text-lg italic text-everglade-600 font-serif tracking-tighter">The essentials for a remote worker</span>
@@ -289,6 +304,77 @@
         @endif
     </div>
 
+    <div class="max-w-screen-xl mx-auto py-12 px-4">
+        <h2 class="text-3xl font-display mb-8">5 reasons why to choose this offer on Nomad Stay</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="text-green-500 h-6 w-6 mr-4">
+                    <polyline points="20 6 9 17 4 12">
+
+                    </polyline>
+                </svg>
+                <p class="text-lg w-80">
+                    No more personal visits, no more stress or disappointment! You deal with the whole renting process
+                    immediately.
+                </p>
+            </div>
+
+            <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="text-green-500 h-6 w-6 mr-4">
+                    <polyline points="20 6 9 17 4 12">
+
+                    </polyline>
+                </svg>
+                <p class="text-lg w-80">
+                    This stay is certified for remote work by Nomad Stay.
+                </p>
+            </div>
+
+            <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="text-green-500 h-6 w-6 mr-4">
+                    <polyline points="20 6 9 17 4 12">
+
+                    </polyline>
+                </svg>
+                <p class="text-lg w-80">
+                    You get Nomad Stay support for the whole duration of your rent.
+                </p>
+            </div>
+            <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="text-green-500 h-6 w-6 mr-4">
+                    <polyline points="20 6 9 17 4 12">
+
+                    </polyline>
+                </svg>
+                <p class="text-lg w-80">
+                    The whole contract is available for you before reservation.
+                </p>
+            </div>
+
+            <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="text-green-500 h-6 w-6 mr-4">
+                    <polyline points="20 6 9 17 4 12">
+
+                    </polyline>
+                </svg>
+                <p class="text-lg w-80">
+                    You can book the place for a few days or for a few months.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    @include('components.pointsOfInterest', ['listing' => $listing])
 
     <div x-data="{ showModal: false }" class="text-center">
         <div class="bg-white">
@@ -319,7 +405,7 @@
     </div>
     @include('components.footers.main')
 </div>
-</div>
+
 
 
 @push('js')

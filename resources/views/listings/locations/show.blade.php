@@ -17,7 +17,8 @@
             </div>
             <div class="relative px-16 py-16 sm:py-32 leading-4">
                 <h1 class="text-xl font-display font-bold text-white sm:text-2xl lg:text-3xl">
-                    All Listings in <br>
+                    Best rentals for remote work in
+                    <br>
                     <div class="flex gap-2 items-center">
                         <span class="text-xl font-normal">{{ $location->name }} {{ $location->country->name }}</span>
                         <x-icon name="flag-country-{{ strtolower($location->country->code) }}" width="30" height="30"/>

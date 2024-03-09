@@ -235,89 +235,62 @@
             <h3 class="max-w-screen-lg mx-auto w-full mt-6 font-display md:text-3xl text-xl font-bold">Join a community
                 of remote workers</h3>
 
-            <div class="marquee"
-                 style="--play: running; --direction: normal; --duration: 23s; --delay: 0s; --iteration-count: infinite;">
-                <div class="max-w-screen-xl sm:flex mx-auto space-y-10 sm:gap-x-10 my-8 items-center">
-                    <a href="https://www.linkedin.com/in/remybroun"
-                       class="relative flex items-start w-full cursor-pointer">
-                        <div
-                            class="py-6 pt-16 px-4 md:mx-0 bg-white border-4 border-everglade-600 rounded-2xl text-gray-900">
-                            <div class="absolute top-0 -mt-8 transform">
-                                <img alt="Testimonial 01"
-                                     src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/nomadremy.webp"
-                                     decoding="async" data-nimg="future"
-                                     class="relative rounded-full border-4 border-everglade-700 h-20 w-20"
-                                     loading="lazy">
-                            </div>
-                            <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
-                                <p>"After Spending so much time looking for convinient Airbnbs, I decided to found
-                                    Nomad Stay. An airbnb curation list driven by a community of nomads. <br> My
-                                    goal is to ensure that all remote workers find a perfect place to live and work
-                                    in harmony."</p>
-                            </blockquote>
-                            <cite class="block font-bold text-lg not-italic">
-                            </cite>
-                            <div class="text-everglade-700 text-sm font-bold">
-                                <p class="text-xs italic mb-2">Founding Nomad </p>
-                                <span>Software Engineer </span>
-                                <div class="text-everglade-600 hover:underline">@Apple</div>
-                            </div>
+            <div class="w-full grid gap-6 md:gap-12 lg:grid-cols-2 xl:gap-10 xl:grid-cols-3">
+                <div class="flex flex-col items-center gap-2">
+                    <div class="border text-card-foreground shadow-lg bg-white p-4 rounded-lg space-y-4">
+                        <img
+                            src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/nomadremy.webp" width="96"
+                            height="96" alt="Portrait of Emily" class="rounded-full"
+                            style="aspect-ratio: 96 / 96; object-fit: cover;">
+                        <div class="grid gap-1">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Software Engineer</p>
                         </div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/emrick-donadei/"
-                       class="relative flex items-start w-full cursor-pointer">
-                        <div
-                            class="py-6 pt-16 px-4 md:mx-0 bg-white border-4 border-everglade-600 rounded-2xl text-gray-900">
-                            <div class="absolute top-0 -mt-8 transform">
-                                <img alt="Testimonial 01"
-                                     src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/1590874819807.webp"
-                                     width="120" height="120" decoding="async" data-nimg="future"
-                                     class="relative rounded-full border-4 border-everglade-700 h-20 w-20"
-                                     loading="lazy">
-                            </div>
-                            <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
-                                <p>"Ever since Google has offered us the chance to work remotely, I have always
-                                    dreamed of finding the perfect airbnb made for the remote worker. <br>Now with
-                                    Nomad Stay, I don't have one, but hundreds of airbnbs to choose from."</p>
-                            </blockquote>
-                            <cite class="block font-bold text-lg not-italic">
-                            </cite>
-                            <div class="text-everglade-700 text-sm font-bold">
-                                <span>Software Engineer </span>
-                                <div class="text-everglade-600 hover:underline">@Google</div>
-                            </div>
+                        <p class="text-sm">
+                            “After Spending so much time looking for convinient Airbnbs, I decided to found
+                            Nomad Stay. An airbnb curation list driven by a community of nomads. <br> My
+                            goal is to ensure that all remote workers find a perfect place to live and work
+                            in harmony“
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="border text-card-foreground shadow-lg bg-white p-4 rounded-lg space-y-4">
+                        <img
+                            src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/1590874819807.webp"
+                            width="96" height="96" alt="Portrait of Alex" class="rounded-full"
+                            style="aspect-ratio: 96 / 96; object-fit: cover;">
+                        <div class="grid gap-1">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Software Engineer</p>
                         </div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/josh-balard-7b299b212"
-                       class="relative flex items-start w-full cursor-pointer">
-                        <div
-                            class="py-6 pt-16 px-4 md:mx-0 bg-white border-4 border-everglade-600 rounded-2xl text-gray-900">
-                            <div class="absolute top-0 -mt-8 transform">
-                                <img alt="Testimonial 01"
-                                     src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/1627333510820.webp"
-                                     width="120" height="120" decoding="async" data-nimg="future"
-                                     class="relative rounded-full border-4 border-everglade-700 h-20 w-20"
-                                     loading="lazy">
-                            </div>
-                            <blockquote class="text-justify text-xs leading-5 tracking-tight font-display pb-4">
-                                <p>"I have been a full-time nomad since 2018. I haven't stopped travelling! Work
-                                    also can't stop. Multiple times I was at risk of losing my job due to a bad set
-                                    up, poor Wi-Fi or colleagues questionning my whereabouts. Nomad Stay seems to
-                                    be the way to go. I can't wait until I try my first Nomad Listing."</p>
-                            </blockquote>
-                            <cite class="block font-bold text-lg not-italic">
-                            </cite>
-                            <div class="text-everglade-700 text-sm font-bold">
-                                <span>Software Engineer </span>
-                                <div class="text-everglade-600 hover:underline">@Google</div>
-                            </div>
+                        <p class="text-sm">
+                            “Ever since Google has offered us the chance to work remotely, I have always
+                            dreamed of finding the perfect airbnb made for the remote worker. <br>Now with
+                            Nomad Stay, I don't have one, but hundreds of airbnbs to choose from.“
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <div class="border text-card-foreground shadow-lg bg-white p-4 rounded-lg space-y-4">
+                        <img
+                            src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/other/1627333510820.webp"
+                            width="96" height="96" alt="Portrait of Sophia" class="rounded-full"
+                            style="aspect-ratio: 96 / 96; object-fit: cover;">
+                        <div class="grid gap-1">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Software Engineer</p>
                         </div>
-                    </a>
+                        <p class="text-sm">
+                            “I have been a full-time nomad since 2018. I haven't stopped travelling! Work
+                            also can't stop. Multiple times I was at risk of losing my job due to a bad set
+                            up, poor Wi-Fi or colleagues questionning my whereabouts. Nomad Stay seems to
+                            be the way to go. I can't wait until I try my first Nomad Listing.“
+                        </p>
+                    </div>
                 </div>
             </div>
+
         </div>
         <section id="newsletter" aria-label="Newsletter">
-            <div class="mx-auto max-w-7xl px-4">
+            <div class="mx-auto max-w-screen-xl px-4">
                 <div
                     class="relative -mx-4 overflow-hidden bg-everglade-100 py-16 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:rounded-5xl md:px-16 xl:px-24 xl:py-24 sm:mt-20 text-white">
                     <div class="absolute inset-0">
@@ -328,7 +301,7 @@
                         </div>
                     </div>
                     <div
-                        class="relative mx-auto grid max-w-2xl grid-cols-1 gap-x-32 gap-y-14 xl:max-w-none xl:grid-cols-2">
+                        class="relative mx-auto grid max-w-4xl w-full grid-cols-1 gap-x-32 gap-y-14 xl:max-w-none xl:grid-cols-2">
                         <div>
                             <p class="font-serif text-4xl font-medium tracking-tight text-white sm:text-5xl">Get news on
                                 our latest locations</p>
@@ -336,6 +309,7 @@
                                 our collection. You will receive promo codes and lifestyle hacks as well.</p>
                         </div>
                         <form name="newsletter2">
+                            @csrf
                             <h3 class="text-lg font-semibold tracking-tight text-white">Sign up to our newsletter <span
                                     aria-hidden="true">↓</span>
                             </h3>
@@ -345,7 +319,7 @@
                                        aria-label="Email address"
                                        class="-my-2.5 flex-auto bg-transparent pl-6 pr-2.5 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none">
                                 <button
-                                    class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-everglade-900 hover:bg-everglade-600"
+                                    class="focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-everglade-900 hover:bg-everglade-600"
                                     type="submit">
                                     <span class="sr-only sm:not-sr-only">Sign up</span>
                                     <span class="sm:hidden">
