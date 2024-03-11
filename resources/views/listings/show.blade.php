@@ -35,8 +35,15 @@
                 </a>
                 <div class="font-display tracking-tighter text-3xl font-medium sm:p-0 px-2">
                     ${{ $listing->latest_price?->price_per_night }}
-                    <span
-                        class="text-sm sm:text-lg italic text-everglade-600 font-serif tracking-tighter">/ night</span>
+                    @if($listing->latest_price?->price_per_night > 1200)
+                        <span
+                            class="text-sm sm:text-lg italic text-everglade-600 font-serif tracking-tighter">/ month
+                        </span>
+                    @else
+                        <span
+                            class="text-sm sm:text-lg italic text-everglade-600 font-serif tracking-tighter">/ night
+                        </span>
+                    @endif
                 </div>
             </div>
         </div>
@@ -391,12 +398,7 @@
                                 class="px-4 py-2 font-semibold text-white bg-everglade-600 rounded-xl hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
                             Reserve this location with Airbnb
                         </button>
-                        {{--                    <a--}}
-                        {{--                        href="{{$listing?->external_url}}"--}}
-                        {{--                        target="_blank"--}}
-                        {{--                        class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-everglade-600 hover:bg-everglade-500">--}}
-                        {{--                        Reserve this location with Airbnb--}}
-                        {{--                    </a>--}}
+
                     </div>
                 </div>
             </div>

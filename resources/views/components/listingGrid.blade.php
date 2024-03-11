@@ -12,9 +12,16 @@
                                     @if ($listing->latest_price?->price_per_night)
                                         <div
                                             class="absolute bottom-2 right-2 text-right z-40 bg-white px-3 py-1 rounded-lg font-display">
-                                            <span
-                                                class="font-bold text-everglade-500">${{ $listing->latest_price?->price_per_night }}</span>
-                                            per night
+                                            ${{ $listing->latest_price?->price_per_night }}
+                                            @if($listing->latest_price?->price_per_night > 1200)
+                                                <span
+                                                    class="text-sm sm:text-lg italic text-everglade-600 font-serif tracking-tighter">/ month
+                                                </span>
+                                            @else
+                                                <span
+                                                    class="text-sm sm:text-lg italic text-everglade-600 font-serif tracking-tighter">/ night
+                                                </span>
+                                            @endif
                                         </div>
                                     @endif
                                     {{--                                    {{dd($listing->mainListingImage->url)}}--}}
@@ -30,12 +37,12 @@
                                     <div class="flex-1">
                                         @if ($listing?->location)
                                             <div class="flex items-center gap-x-2 text-gray-500">
-                                                <x-icon name="flag-country-{{ strtolower($listing->location_slug->country->code) }}" width="20" height="20"/>
+                                                <x-icon
+                                                    name="flag-country-{{ strtolower($listing->location_slug->country->code) }}"
+                                                    width="20" height="20"/>
                                                 <h4 class="text-xs font-display uppercase font-bold leading-4">
                                                     {{ $listing?->location }}
                                                 </h4>
-
-
                                             </div>
                                         @endif
                                         <h3 class="text-lg line-clamp-1 text-gray-900 font-display tracking-tighter leading-6 mt-1">{{ $listing->title }}</h3>
