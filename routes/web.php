@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CoworkingController;
 use App\Http\Controllers\ListController;
@@ -53,9 +54,7 @@ Route::get('listings/locations/proximity/wework/cities', [ListingController::cla
 Route::get('listings/locations/proximity/wework/cities/{city}', [ListingController::class, 'showProximityWeWorkShowView'])->name('listings-proximity-wework-city-show');
 Route::get('listings/locations/area/{area}', [ListingController::class, 'showListingsInAreaView'])->name('listings-locations-area');
 Route::get('listings/locations/countries/{country}', [ListingController::class, 'showCountryView'])->name('listings-locations-country');
-
 Route::get('listings/locations/{location}', [ListingController::class, 'showLocationView'])->name('listings-locations-show');
-
 Route::get('listings/{listing}', [ListingController::class, 'showView'])->name('listing.show');
 
 Route::get('list', [ListController::class, 'showListForm'])->name('list');
@@ -63,6 +62,10 @@ Route::get('list', [ListController::class, 'showListForm'])->name('list');
 Route::post('/owners/join', [OwnerController::class, 'joinForm'])->name('joinForm');
 
 Route::post('/join-newsletter', [ContactController::class, 'joinNewsletter'])->name('join-newsletter');
+
+Route::get('/blog', [BlogController::class, 'show'])->name('blog');
+Route::post('/blog/join-newsletter', [BlogController::class, 'joinNewsletter'])->name('join-newsletter');
+Route::get('/blog/{article}', [BlogController::class, 'showArticle'])->name('blog-article');
 
 Route::get('/pricing', [PricingController::class, 'index']);
 

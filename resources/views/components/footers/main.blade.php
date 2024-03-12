@@ -22,7 +22,8 @@
         <div class="mt-12 grid md:grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
             <div><h3 class="text-lg font-medium text-everglade-500">Nomad Listings</h3>
                 <ul role="list" class="mt-2 space-y-1">
-                    <li><a href="https://boundra.com" class="text-sm text-gray-500 hover:text-everglade-500">Boundra</a></li>
+                    <li><a href="https://boundra.com" class="text-sm text-gray-500 hover:text-everglade-500">Boundra</a>
+                    </li>
                     <li><a href="/listings" class="text-sm text-gray-500 hover:text-everglade-500">All Listings</a></li>
                     <li><a href="/listings/locations" class="text-sm text-gray-500 hover:text-everglade-500">Listings
                             per Country</a></li>
@@ -34,15 +35,17 @@
                 <ul role="list" class="mt-2 space-y-1">
                     <li><a href="/coworkings/wework-ranking" class="text-sm text-gray-500 hover:text-everglade-500">Wework
                             Location Ranking</a></li>
-                    <li><a href="https://boundra.com/community" class="text-sm text-gray-500 hover:text-everglade-500">Join a club of
+                    <li><a href="https://boundra.com/community" class="text-sm text-gray-500 hover:text-everglade-500">Join
+                            a club of
                             remote workers</a></li>
-                    <li><a href="/house" class="text-sm text-gray-500 hover:text-everglade-500">Nomad House</a></li>
+{{--                    <li><a href="/house" class="text-sm text-gray-500 hover:text-everglade-500">Nomad House</a></li>--}}
                 </ul>
             </div>
             <div><h3 class="text-lg font-medium text-everglade-500">Company</h3>
                 <ul role="list" class="mt-2 space-y-1">
                     <li><a href="/" class="text-sm text-gray-500 hover:text-everglade-500">About</a></li>
                     <li><a href="/host/contact" class="text-sm text-gray-500 hover:text-everglade-500">Contact</a></li>
+                    <li><a href="/blog" class="text-sm text-gray-500 hover:text-everglade-500">Blog</a></li>
                 </ul>
             </div>
         </div>
