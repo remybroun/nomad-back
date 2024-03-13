@@ -57,6 +57,4 @@ class LocationController extends Controller
         $locations = Location::where('name', 'like', "%$query%")->limit(5)->get();
         return response()->json($locations, 200);
     }
-
-
 }

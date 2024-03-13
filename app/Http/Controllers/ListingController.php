@@ -78,7 +78,6 @@ class ListingController extends Controller
             $listings = $listings->take($limit);
         }
 
-
         return ListingResource::collection($listings);
     }
 
@@ -170,6 +169,7 @@ class ListingController extends Controller
         $country_str = str(request('location'))->explode(', ')->last();
         $country = Country::where('name', $country_str)->first();
         $location = Location::where('slug', $location_slug)->first();
+        $location->recordView();
 
         if (!$location) {
             try {
@@ -224,6 +224,7 @@ class ListingController extends Controller
         $country_str = str($listing['location'])->explode(', ')->last();
         $country = Country::where('name', $country_str)->first();
         $location = Location::where('slug', $location_slug)->first();
+        $location->recordView();
 
         if (!$location) {
             try {
@@ -387,7 +388,9 @@ class ListingController extends Controller
     function showLocationView($location)
     {
         $location = Location::where('slug', $location)->firstOrFail();
+        $location->recordView();
         $listings = Listing::where('location', 'LIKE', '%' . $location->name . '%')->with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->latest()->paginate();
+
         return view('listings.locations.show', compact('location', 'listings'));
     }
 
@@ -496,6 +499,7 @@ class ListingController extends Controller
     function showProximityWeWorkShowView($city)
     {
         $location = Location::where('slug', $city)->firstOrFail();
+        $location->recordView();
         $listings = Listing::whereHas('location_slug', function ($q) use ($location) {
                 $q->where('slug', $location->slug);
             })

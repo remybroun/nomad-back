@@ -46,7 +46,9 @@ Route::get('/', function () {
 
 //Route::get('/listings', [ListingController::class], 'showListings')->name('listings');
 Route::get('listings', [ListingController::class, 'showListings'])->name('listings');
-
+Route::get('about', function () {
+    return view('about');
+})->name('about');
 //Route::get('/listings/{listing}', [ListingController::class], 'showView')->name('listing.show');
 Route::get('listings/locations', [ListingController::class, 'showLocationsView'])->name('listings-locations');
 Route::get('listings/locations/proximity/wework', [ListingController::class, 'showProximityWeWorkView'])->name('listings-locations-proximity-wework');
