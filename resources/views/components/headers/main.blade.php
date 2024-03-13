@@ -3,17 +3,17 @@
     // Get most popular locations with counts
     $popularLocations = \App\Models\Location::withCount('views')
                             ->orderByDesc('views_count')
-                            ->take(5)
+                            ->take(6)
                             ->get();
 
     // Get other locations without duplicates
     $locations = \App\Models\Location::inRandomOrder()
-                        ->take(5)
+                        ->take(3)
                         ->get();
 
     // Fetch countries
     $countries = \App\Models\Country::inRandomOrder()
-                        ->take(5)
+                        ->take(3)
                         ->get();
 
     // Define continents
