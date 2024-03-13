@@ -1,15 +1,42 @@
 @php
-    $locations = \App\Models\Location::inRandomOrder()->limit(5)->get();
-//    $countries = \App\Models\Country::inRandomOrder()->limit(5)->get();
-//    $continents = [
-//        (object)['name' => 'Asia', 'slug' => 'asia'],
-//        (object)['name' => 'Europe', 'slug' => 'europe'],
-//        (object)['name' => 'South America', 'slug' => 'south-america'],
-//    ];
-//    //concatenate the collections
-//    $locations = $locations->concat($countries)->concat($continents);
-//    //shuffle the collection
-//    $locations = $locations->shuffle();
+
+    // Get most popular locations with counts
+    $popularLocations = \App\Models\Location::withCount('views')
+                            ->orderByDesc('views_count')
+                            ->take(5)
+                            ->get();
+
+    // Get other locations without duplicates
+    $locations = \App\Models\Location::inRandomOrder()
+                        ->take(5)
+                        ->get();
+
+    // Fetch countries
+    $countries = \App\Models\Country::inRandomOrder()
+                        ->take(5)
+                        ->get();
+
+    // Define continents
+    $continents = [
+        (object)['name' => 'Asia', 'slug' => 'asia', 'link' => route('listings-locations-area', ['asia'])],
+        (object)['name' => 'Europe', 'slug' => 'europe', 'link' => route('listings-locations-area', ['europe'])],
+        (object)['name' => 'South America', 'slug' => 'south-america', 'link' => route('listings-locations-area', ['south-america'])],
+    ];
+
+    // Merge all collections
+    $locations = $popularLocations->concat($locations)->concat($countries)->concat($continents);
+
+    // Shuffle the collection
+    $locations = $locations->shuffle();
+
+    // Generate links for locations and countries
+    $locations->each(function ($location) {
+        if ($location instanceof \App\Models\Location) {
+            $location->link = route('listings-locations-show', [$location->slug]);
+        } elseif ($location instanceof \App\Models\Country) {
+            $location->link = route('listings-locations-country', [$location->slug]);
+        }
+    });
 @endphp
 
 <div class="xl:max-w-screen-2xl lg:max-w-screen-xl mx-auto">
@@ -69,7 +96,8 @@
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:flex md:overflow-x-auto p-4 gap-2">
         @foreach($locations as $location)
-            <a href="{{ route('listings-locations-show', [$location->slug]) }}"
+            <a href="{{$location->link}}"
+{{--            <a href="{{ route('listings-locations-show', [$location->slug]) }}"--}}
                class="leading-4 text-center inline-flex items-center justify-center sm:whitespace-nowrap rounded-md sm:text-sm text-xs font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
                 {{ $location->name }}
             </a>

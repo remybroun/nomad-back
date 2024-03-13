@@ -63,7 +63,7 @@
                href="https://boundra.com">Discover <span class="font-bold mx-1"> Boundra</span> →</a>
         </div>
         <div class="col-span-2">
-            <img class="object-cover mx-auto w-full max-w-sm col-span-3 aspect-square align-middle"
+            <img class="rounded object-cover mx-auto w-full max-w-sm col-span-3 aspect-square align-middle"
                  alt="nomad setup with screen, chair and desk"
                  src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/settle/pilot/f4b5e877655267.5c8e5635d97e8.webp"
                  decoding="async" data-nimg="future">
@@ -115,7 +115,7 @@
             </div>
             <div class="col-span-full md:col-span-3 hidden sm:block">
                 <img alt="nomad office" src="https://i.pinimg.com/564x/e1/eb/28/e1eb28c90f4bbd9dffc35182d9606c0c.jpg"
-                     width="400" decoding="async" data-nimg="future" class="object-cover mx-auto">
+                     width="400" decoding="async" data-nimg="future" class="object-cover mx-auto rounded">
             </div>
             <div
                 class="px-4 mx-auto font-medium flex flex-col gap-10 col-span-full md:col-span-2 w-full grid grid-cols-2 sm:grid-cols-1">
@@ -154,18 +154,21 @@
     </div>
     <div class="relative sm:my-20 my-5 font-display max-w-screen-xl mx-auto">
         <div class="h-56 bg-white sm:h-72 md:absolute md:left-0 md:h-full md:w-1/3">
-            <img class="w-full h-full object-cover"
+            <img class="rounded w-full h-full object-cover"
                  src="https://www.contemporist.com/wp-content/uploads/2018/04/cantilevered-home-office-windows-modern-house-300418-315-03.jpg"
                  alt="">
         </div>
         <div class="relative max-w-7xl mx-auto px-4 sm:py-12 py-8 sm:px-4 lg:px-8 lg:py-16">
             <div class="md:ml-auto md:w-2/3 md:pl-10">
                 <h2 class="text-base font-semibold uppercase tracking-wider text-gray-700">Start hosting nomads</h2>
-                <p class="font-display mt-2 text-black text-3xl font-medium tracking-tight sm:text-4xl">List your
-                    Airbnb on Nomad Stay</p>
-                <p class="mt-3 text-lg font-display text-gray-600">Once we have certified your listing on Airbnb, we
-                    will promote it on Nomad Stay. Our portfolio of Nomad Listings will be accessible to all of our
-                    community.</p>
+                <p class="font-display mt-2 text-black text-3xl font-semibold tracking-tight sm:text-4xl">
+                    Promote your listing for remote workers on Nomad Stay
+                </p>
+                <p class="mt-3 text-lg font-display text-gray-600">
+                    Once we have certified your listing is equipped for remote workers, we
+                    will promote it on Nomad Stay. Our portfolio of Nomad Listings will be
+                    accessible to all of our community.
+                </p>
                 <div class="mt-8">
                     <div class="inline-flex rounded-md shadow">
                         <a class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-everglade-600 hover:bg-everglade-500"
@@ -182,17 +185,17 @@
             <div
                 class="mx-auto mt-10 max-w-lg flex justify-center items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5 max-h-12">
                 <a href="https://remotebase.co">
-                    <img class="max-w-xs max-h-16 py-2 w-full object-contain"
+                    <img class="rounded max-w-xs max-h-16 py-2 w-full object-contain"
                          src="https://static.tildacdn.com/tild3363-3134-4638-b164-323062306532/RemoteBase_Logo.png"
                          alt="Transistor" width="158" height="48">
                 </a>
                 <a href="https://nomadcowork.com">
-                    <img class="max-w-xs max-h-16 py-2 w-full object-contain"
+                    <img class="rounded max-w-xs max-h-16 py-2 w-full object-contain"
                          src="https://icowork-static-prd.s3.amazonaws.com/static/static_images/icw-logo-text.png"
                          alt="nomadcowork" width="158" height="48">
                 </a>
                 <a href="https://manaapartments.com">
-                    <img class="max-w-xs max-h-16 w-full object-contain bg-everglade-600 rounded-lg"
+                    <img class="rounded max-w-xs max-h-16 w-full object-contain bg-everglade-600 rounded-lg"
                          src="https://manaapartments.com/wp-content/uploads/2023/02/LOGO-Mana-Grises-2-1.png"
                          alt="manaapartments" width="158" height="48">
                 </a>
@@ -294,7 +297,7 @@
                 <div
                     class="relative -mx-4 overflow-hidden bg-everglade-100 py-16 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:rounded-5xl md:px-16 xl:px-24 xl:py-24 sm:mt-20 text-white">
                     <div class="absolute inset-0">
-                        <img class="w-full h-full object-cover"
+                        <img class="rounded w-full h-full object-cover"
                              src="https://images2.dwell.com/photos/6263102025783029760/6267097017049030656/original.jpg?auto=format&amp;q=35&amp;w=1280"
                              alt="">
                         <div class="absolute inset-0 bg-gray-500 mix-blend-multiply" aria-hidden="true">
