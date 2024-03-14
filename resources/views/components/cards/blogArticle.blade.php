@@ -1,6 +1,5 @@
-<a  href="{{"/blog/".$post['url']}}" class="flex flex-col items-start bg-zinc-100 rounded-xl">
-    {{-- {{dd($post)}} --}}
-    <div>
+<div class="flex flex-col items-start bg-zinc-100 rounded-xl">
+    <a href="{{"/blog/".$post['url']}}">
         <div class="relative w-full">
             <img src="{{$post['imageUrl']}}" alt=""
                  class="aspect-[16/9] w-full rounded-t-2xl bg-gray-100 object-cover lg:aspect-[3/2]">
@@ -10,7 +9,7 @@
         <div class="max-w-xl px-3 pb-4">
             <div class="mt-4 flex items-center gap-x-4 text-xs">
                 @if($post['created_at'])
-                    <time datetime="{{ $post['created_at'] }}" class="text-white py-1">
+                    <time datetime="{{ $post['created_at'] }}" class="text-zinc-500 py-1">
                         {{ date('F j, Y', strtotime($post['created_at'])) }}
                     </time>
                 @endif
@@ -42,5 +41,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</a>
+    </a>
+</div>

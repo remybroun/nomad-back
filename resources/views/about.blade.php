@@ -79,8 +79,6 @@
                         </section>
                     </div>
                 </div>
-
-
             <img src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/settle/el-born/office_setup.webp" alt="Team Image" width="500" height="500"
                  class="aspect-square rounded-lg object-cover">
         </div>
