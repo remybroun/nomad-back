@@ -22,7 +22,7 @@
             </div>
             <div class="group relative">
                 <h3 class="mt-2 text-lg font-semibold leading-6 text-zinc-800 group-hover:text-gray-600">
-                    <a href="{{"/blog/articles/".$post['url']}}">
+                    <a href="{{"/blog/".$post['url']}}">
 					<span class="absolute inset-0">
 					</span>{{$post['title']}}</a>
                 </h3>
