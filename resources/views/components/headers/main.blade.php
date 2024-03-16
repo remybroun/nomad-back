@@ -95,10 +95,9 @@
         </div>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:flex md:overflow-x-auto p-4 gap-2">
-        @foreach($locations as $location)
+        @foreach($locations as $index => $location)
             <a href="{{$location->link}}"
-{{--            <a href="{{ route('listings-locations-show', [$location->slug]) }}"--}}
-               class="leading-4 text-center inline-flex items-center justify-center sm:whitespace-nowrap rounded-md sm:text-sm text-xs font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+               class="leading-4 text-center inline-flex items-center justify-center sm:whitespace-nowrap rounded-md sm:text-sm text-xs font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 @if($index >= 6) hidden md:block @endif">
                 {{ $location->name }}
             </a>
         @endforeach

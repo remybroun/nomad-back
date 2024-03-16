@@ -21,7 +21,8 @@
                 class="container mx-auto flex md:min-h-[60vh] flex-col items-center justify-center space-y-10 px-8 lg:flex-row lg:space-x-8 lg:px-0 lg:pb-10 xl:space-x-24 z-10">
                 <div class="flex flex-col space-y-2">
 
-                    <h1 class="garamond text-4xl font-bold lg:text-5xl text-center sm:text-left">Start hosting remote workers</h1>
+                    <h1 class="garamond text-4xl font-bold lg:text-5xl text-center sm:text-left">Start hosting remote
+                        workers</h1>
 
                     <p class="max-w-md text-lg opacity-75 lg:text-xl text-center sm:text-left">
                         Join the waitlist and we'll contact you for access.

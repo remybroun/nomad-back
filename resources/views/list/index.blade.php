@@ -5,8 +5,8 @@
 <div class=" top-0 w-full">
     @include('components.headers.main')
 </div>
-<div class="h-max bg-white min-h-screen">
-    <div class="bg-background flex flex-col text-white bg-blend-screen selection:bg-black/30 font-display relative h-screen">
+<div class="max-w-screen-2xl px-4 mx-auto py-10">
+    <div class="bg-background flex flex-col text-white bg-blend-screen selection:bg-black/30 font-display relative md:max-h-[80vh] rounded-lg overflow-clip">
         <div class="absolute top-0 h-full w-full">
             <img alt="Nomad Stay background image" draggable="false" fetchpriority="high" decoding="async"
                  data-nimg="fill" class="object-cover object-top blur-sm sm:blur-none h-full"

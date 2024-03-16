@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    @stack('css')
+{{--    @vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
     {{--        @livewireStyles--}}
     <title>{{ config('app.name', 'Nomad Stay - Accomodation for Remote Workers') }}</title>
+    <?php
+
+    use Illuminate\Foundation\Vite;
+
+    $vite = new Vite();
+    echo $vite(['resources/css/app.css', 'resources/js/app.js']);
+    ?>
+    @stack('css')
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:site_name" content="Nomad Stay - Accomodation for Remote Workers">
