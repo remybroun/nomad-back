@@ -11,6 +11,7 @@ use App\Http\Controllers\ListingController;
 use App\Jobs\LaunchRemovePhotosCommand;
 use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,4 +103,10 @@ Route::get('/search/locations', [App\Http\Controllers\LocationController::class,
 Route::get('/launch/remove-photos', function () {
     LaunchRemovePhotosCommand::dispatch();
     return 'Photos removed';
+});
+
+Route::get('/generate-sitemap', function () {
+    SitemapGenerator::create(config('app.url'))
+        ->writeToFile(public_path('sitemap.xml'));
+    return 'Sitemap generated successfully!'.'<br>'.'Download it <a href="/sitemap.xml">here</a>';
 });

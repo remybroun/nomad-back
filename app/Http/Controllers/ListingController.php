@@ -390,8 +390,16 @@ class ListingController extends Controller
         $location = Location::where('slug', $location)->firstOrFail();
         $location->recordView();
         $listings = Listing::where('location', 'LIKE', '%' . $location->name . '%')->with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->latest()->paginate();
+        $randomListings = [];
+        $locations = [];
 
-        return view('listings.locations.show', compact('location', 'listings'));
+        if ($listings->isEmpty()) {
+            $locations = Location::where('country_id', $location->country_id)->take(3)->get();
+            $randomListings = Listing::with(["mainListingImage", "location_slug", "close_coworkings", "latest_price"])->inRandomOrder()
+                ->take(10)->get();
+        }
+
+        return view('listings.locations.show', compact('location', 'listings', 'randomListings', 'locations'));
     }
 
     function showCountryView($country)
