@@ -60,6 +60,8 @@ Route::get('listings/locations/{location}', [ListingController::class, 'showLoca
 Route::get('listings/{listing}', [ListingController::class, 'showView'])->name('listing.show');
 
 Route::get('list', [ListController::class, 'showListForm'])->name('list');
+Route::get('/owners/onboarding/init', [OwnerController::class, 'onboardingInit'])->name('onboarding-init');
+
 //Route::post('/owners/join', [OwnerController::class, 'join'])->name('owner-join');
 Route::post('/owners/join', [OwnerController::class, 'joinForm'])->name('joinForm');
 

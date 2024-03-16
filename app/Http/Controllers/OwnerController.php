@@ -53,4 +53,9 @@ class OwnerController extends Controller
     {
         return view('owners.join');
     }
+
+    public function onboardingInit()
+    {
+        return view('owners.onboarding.init');
+    }
 }
