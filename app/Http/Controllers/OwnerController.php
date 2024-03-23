@@ -54,8 +54,26 @@ class OwnerController extends Controller
         return view('owners.join');
     }
 
+    public function onboardingStepPhotos()
+    {
+//        Receive photos and save to storage
+        return response()->json(['message' => 'Photos received']);
+
+    }
     public function onboardingInit()
     {
         return view('owners.onboarding.init');
+    }
+    public function onboardingStepLocation(Request $request)
+    {
+        return response()->json($request->all());
+    }
+        public function onboardingStepPropertyDetails(Request $request)
+    {
+        return response()->json($request->all());
+    }
+    public function onboardingStepRemoteWorkSetup()
+    {
+        return response()->json($request->all());
     }
 }

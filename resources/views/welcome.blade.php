@@ -48,27 +48,27 @@
         </div>
     </div>
 
-    <div class="lg:grid lg:grid-cols-4 flex flex-col-reverse gap-y-10 max-w-screen-2xl mx-auto my-20">
-        <div class="lg:col-span-2 col-span-7 mx-auto flex flex-col justify-center">
-            <span class="rounded-full bg-everglade-600 text-sm text-white px-3 py-1 h-fit w-fit my-2">New</span>
-            <div class="space-y-6">
-                <div class="space-y-4">
-                    <h2 class="text-black font-display font-bold sm:text-5xl text-4xl tracking-tight leading-8">
-                        Introducing Boundra</h2>
-                    <p class="sm:text-xl text-lg leading-5 text-gray-500 tracking-tight font-serif italic">An
-                        apartment built for Remote Workers</p>
-                </div>
-            </div>
-            <a class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 w-full bg-everglade-800 max-w-xs mt-5 font-light py-3 text-sm mx-auto lg:mx-0"
-               href="https://boundra.com">Discover <span class="font-bold mx-1"> Boundra</span> →</a>
-        </div>
-        <div class="col-span-2">
-            <img class="rounded object-cover mx-auto w-full max-w-sm col-span-3 aspect-square align-middle"
-                 alt="nomad setup with screen, chair and desk"
-                 src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/settle/pilot/f4b5e877655267.5c8e5635d97e8.webp"
-                 decoding="async" data-nimg="future">
-        </div>
-    </div>
+{{--    <div class="lg:grid lg:grid-cols-4 flex flex-col-reverse gap-y-10 max-w-screen-2xl mx-auto my-20">--}}
+{{--        <div class="lg:col-span-2 col-span-7 mx-auto flex flex-col justify-center">--}}
+{{--            <span class="rounded-full bg-everglade-600 text-sm text-white px-3 py-1 h-fit w-fit my-2">New</span>--}}
+{{--            <div class="space-y-6">--}}
+{{--                <div class="space-y-4">--}}
+{{--                    <h2 class="text-black font-display font-bold sm:text-5xl text-4xl tracking-tight leading-8">--}}
+{{--                        Introducing Boundra</h2>--}}
+{{--                    <p class="sm:text-xl text-lg leading-5 text-gray-500 tracking-tight font-serif italic">An--}}
+{{--                        apartment built for Remote Workers</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <a class="inline-flex justify-center rounded-xl bg-black px-4 py-2 text-base font-semibold text-white hover:bg-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black active:text-white/70 w-full bg-everglade-800 max-w-xs mt-5 font-light py-3 text-sm mx-auto lg:mx-0"--}}
+{{--               href="https://boundra.com">Discover <span class="font-bold mx-1"> Boundra</span> →</a>--}}
+{{--        </div>--}}
+{{--        <div class="col-span-2">--}}
+{{--            <img class="rounded object-cover mx-auto w-full max-w-sm col-span-3 aspect-square align-middle"--}}
+{{--                 alt="nomad setup with screen, chair and desk"--}}
+{{--                 src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/settle/pilot/f4b5e877655267.5c8e5635d97e8.webp"--}}
+{{--                 decoding="async" data-nimg="future">--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="max-w-screen-xl mx-auto h-3/4" id="a-complete-setup">
         <div class="my-6 px-4">
             <h2 class="font-display text-3xl tracking-tight font-bold text-black sm:text-3xl">

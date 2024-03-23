@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    @viteReactRefresh
+    @vite(['resources/sass/app.scss', 'resources/js/app.jsx'])
     @stack('css')
     {{--        @livewireStyles--}}
     <title>{{ config('app.name', 'Nomad Stay - Accomodation for Remote Workers') }}</title>

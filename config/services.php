@@ -35,4 +35,8 @@ return [
         'token' => env('MAPBOX_TOKEN'),
     ],
 
+    'hubspot' => [
+        'access_token' => env('HUBSPOT_ACCESS_TOKEN'),
+    ],
+
 ];

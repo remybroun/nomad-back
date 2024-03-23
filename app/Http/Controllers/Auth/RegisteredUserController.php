@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Services\HubSpotService;
 
 class RegisteredUserController extends Controller
 {
@@ -35,6 +36,12 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
+
+        $response = HubSpotService::createContact([
+            'firstname' => $request->twitter ? $request->twitter : $request->email,
+            'email' => $request->email,
+            'twitterhandle' => $request->twitter
+        ]);
 
         Auth::login($user);
 

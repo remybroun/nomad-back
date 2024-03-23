@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\OwnerController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Owners\OwnerController;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,33 @@ use App\Http\Controllers\Owners\OwnerController;
 |
 */
 
+
+Route::get('/', function () {
+    if (auth()->check()) { // && auth()->user()->owns_property
+        return redirect()->route('owners-index');
+    }
+    return redirect()->route('owners.public.landing');
+});
+
+//owners.public.landing
+Route::get('/join', function () {
+    return view('owners.public.landing');
+})->name('owners.public.landing');
 Route::post('/join', [OwnerController::class, 'joinForm'])->name('joinForm');
-Route::get('/join', [OwnerController::class, 'join'])->name('join');
+//Route::get('/owners/onboarding/init', [OwnerController::class, 'onboardingInit'])->name('onboarding-init');
 
 
+//auth middleware
+Route::middleware(['auth'])->group(function () {
+    // Owners App in Inertia
+    Route::get('/property', function () {
+        return Inertia::render('Owners');
+    })->name('owners-index');
 
+    Route::get('/property/{property}/onboarding', [OwnerController::class, 'onboarding'])->name('onboarding');
+    Route::post('/property/{$property}/onboarding/location', [OwnerController::class, 'onboardingStepLocation'])->name('onboarding-step-location');
+    Route::post('/property/{$property}/onboarding/propertyDetails', [OwnerController::class, 'onboardingStepPropertyDetails'])->name('onboarding-step-property-details');
+    Route::post('/property/{$property}/onboarding/remoteWorkSetup', [OwnerController::class, 'onboardingStepRemoteWorkSetup'])->name('onboarding-step-remote-work-setup');
+    Route::post('/property/{$property}/onboarding/photos', [OwnerController::class, 'onboardingStepPhotos'])->name('onboarding-step-photos');
+});
 // require __DIR__.'/auth.php';

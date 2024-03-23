@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Resources\ListingResource;
-use App\Models\Listing;
-use App\Models\Location;
 use App\Models\Country;
+use App\Models\Coworking;
+use App\Models\CoworkingListingProximity;
+use App\Models\Listing;
+use App\Models\ListingPrice;
+use App\Models\Location;
+use App\Models\UnverifiedListings;
 use App\Models\Visit;
 use App\Models\Wework;
-use App\Models\Coworking;
-use App\Models\UnverifiedListings;
 use App\Models\WeworkListingProximity;
-use App\Models\CoworkingListingProximity;
-use App\Models\ListingPrice;
+use Illuminate\Http\Request;
 
 
 class ListingController extends Controller
@@ -378,7 +378,7 @@ class ListingController extends Controller
 
     function showLocationsView()
     {
-        $locations = Location::with('country')->paginate(30);
+        $locations = Location::with('country')->orderBy('views', 'DESC')->paginate(30);
         $filteredLocations = [];
         $featuredLocations = [];
 
@@ -509,8 +509,8 @@ class ListingController extends Controller
         $location = Location::where('slug', $city)->firstOrFail();
         $location->recordView();
         $listings = Listing::whereHas('location_slug', function ($q) use ($location) {
-                $q->where('slug', $location->slug);
-            })
+            $q->where('slug', $location->slug);
+        })
             ->whereHas('close_weworks')
             ->with(["mainListingImage", "location_slug", "close_weworks", "latest_price"])
             ->latest()->paginate();

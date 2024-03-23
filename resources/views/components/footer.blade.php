@@ -25,6 +25,7 @@
               <h3 class="text-2xl garamond font-bold">More</h3>
               <a class="tracking-wide font-display hover:underline" href="/about">About</a>
               <a class="tracking-wide font-display hover:underline" href="/blog">Blog</a>
+              <a class="tracking-wide font-display hover:underline" href="/faq">faq</a>
           </nav>
       </div>
     </footer>

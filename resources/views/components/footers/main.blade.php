@@ -33,6 +33,7 @@
                     <li><a href="/about" class="text-sm text-gray-500 hover:text-everglade-500">About</a></li>
                     <li><a href="/host/contact" class="text-sm text-gray-500 hover:text-everglade-500">Contact</a></li>
                     <li><a href="/blog" class="text-sm text-gray-500 hover:text-everglade-500">Blog</a></li>
+                    <li><a href="/faq" class="text-sm text-gray-500 hover:text-everglade-500">FAQ</a></li>
                 </ul>
             </div>
             <div class="mt-12 md:mt-0"><h3 class="text-lg font-medium text-everglade-500">Nomad Resources</h3>

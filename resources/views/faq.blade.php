@@ -16,19 +16,19 @@
 @php
     $questions = [
     [
-        'question' => 'What is NomadStay?',
-        'answer' => 'NomadStay is a specialized accommodation platform for digital nomads and remote workers, offering a global network of fully furnished apartments with flexible accommodations. Our unique feature is providing apartments equipped with high-quality workstations designed to enhance productivity and well-being for those who live and work in different destinations.'
+        'question' => 'What is Nomad Stay?',
+        'answer' => 'Nomad Stay is a specialized accommodation platform for digital nomads and remote workers, offering a global network of fully furnished apartments with flexible accommodations. Our unique feature is providing apartments equipped with high-quality workstations designed to enhance productivity and well-being for those who live and work in different destinations.'
     ],
     [
-        'question' => 'Who is NomadStay for?',
+        'question' => 'Who is Nomad Stay for?',
         'answer' => 'Our services are tailored for digital nomads, remote workers, and anyone needing temporary accommodations that support a productive work environment while exploring new locations.'
     ],
     [
-        'question' => 'How do I book an apartment on NomadStay?',
+        'question' => 'How do I book an apartment on Nomad Stay?',
         'answer' => 'You can search for available apartments on our platform, filter according to your preferences (location, duration, etc.), and book directly through our website. If you have specific requirements or questions, our customer service is here to help.'
     ],
     [
-        'question' => 'What makes NomadStay apartments suitable for remote work?',
+        'question' => 'What makes Nomad Stay apartments suitable for remote work?',
         'answer' => 'Each apartment in our network is equipped with a premium workstation, including an ergonomic office chair, standing desk, HD webcam, 4K monitor, mechanical keyboard, wireless mouse, and external microphone, ensuring a comfortable and productive work environment.'
     ],
     [
@@ -41,7 +41,7 @@
     ],
     [
         'question' => 'What payment methods are accepted?',
-        'answer' => 'NomadStay accepts various payment methods, including credit/debit cards, PayPal, and bank transfers. The available options may vary depending on the property\'s location.'
+        'answer' => 'Nomad Stay accepts various payment methods, including credit/debit cards, PayPal, and bank transfers. The available options may vary depending on the property\'s location.'
     ],
     [
         'question' => 'What if I encounter issues with my accommodation?',
@@ -52,12 +52,12 @@
         'answer' => 'While the primary offering is the accommodation with a workstation, we often provide additional services like local guides, community events, and support with logistics. These services may vary by location.'
     ],
     [
-        'question' => 'How can I list my property on NomadStay?',
-        'answer' => 'Property owners can join the NomadStay network by contacting us through our website. Our team will guide you through the process, ensuring your property meets our standards and is ready for digital nomads and remote workers.'
+        'question' => 'How can I list my property on Nomad Stay?',
+        'answer' => 'Property owners can join the Nomad Stay network by contacting us through our website. Our team will guide you through the process, ensuring your property meets our standards and is ready for digital nomads and remote workers.'
     ],
     [
-        'question' => 'What are the benefits of listing my property with NomadStay?',
-        'answer' => 'By listing with NomadStay, you gain access to a specific audience of digital nomads and remote workers, the opportunity to increase your rental income by up to 15%, global visibility, and flexible booking conditions tailored to your strategy.'
+        'question' => 'What are the benefits of listing my property with Nomad Stay?',
+        'answer' => 'By listing with Nomad Stay, you gain access to a specific audience of digital nomads and remote workers, the opportunity to increase your rental income by up to 15%, global visibility, and flexible booking conditions tailored to your strategy.'
     ]
 ];
 
@@ -76,12 +76,21 @@
                     Here are the answers to all of the most recent questions on Sora.
                 </p>
             </div>
-            <div class="mt-10 lg:col-span-7 lg:mt-0">
+            <div class="mt-10 lg:col-span-7 lg:mt-0" x-data="{ selectedQuestion: null }">
                 <dl class="space-y-10">
-                    @foreach($questions as $question)
+                    @foreach($questions as $index => $question)
                         <div>
-                            <dt class="text-base font-semibold leading-7 text-gray-900">{{ $question['question'] }}</dt>
-                            <dd class="mt-2 text-base leading-7 text-gray-600">{{ $question['answer'] }}</dd>
+                            <dt class="text-base font-semibold leading-7 text-gray-900 cursor-pointer flex justify-between"
+                                @click="selectedQuestion === {{ $index }} ? selectedQuestion = null : selectedQuestion = {{ $index }}">
+                                {{ $question['question'] }}
+                                <!-- Optional: Add an icon to indicate expand/collapse -->
+                                <span x-show="selectedQuestion !== {{ $index }}">+</span>
+                                <span x-show="selectedQuestion === {{ $index }}">-</span>
+                            </dt>
+                            <dd class="mt-2 text-base leading-7 text-gray-600"
+                                x-show="selectedQuestion === {{ $index }}" x-transition>
+                                {{ $question['answer'] }}
+                            </dd>
                         </div>
                     @endforeach
                 </dl>

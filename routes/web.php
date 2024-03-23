@@ -23,18 +23,15 @@ use Spatie\Sitemap\SitemapGenerator;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//
-//Route::get('/', function () {
-//    return ['Laravel' => app()->version()];
-//});
 
-//#Serve Inertia App
-//Route::get('/', function () {
-//    return Inertia\Inertia::render('Welcome');
-//})->name('welcome');
+
 
 Route::prefix('auth')->group(base_path('routes/auth.php'));
-// require __DIR__.'/auth.php';
+
+
+// Property owner platform in inertia use a second route file to keep it clean
+Route::prefix('owner')->group(base_path('routes/owners.php'));
+
 
 Route::get('/sitemap.xml', function () {
     return File::get(public_path() . '/sitemap.xml');
@@ -45,12 +42,15 @@ Route::get('/', function () {
     return view('welcome', ['featuredListings' => $featuredListings]);
 })->name('welcome');
 
-//Route::get('/listings', [ListingController::class], 'showListings')->name('listings');
+Route::get('/faq', function () {
+    return view('faq');
+})->name('faq');
+
 Route::get('listings', [ListingController::class, 'showListings'])->name('listings');
 Route::get('about', function () {
     return view('about');
 })->name('about');
-//Route::get('/listings/{listing}', [ListingController::class], 'showView')->name('listing.show');
+
 Route::get('listings/locations', [ListingController::class, 'showLocationsView'])->name('listings-locations');
 Route::get('listings/locations/proximity/wework', [ListingController::class, 'showProximityWeWorkView'])->name('listings-locations-proximity-wework');
 Route::get('listings/locations/proximity/wework/cities', [ListingController::class, 'showProximityWeWorkCityAll'])->name('listings-proximity-wework-city-all');
@@ -61,10 +61,7 @@ Route::get('listings/locations/{location}', [ListingController::class, 'showLoca
 Route::get('listings/{listing}', [ListingController::class, 'showView'])->name('listing.show');
 
 Route::get('list', [ListController::class, 'showListForm'])->name('list');
-Route::get('/owners/onboarding/init', [OwnerController::class, 'onboardingInit'])->name('onboarding-init');
 
-//Route::post('/owners/join', [OwnerController::class, 'join'])->name('owner-join');
-Route::post('/owners/join', [OwnerController::class, 'joinForm'])->name('joinForm');
 
 Route::post('/join-newsletter', [ContactController::class, 'joinNewsletter'])->name('join-newsletter');
 

@@ -1,6 +1,8 @@
+@extends('layouts.app')
+
 <div class="h-max sm:px-4 bg-black min-h-screen">
     <div
-        class="bg-background flex flex-col text-white bg-blend-screen selection:bg-black/30 font-display relative h-screen">
+            class="bg-background flex flex-col text-white bg-blend-screen selection:bg-black/30 font-display relative h-screen">
         <div class="absolute top-0 h-full w-full">
             <img alt="Boundra stays background image" draggable="false" fetchpriority="high" decoding="async"
                  data-nimg="fill" class="object-cover object-top blur-sm sm:blur-none h-full"
@@ -16,9 +18,9 @@
         <div class="absolute bottom-0 left-0 h-80 w-full bg-gradient-to-t from-black to-transparent">
         </div>
         <div
-            class="mx-auto md:px-20 w-full flex flex-col justify-center gap-3 sm:mt-16 sm:pb-16 md:flex-row 2xl:my-10 h-full">
+                class="mx-auto md:px-20 w-full flex flex-col justify-center gap-3 sm:mt-16 sm:pb-16 md:flex-row 2xl:my-10 h-full">
             <div
-                class="container mx-auto flex md:min-h-[60vh] flex-col items-center justify-center space-y-10 px-8 lg:flex-row lg:space-x-8 lg:px-0 lg:pb-10 xl:space-x-24 z-10">
+                    class="container mx-auto flex md:min-h-[60vh] flex-col items-center justify-center space-y-10 px-8 lg:flex-row lg:space-x-8 lg:px-0 lg:pb-10 xl:space-x-24 z-10">
                 <div class="flex flex-col space-y-2">
 
                     <h1 class="garamond text-4xl font-bold lg:text-5xl text-center sm:text-left">Start hosting remote
@@ -31,7 +33,7 @@
 
                 <div class="relative mx-auto mt-0 pt-3 md:px-5 w-full max-w-lg ">
                     <div
-                        class="rounded-3xl p-4 border backdrop-blur-[36px] bg-white/10 border-white border-opacity-10 w-full mx-auto">
+                            class="rounded-3xl p-4 border backdrop-blur-[36px] bg-white/10 border-white border-opacity-10 w-full mx-auto">
                         <div class="flex flex-col gap-4">
                             <div class="flex flex-col gap-2">
                                 <span class="text-xs font-bold uppercase leading-none tracking-widest text-neutral-400">WAITLIST ACCESS FORM</span>
@@ -46,22 +48,22 @@
                                 <div class="grid-cols-2 grid gap-4">
                                     <div class="col-span-1">
                                         <input
-                                            class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('first_name') ? 'border-red-500' : '' }}"
-                                            name="first_name"
-                                            placeholder="First name"
-                                            required
-                                            type="text">
+                                                class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('first_name') ? 'border-red-500' : '' }}"
+                                                name="first_name"
+                                                placeholder="First name"
+                                                required
+                                                type="text">
                                         @error('first_name')
                                         <span class="text-red-500">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="col-span-1">
                                         <input
-                                            class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('last_name') ? 'border-red-500' : '' }}"
-                                            name="last_name"
-                                            placeholder="Last name"
-                                            required
-                                            type="text">
+                                                class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('last_name') ? 'border-red-500' : '' }}"
+                                                name="last_name"
+                                                placeholder="Last name"
+                                                required
+                                                type="text">
                                         @error('last_name')
                                         <span class="text-red-500">{{ $message }}</span>
                                         @enderror
@@ -69,31 +71,31 @@
                                 </div>
 
                                 <input
-                                    class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('email') ? 'border-red-500' : '' }}"
-                                    name="email"
-                                    placeholder="Enter your email"
-                                    required
-                                    type="email">
+                                        class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('email') ? 'border-red-500' : '' }}"
+                                        name="email"
+                                        placeholder="Enter your email"
+                                        required
+                                        type="email">
                                 @error('email')
                                 <span class="text-red-500">{{ $message }}</span>
                                 @enderror
 
                                 <input
-                                    class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('company') ? 'border-red-500' : '' }}"
-                                    name="company"
-                                    placeholder="Enter your company name"
-                                    required
-                                    type="text">
+                                        class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('company') ? 'border-red-500' : '' }}"
+                                        name="company"
+                                        placeholder="Enter your company name"
+                                        required
+                                        type="text">
                                 @error('company')
                                 <span class="text-red-500">{{ $message }}</span>
                                 @enderror
 
                                 <input
-                                    class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('city') ? 'border-red-500' : '' }}"
-                                    name="city"
-                                    placeholder="Enter your city"
-                                    required
-                                    type="text">
+                                        class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('city') ? 'border-red-500' : '' }}"
+                                        name="city"
+                                        placeholder="Enter your city"
+                                        required
+                                        type="text">
                                 @error('city')
                                 <span class="text-red-500">{{ $message }}</span>
                                 @enderror
@@ -101,22 +103,22 @@
                                 <div class="grid-cols-2 grid gap-4">
                                     <div class="col-span-1">
                                         <input
-                                            class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('instagram') ? 'border-red-500' : '' }}"
-                                            name="instagram"
-                                            placeholder="instagram @ (optional)"
-                                            required
-                                            type="text">
+                                                class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('instagram') ? 'border-red-500' : '' }}"
+                                                name="instagram"
+                                                placeholder="instagram @ (optional)"
+                                                required
+                                                type="text">
                                         @error('instagram')
                                         <span class="text-red-500">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="col-span-1">
                                         <input
-                                            class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('linkedin') ? 'border-red-500' : '' }}"
-                                            name="linkedin"
-                                            placeholder="Linkedin url (optional)"
-                                            required
-                                            type="text">
+                                                class="text-white bg-transparent placeholder:text-zinc-200 flex-1 rounded-lg border border-white/20 backdrop-blur-xl z-10 relative flex gap-1 w-full {{ $errors->has('linkedin') ? 'border-red-500' : '' }}"
+                                                name="linkedin"
+                                                placeholder="Linkedin url (optional)"
+                                                required
+                                                type="text">
                                         @error('linkedin')
                                         <span class="text-red-500">{{ $message }}</span>
                                         @enderror
