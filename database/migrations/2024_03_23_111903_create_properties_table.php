@@ -9,8 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-class CreatePropertiesTable extends Migration
-{
+
     public function up()
     {
         Schema::create('properties', function (Blueprint $table) {
