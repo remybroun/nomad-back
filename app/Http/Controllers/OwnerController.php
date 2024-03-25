@@ -72,7 +72,7 @@ class OwnerController extends Controller
     {
         return response()->json($request->all());
     }
-    public function onboardingStepRemoteWorkSetup()
+    public function onboardingStepRemoteWorkSetup(Request $request)
     {
         return response()->json($request->all());
     }

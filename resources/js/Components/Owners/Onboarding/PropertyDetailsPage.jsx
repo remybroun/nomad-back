@@ -57,7 +57,7 @@ export default function PropertyDetails({nextPage, prevPage}) {
     };
     // Handle form submission
     const submitForm = () => {
-        axios.post('/owners/onboarding/step/propertyDetails', propertyDetails)
+        axios.post('/owners/property/1/onboarding/propertyDetails', propertyDetails)
             .then(response => {
                 console.log(response);
             })

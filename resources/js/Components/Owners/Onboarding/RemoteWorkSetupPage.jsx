@@ -48,7 +48,7 @@ export default function RemoteWorkSetupPage({nextPage, prevPage}) {
         setOfficeLamp(!officeLamp);
     };
     const submitForm = () => {
-        axios.post('owners/onboarding/step/propertyDetails', {
+        axios.post('/owners/property/1/onboarding/remoteWorkSetup', {
             standingDesk,
             ergonomicChair,
             externalMonitor,

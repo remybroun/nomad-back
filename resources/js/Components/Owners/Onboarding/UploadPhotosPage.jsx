@@ -42,7 +42,7 @@ export function UploadPhotosComponent() {
             formData.append('photos[]', file);
         });
 
-        axios.post('owners/onboarding/step/photos', formData, {
+        axios.post('owners/property/1/onboarding/photos', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },

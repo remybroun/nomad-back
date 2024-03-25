@@ -29,7 +29,8 @@ export default function LocationPage({nextPage, prevPage}) {
             location: location,
             amenities: selectedOptions
         }
-        axios.post('/owners/onboarding/step/location', {data: data})
+
+        axios.post('/owners/property/1/onboarding/location', {data: data})
             .then(response => {
                 // Handle success
                 console.log(response.data);
