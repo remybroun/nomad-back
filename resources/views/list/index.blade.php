@@ -10,7 +10,7 @@
         <div class="absolute top-0 h-full w-full">
             <img alt="Nomad Stay background image" draggable="false" fetchpriority="high" decoding="async"
                  data-nimg="fill" class="object-cover object-top blur-sm sm:blur-none h-full"
-                 src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/settle/home.webp"
+                 src="https://a-step-in.s3.us-east-2.amazonaws.com/boundra/home.webp"
                  style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
         </div>
         <div class="absolute left-0 top-0 h-full w-full  h-60 bg-gradient-to-b from-black/40 to-transparent">

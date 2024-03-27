@@ -4,12 +4,12 @@
 @endsection
 
 <div class="absolute top-0 w-full">
-    @include('components.header')            
+    @include('components.header')
 </div>
 <div class="h-max sm:px-4 bg-black min-h-screen">
     <div class="bg-background flex flex-col text-white bg-blend-screen selection:bg-black/30 font-display relative h-screen">
         <div class="absolute top-0 h-full w-full">
-            <img alt="Settle stays background image" draggable="false" fetchpriority="high" decoding="async" data-nimg="fill" class="object-cover object-top blur-sm sm:blur-none h-full" src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/settle/home.webp" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+            <img alt="Settle stays background image" draggable="false" fetchpriority="high" decoding="async" data-nimg="fill" class="object-cover object-top blur-sm sm:blur-none h-full" src="https://a-step-in.s3.us-east-2.amazonaws.com/boundra/home.webp" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
         </div>
         <div class="absolute left-0 top-0 h-full w-full  h-60 bg-gradient-to-b from-black to-transparent">
         </div>
@@ -38,20 +38,20 @@
                     </div>
                     <form method="POST" action="{{route('waitlist-form');}}" class="flex flex-col gap-4">
                         @csrf
-{{--                        <input 
+{{--                        <input
                             class="text-white bg-transparent placeholder:text-zinc-300 flex-1 rounded-lg border border-white/20 backdrop-blur-xl !text-white z-10 relative flex gap-1 w-full {{ $errors->has('first_name') ? 'border-red-500' : '' }}"
-                            name="first_name" 
-                            placeholder="Enter your first name" 
+                            name="first_name"
+                            placeholder="Enter your first name"
                             required
                             type="text">
                         @error('first_name')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
  --}}
-                        <input 
+                        <input
                             class="text-white bg-transparent placeholder:text-zinc-300 flex-1 rounded-lg border border-white/20 backdrop-blur-xl !text-white z-10 relative flex gap-1 w-full {{ $errors->has('email') ? 'border-red-500' : '' }}"
                             name="email"
-                            placeholder="Enter your email" 
+                            placeholder="Enter your email"
                             required
                             type="email">
                         @error('email')

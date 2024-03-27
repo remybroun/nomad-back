@@ -5,10 +5,10 @@
 <div class="bg-black space-y-20 h-max">
 
     @include('components.header')
-    
+
     <section class="relative h-full sm:max-h-[60vh] overflow-hidden bg-black text-white md:pb-20 max-w-screen-2xl mx-auto font-display">
         <div class="absolute top-0 h-full w-full sm:max-h-[60vh]">
-            <img alt="Settle stays background image" draggable="false" fetchpriority="high" decoding="async" data-nimg="fill" class="object-fill object-top blur-sm sm:blur-none h-full" src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/settle/home.webp" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+            <img alt="Settle stays background image" draggable="false" fetchpriority="high" decoding="async" data-nimg="fill" class="object-fill object-top blur-sm sm:blur-none h-full" src="https://a-step-in.s3.us-east-2.amazonaws.com/boundra/home.webp" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
         </div>
         <div class="absolute left-0 top-0 h-full sm:max-h-[60vh] w-full h-[10vh] bg-gradient-to-b from-black to-transparent">
         </div>
@@ -24,7 +24,7 @@
                 <span data-br=":r0:" data-brr="1" class="inline-block align-top decoration-inherit">Swap Homes, Travel Limitlessly</span>
                 </h1>
                 <h2 class="text-white font-sans w-full max-w-[704px] text-sm font-normal opacity-80 shadow-lg sm:w-[327px] md:text-base lg:w-[584px] !leading-8">
-                    Exclusive nomad-centric home swap platform. Exchange spaces, roam the world at $0 a night. Dive into the community 
+                    Exclusive nomad-centric home swap platform. Exchange spaces, roam the world at $0 a night. Dive into the community
                 </h2>
                 <div class="mt-6 sm:max-w-[480px]">
                 </div>
@@ -44,30 +44,30 @@
                                 <form method="POST" action="{{route('landing-sign-up')}}" class="flex flex-col gap-4">
                                     @csrf
 
-                                    <input 
+                                    <input
                                         class="text-white bg-transparent placeholder:text-zinc-300 flex-1 rounded-lg border border-white/20 backdrop-blur-xl !text-white z-10 relative flex gap-1 w-full {{ $errors->has('email') ? 'border-red-500' : '' }}"
                                         name="email"
-                                        placeholder="Enter your email" 
+                                        placeholder="Enter your email"
                                         required
                                         type="email">
                                     @error('email')
                                         <span class="text-red-500">{{ $message }}</span>
                                     @enderror
 
-                                    <input 
+                                    <input
                                         class="text-white bg-transparent placeholder:text-zinc-300 flex-1 rounded-lg border border-white/20 backdrop-blur-xl !text-white z-10 relative flex gap-1 w-full {{ $errors->has('country') ? 'border-red-500' : '' }}"
                                         name="country"
-                                        placeholder="Which country is your home?" 
+                                        placeholder="Which country is your home?"
                                         required
                                         type="text">
                                     @error('country')
                                         <span class="text-red-500">{{ $message }}</span>
                                     @enderror
 
-                                    <input 
+                                    <input
                                         class="text-white bg-transparent placeholder:text-zinc-300 flex-1 rounded-lg border border-white/20 backdrop-blur-xl !text-white z-10 relative flex gap-1 w-full {{ $errors->has('city') ? 'border-red-500' : '' }}"
                                         name="city"
-                                        placeholder="Enter your city" 
+                                        placeholder="Enter your city"
                                         required
                                         type="text">
                                     @error('city')
@@ -75,7 +75,7 @@
                                     @enderror
 
 
-                                    <input 
+                                    <input
                                         class="text-white bg-transparent placeholder:text-zinc-300 flex-1 rounded-lg border border-white/20 backdrop-blur-xl !text-white z-10 relative flex gap-1 w-full {{ $errors->has('desired_city') ? 'border-red-500' : '' }}"
                                         name="desired_city"
                                         placeholder="Where do you want to live? (optional)"
@@ -128,7 +128,7 @@
       <div class="flex flex-col border-l-4 border-everglade-600 py-2 pl-4 md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4">
         <span class="text-2xl font-medium text-white garamond italic">Step 3</span>
         <span class="text-xl font-medium text-white">
-            Host to earn credits    
+            Host to earn credits
         </span>
         <span class="text-sm font-medium text-white">
             Accumulate journey credits by opening your doors to other nomads.
@@ -140,8 +140,8 @@
 
 <div class="relative md:h-screen">
     <div class="absolute top-0 md:h-screen hidden md:block w-full">
-        <img alt="Settle stays background image" draggable="false" fetchpriority="high" decoding="async" data-nimg="fill" class="object-fill object-top blur-sm sm:blur-none h-full" src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/settle/home.webp" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
-    </div>    
+        <img alt="Settle stays background image" draggable="false" fetchpriority="high" decoding="async" data-nimg="fill" class="object-fill object-top blur-sm sm:blur-none h-full" src="https://a-step-in.s3.us-east-2.amazonaws.com/boundra/home.webp" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+    </div>
 
     <section class="w-full bg-white rounded-lg px-4 py-8 text-center md:px-10 md:py-10 lg:px-10 z-10 md:absolute max-w-2xl flex flex-col items-center justify-center md:left-10 md:top-40">
         <h1 class="text-lg">Swap &amp; stay for a fraction of the cost</h1>
