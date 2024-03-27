@@ -202,7 +202,7 @@ export default function PropertyDetails({nextPage, prevPage}) {
 
                 <img
                     className={"lg:max-w-lg object-cover rounded-l overflow-clip"}
-                    src="https://nomadlivingimages.s3.us-east-2.amazonaws.com/settle/el-born/office_setup.webp"
+                    src="https://a-step-in.s3.us-east-2.amazonaws.com/boundra/office_setup.webp"
                     alt="Property"
                 />
             </div>

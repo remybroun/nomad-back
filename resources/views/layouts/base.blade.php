@@ -15,18 +15,18 @@
           content=""
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en">
-    <meta property="og:url" content="https://boundra.com/">
+    <meta property="og:url" content="https://nomadstay.com/">
     @hasSection('image')
         <meta property="og:image" content="@yield('image')">
     @else
-        <meta property="og:image" content="{{ asset('images/boundra_black_background.png') }}">
+        <meta property="og:image" content="{{ asset('images/.png') }}">
     @endif
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Boundra - Remote housing for creatives">
-    <meta name="twitter:image" content="{{ asset('images/boundra_black_background.png') }}">
+    <meta name="twitter:image" content="{{ asset('images/.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
