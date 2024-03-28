@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-
     @viteReactRefresh
     @vite(['resources/sass/app.scss', 'resources/js/app.jsx'])
     @stack('css')
     {{--        @livewireStyles--}}
-    <title>{{ config('app.name', 'Nomad Stay - Accomodation for Remote Workers') }}</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:site_name" content="Nomad Stay - Accomodation for Remote Workers">
@@ -25,21 +24,21 @@
     <meta property="og:image:height" content="630">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Boundra - Remote housing for creatives">
+    <meta name="twitter:title" content="Nomad Stay - Remote housing for creatives">
     <meta name="twitter:image" content="{{ asset('images/.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,700;1,9..40,1000&display=swap"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,700;1,9..40,1000&display=swap"
+            rel="stylesheet">
     @hasSection('title')
         <title>@yield('title') - {{ config('app.name') }}</title>
     @else
-        <title>{{ config('app.name') }}</title>
+        <title>{{ config('app.name', 'Nomad Stay - Accomodation for Remote Workers') }}</title>
     @endif
 
     <meta name="description"
-          content="@yield('meta_description', 'Boundra is a community of creatives who live and work remotely. We provide housing, workspaces, and community for creatives who want to live and work remotely.')">
+          content="@yield('meta_description', 'Nomad Stay is a platform that connects remote workers with accommodation providers. Find your next remote work location.')">
 
 
     <!-- Favicon -->

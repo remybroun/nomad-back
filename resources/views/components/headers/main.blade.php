@@ -1,5 +1,4 @@
 @php
-
     // Get most popular locations with counts
     $popularLocations = \App\Models\Location::withCount('views')
                             ->orderByDesc('views_count')

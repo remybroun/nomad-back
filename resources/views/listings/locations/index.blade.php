@@ -1,11 +1,10 @@
 {{-- Layout and Meta --}}
 @extends('layouts.app')
-
+@section('title', 'All locations')
+@section('description', 'Find remote work listings in different locations around the world. Work remotely from your dream destination.')
+@section('metaImage', "https://images2.dwell.com/photos/6263102025783029760/6267097017049030656/original.jpg?auto=format&q=35&w=1280")
 @section('content')
-    <head>
-        <title>All locations</title>
-        <meta property="og:title" content="My page title" key="title"/>
-    </head>
+
 
     {{-- Header --}}
     @include('components.headers.main')

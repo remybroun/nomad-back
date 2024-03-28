@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('title', 'All Listings for remote work in ' . ucwords(str_replace('-', ' ', $country->name)))
+@section('description', 'Find remote work listings in ' . ucwords(str_replace('-', ' ', $country->name)) . '. Work remotely from your dream destination.')
+@section('metaImage', "")
 
 <body>
 @include('components.headers.main')

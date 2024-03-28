@@ -1,7 +1,10 @@
 {{-- Layout --}}
 @extends('layouts.app')
 @section('title', 'Best places to work remotely in ' . ucwords($location->name))
+@section('description', 'Find the best remote work rentals in ' . ucwords($location->name) . ', ' . ucwords($location->country->name) . '. Work from anywhere in the world with Nomad Stay.')
+@section('metaImage', "")
 
+{{-- Content --}}
 @php
     $metaDescription = "Find the best remote work rentals in " . ucwords($location->name) . ", " . ucwords($location->country->name) . ". Work from anywhere in the world with Nomad Stay.";
     $metaImage = "https://nomadstay.com/images/remote-work-rentals.jpg";

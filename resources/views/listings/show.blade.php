@@ -1,5 +1,8 @@
 @extends('layouts.app')
-@section('title', 'All Nomad Listings')
+@section('title', $listing->title)
+@section('description', $listing->description)
+@section('metaImage', "https://images2.dwell.com/photos/6263102025783029760/6267097017049030656/original.jpg?auto=format&q=35&w=1280")
+
 
 <div>
     @include('components.headers.main')
